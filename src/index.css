@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.pop-logo {
+  transform: translateY(0);
+}
+
+.pop-text {
+  transform: translateY(0);
+}
+
+.hide-logo {
+  transform: translateY(55px);
+}
+
+.hide-text {
+  transform: translateY(-55px);
+}
