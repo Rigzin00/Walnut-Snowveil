@@ -1,6 +1,25 @@
 import { ArrowRight } from 'lucide-react';
 
+
+interface NavLinkProps {
+  label: string;
+}
+
+const NavLink = ({ label }: NavLinkProps) => {
+  return (
+    <a
+      href="#"
+      className="nav-link-wrapper"
+    >
+      <div className="nav-link-text">{label}</div>
+      <div className="nav-link-text">{label}</div>
+    </a>
+  );
+};
+
 const Footer = () => {
+  const navItems = ['HOME', 'ABOUT US', 'ROOMS', 'EXPERIENCES', 'BLOG', 'RESERVATIONS', 'CONTACT'];
+
   return (
     <footer className="bg-[#2b1207]" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
       <div className="text-center">
@@ -43,19 +62,14 @@ const Footer = () => {
         </div>
 
         <nav className="flex items-center justify-center flex-wrap" style={{ gap: '24px' }}>
-          <a href="#" className="text-white hover:opacity-100 transition-opacity" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', opacity: 0.8, textTransform: 'uppercase' }}>HOME</a>
-          <span className="text-white" style={{ opacity: 0.6 }}>|</span>
-          <a href="#" className="text-white hover:opacity-100 transition-opacity" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', opacity: 0.8, textTransform: 'uppercase' }}>ABOUT US</a>
-          <span className="text-white" style={{ opacity: 0.6 }}>|</span>
-          <a href="#" className="text-white hover:opacity-100 transition-opacity" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', opacity: 0.8, textTransform: 'uppercase' }}>ROOMS</a>
-          <span className="text-white" style={{ opacity: 0.6 }}>|</span>
-          <a href="#" className="text-white hover:opacity-100 transition-opacity" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', opacity: 0.8, textTransform: 'uppercase' }}>EXPERIENCES</a>
-          <span className="text-white" style={{ opacity: 0.6 }}>|</span>
-          <a href="#" className="text-white hover:opacity-100 transition-opacity" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', opacity: 0.8, textTransform: 'uppercase' }}>BLOG</a>
-          <span className="text-white" style={{ opacity: 0.6 }}>|</span>
-          <a href="#" className="text-white hover:opacity-100 transition-opacity" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', opacity: 0.8, textTransform: 'uppercase' }}>RESERVATIONS</a>
-          <span className="text-white" style={{ opacity: 0.6 }}>|</span>
-          <a href="#" className="text-white hover:opacity-100 transition-opacity" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', opacity: 0.8, textTransform: 'uppercase' }}>CONTACT</a>
+          {navItems.map((item, index) => (
+            <div key={item} className="flex items-center" style={{ gap: '24px' }}>
+              <NavLink label={item} />
+              {index < navItems.length - 1 && (
+                <span className="text-white" style={{ opacity: 0.6 }}>|</span>
+              )}
+            </div>
+          ))}
         </nav>
       </div>
     </footer>
