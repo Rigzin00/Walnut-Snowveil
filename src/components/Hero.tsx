@@ -1,59 +1,79 @@
 import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides = [
     "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1920",
     "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    "https://images.pexels.com/photos/1454496/pexels-photo-1454496.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1920",
   ];
+
+  const extendedSlides = [...slides, ...slides];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => prev + 1);
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (currentSlide === slides.length) {
+      setTimeout(() => {
+        setTransitionEnabled(false);
+        setCurrentSlide(0);
+
+        setTimeout(() => {
+          setTransitionEnabled(true);
+        }, 50);
+      }, 2000);
+    }
+  }, [currentSlide]);
+
   return (
     <section className="relative h-screen overflow-hidden">
 
       {/* Background Slides */}
-      {slides.map((slide, index) => (
+      <div className="absolute inset-0 overflow-hidden">
         <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-[2000ms] ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className="flex h-full"
+          style={{
+            transform: `translateX(-${currentSlide * 100}%)`,
+            transition: transitionEnabled ? "transform 2000ms ease-in-out" : "none",
+          }}
         >
-          <div
-            className="h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${slide})`,
-              backgroundPosition: "center 40%",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/25" />
-          </div>
+          {extendedSlides.map((slide, index) => (
+            <div
+              key={index}
+              className="h-full min-w-full bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${slide})`,
+                backgroundPosition: "center 40%",
+              }}
+            >
+              <div className="absolute inset-0 " />
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
 
       {/* TEXT */}
       <div className="absolute inset-0 z-10 flex items-center justify-center px-6">
-  <div className="text-white leading-tight">
+        <div className="text-white leading-tight">
 
-    <h1 className="hero-left">
-      Where Luxury
-    </h1>
+          <h1 className="hero-left">
+            Where Luxury
+          </h1>
 
-    <h1 className="hero-right">
-      Meets Wanderlust
-    </h1>
+          <h1 className="hero-right">
+            Meets Wanderlust
+          </h1>
 
-  </div>
-</div>
+        </div>
+      </div>
 
       {/* Scroll Text */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-xs tracking-[0.2em] opacity-70">
