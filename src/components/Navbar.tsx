@@ -1,64 +1,175 @@
 import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+
+const navLinks = [
+  { label: 'Home', href: '#' },
+  { label: 'About Us', href: '#' },
+  { label: 'Rooms', href: '#' },
+  { label: 'Experiences', href: '#' },
+  { label: 'Blog', href: '#' },
+  { label: 'Reservation', href: '#' },
+  { label: 'Contact', href: '#' },
+];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white' : 'bg-transparent'
-      }`}
-      style={{ height: '80px' }}
-    >
-      <div className="h-full flex items-center justify-between" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
-        <div
-          className={`font-serif transition-colors duration-300 ${
-            isScrolled ? 'text-[#7a4a23]' : 'text-white'
-          }`}
-          style={{ fontFamily: 'Georgia, serif', fontSize: '42px', fontStyle: 'italic', fontWeight: 400, letterSpacing: '0.05em' }}
-        >
-          Dasila
-        </div>
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
 
-        <div className="flex items-center" style={{ gap: '24px' }}>
-          <button
-            className={`transition-colors duration-300 ${
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white' : 'bg-transparent'
+        }`}
+        style={{ height: '80px' }}
+      >
+        <div className="h-full flex items-center justify-between" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
+          <div
+            className={`font-serif transition-colors duration-300 ${
               isScrolled ? 'text-[#7a4a23]' : 'text-white'
             }`}
-            style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase' }}
+            style={{ fontFamily: 'Georgia, serif', fontSize: '42px', fontStyle: 'italic', fontWeight: 400, letterSpacing: '0.05em' }}
           >
-            RESERVATIONS
-          </button>
+            Dasila
+          </div>
 
-          <button
-            className={`rounded-full flex items-center justify-center transition-all duration-300 ${
-              isScrolled ? 'bg-[#7a4a23]' : 'bg-[#7a4a23]'
-            }`}
-            style={{ width: '42px', height: '42px' }}
-          >
-            <div className="flex flex-col gap-1.5">
-              <div className="w-5 h-0.5 bg-white rounded-full"></div>
-              <div className="w-5 h-0.5 bg-white rounded-full"></div>
-              <div className="w-5 h-0.5 bg-white rounded-full"></div>
-            </div>
-          </button>
+          <div className="flex items-center" style={{ gap: '24px' }}>
+            <button
+              className={`transition-colors duration-300 ${
+                isScrolled ? 'text-[#7a4a23]' : 'text-white'
+              }`}
+              style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase' }}
+            >
+              RESERVATIONS
+            </button>
+
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="rounded-full flex items-center justify-center bg-[#7a4a23] transition-all duration-300"
+              style={{ width: '42px', height: '42px' }}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              <div className="flex flex-col gap-1.5">
+                <div
+                  className="bg-white rounded-full transition-all duration-300 origin-center"
+                  style={{ width: '20px', height: '2px', transform: isMenuOpen ? 'translateY(8px) rotate(-45deg)' : 'none' }}
+                />
+                <div
+                  className="bg-white rounded-full transition-all duration-300"
+                  style={{ width: '20px', height: '2px', opacity: isMenuOpen ? 0 : 1, transform: isMenuOpen ? 'scale(0)' : 'scale(1)' }}
+                />
+                <div
+                  className="bg-white rounded-full transition-all duration-300 origin-center"
+                  style={{ width: '20px', height: '2px', transform: isMenuOpen ? 'translateY(-8px) rotate(45deg)' : 'none' }}
+                />
+              </div>
+            </button>
+          </div>
         </div>
+      </nav>
+
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 z-40 transition-opacity duration-500"
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          opacity: isMenuOpen ? 1 : 0,
+          pointerEvents: isMenuOpen ? 'auto' : 'none',
+        }}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      {/* Menu Panel */}
+      <div
+        className="fixed top-0 right-0 h-full z-50 overflow-auto"
+        style={{
+          width: '420px',
+          backgroundColor: '#120a05',
+          transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.5s cubic-bezier(0.76, 0, 0.24, 1)',
+          padding: '80px 50px 80px 60px',
+        }}
+      >
+        {/* Close button — X made of two rotated white lines */}
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="absolute rounded-full flex items-center justify-center"
+          style={{ top: '20px', right: '20px', width: '40px', height: '40px', background: 'transparent' }}
+          aria-label="Close menu"
+        >
+          <div style={{ position: 'relative', width: '20px', height: '20px' }}>
+            <div style={{
+              position: 'absolute', top: '50%', left: 0,
+              width: '100%', height: '2px',
+              backgroundColor: 'rgb(255, 255, 255)',
+              borderRadius: '999px',
+              transform: 'translateY(-50%) rotate(-45deg)',
+            }} />
+            <div style={{
+              position: 'absolute', top: '50%', left: 0,
+              width: '100%', height: '2px',
+              backgroundColor: 'rgb(255, 255, 255)',
+              borderRadius: '999px',
+              transform: 'translateY(-50%) rotate(45deg)',
+            }} />
+          </div>
+        </button>
+
+        {/* Navigation Links */}
+        <nav style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+          {navLinks.map((link, i) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="group relative inline-block"
+              style={{
+                textDecoration: 'none',
+                opacity: isMenuOpen ? 1 : 0,
+                transform: isMenuOpen ? 'translateX(0)' : 'translateX(24px)',
+                transition: `opacity 0.4s ease ${0.15 + i * 0.06}s, transform 0.4s ease ${0.15 + i * 0.06}s`,
+              }}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {/* Overline that appears on hover */}
+              <div
+                className="transition-opacity duration-300 group-hover:opacity-100"
+                style={{
+                  height: '1px',
+                  backgroundColor: 'rgb(255, 255, 255)',
+                  marginBottom: '6px',
+                  opacity: 0,
+                  width: '100%',
+                }}
+              />
+              <h6
+                style={{
+                  color: 'rgb(255, 255, 255)',
+                  fontFamily: 'Georgia, serif',
+                  fontSize: '26px',
+                  fontWeight: 400,
+                  letterSpacing: '0.04em',
+                  margin: 0,
+                }}
+              >
+                {link.label}
+              </h6>
+            </a>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </>
   );
 };
 
