@@ -9,6 +9,8 @@ import TrustedSection from "./components/Trustedsection";
 import CoreValuesSection from "./components/CoreValuesSection";
 import ServicesSection from "./components/ServicesSection";
 import QuoteSection from "./components/QuoteSection";
+import EnvironmentSection from "./components/EnvironmentSection";
+import ConnectSection from "./components/ConnectSection";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -28,8 +30,10 @@ function App() {
           <TrustedSection />
           <CoreValuesSection />
           <ServicesSection />
-          <QuoteSection />
-           <Footer />
+          <QuoteSection />          
+          <EnvironmentSection />           
+          <ConnectSection />
+          <Footer />
         </div>
       )}
     </>
