@@ -172,26 +172,6 @@ const Navbar = () => {
             </Link>
           ))}
         </nav>
-                  marginBottom: '6px',
-                  opacity: 0,
-                  width: '100%',
-                }}
-              />
-              <h6
-                style={{
-                  color: 'rgb(255, 255, 255)',
-                  fontFamily: 'Georgia, serif',
-                  fontSize: '26px',
-                  fontWeight: 400,
-                  letterSpacing: '0.04em',
-                  margin: 0,
-                }}
-              >
-                {link.label}
-              </h6>
-            </a>
-          ))}
-        </nav>
       </div>
     </>
   );
