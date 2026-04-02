@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
+import Rooms from "./pages/Rooms";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/rooms" element={<Rooms />} />
           </Routes>
           <Footer />
         </div>

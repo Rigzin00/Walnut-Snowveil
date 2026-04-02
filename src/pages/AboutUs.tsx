@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import MissionSection from "../components/MissionSection";
 import StatsSection from "../components/StatsSection";
+import FeaturesSection from "../components/FeaturesSection";
+import RetreatSection from "../components/RetreatSection";
+import HistorySection from "../components/HistorySection";
+import ConnectSection from "../components/ConnectSection";
 
 export default function AboutUs() {
   const [scrollY, setScrollY] = useState(0);
@@ -84,6 +88,10 @@ export default function AboutUs() {
 
       <MissionSection />
       <StatsSection />
+      <FeaturesSection />
+      <RetreatSection />
+      <HistorySection />
+      <ConnectSection />
     </div>
   );
 }
