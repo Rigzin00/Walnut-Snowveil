@@ -56,7 +56,6 @@ export default function ServicesSection() {
             >
               Our Services
             </h2>
-            <div className="absolute bottom-[-30px] left-0 w-full h-[30px] bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
           </div>
 
           <div className="relative z-10">
