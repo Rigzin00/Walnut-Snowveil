@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'About Us', href: '#' },
-  { label: 'Rooms', href: '#' },
-  { label: 'Experiences', href: '#' },
-  { label: 'Blog', href: '#' },
-  { label: 'Reservation', href: '#' },
-  { label: 'Contact', href: '#' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Rooms', href: '/rooms' },
+  { label: 'Experiences', href: '/experiences' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Reservation', href: '/reservation' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const Navbar = () => {
@@ -36,14 +37,15 @@ const Navbar = () => {
         style={{ height: '80px' }}
       >
         <div className="h-full flex items-center justify-between" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
-          <div
+          <Link
+            to="/"
             className={`font-serif transition-colors duration-300 ${
               isScrolled ? 'text-[#7a4a23]' : 'text-white'
             }`}
             style={{ fontFamily: 'Georgia, serif', fontSize: '42px', fontStyle: 'italic', fontWeight: 400, letterSpacing: '0.05em' }}
           >
-            Dasila
-          </div>
+            Oasila
+          </Link>
 
           <div className="flex items-center" style={{ gap: '24px' }}>
             <button
@@ -130,9 +132,9 @@ const Navbar = () => {
         {/* Navigation Links */}
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
           {navLinks.map((link, i) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="group relative inline-block"
               style={{
                 textDecoration: 'none',
@@ -148,6 +150,28 @@ const Navbar = () => {
                 style={{
                   height: '1px',
                   backgroundColor: 'rgb(255, 255, 255)',
+                  width: '100%',
+                  opacity: 0,
+                  position: 'absolute',
+                  top: '-4px',
+                  left: 0
+                }}
+              />
+              {/* Text */}
+              <span
+                style={{
+                  fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
+                  fontSize: '48px',
+                  color: 'rgb(255, 255, 255)',
+                  lineHeight: '1.1',
+                  display: 'block'
+                }}
+              >
+                {link.label}
+              </span>
+            </Link>
+          ))}
+        </nav>
                   marginBottom: '6px',
                   opacity: 0,
                   width: '100%',
