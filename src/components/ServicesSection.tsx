@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const services = [
   {
@@ -20,13 +20,28 @@ const services = [
 
 export default function ServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      // Calculate how far we've scrolled past the top of this section
+      // rect.top is negative when scrolling past it
+      const scrolled = Math.max(0, -rect.top);
+      setScrollY(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section ref={containerRef} className="relative w-full bg-white">
       <div className="flex flex-col md:flex-row w-full max-w-[1400px] mx-auto md:px-[80px]">
 
         {/* Left Side: Scrolling Text Content with Sticky "Our Services" Header */}
-        <div className="hidden md:flex flex-col w-1/2 relative px-[40px] md:px-0 pr-8">
+        <div className="hidden md:flex flex-col w-1/2 relative px-[40px] md:px-0 pr-8 self-start">
           {/* Sticky Heading with solid white background to hide text as it scrolls up under it */}
           <div 
             className="sticky top-0 pt-[10vh] pb-[4vh] bg-white w-full z-20"
@@ -44,10 +59,13 @@ export default function ServicesSection() {
             <div className="absolute bottom-[-30px] left-0 w-full h-[30px] bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
           </div>
 
-          <div className="relative z-10 pb-[20vh]">
+          <div className="relative z-10">
             <div className="h-[50vh]"></div>
             {services.map((service, index) => (
-              <div key={index} className="h-screen flex flex-col justify-center">
+              <div 
+                key={index} 
+                className={`flex flex-col ${index === services.length - 1 ? 'pt-[40vh] pb-[5vh]' : 'h-screen justify-center'}`}
+              >
                 <h3
                   className="text-[#5c3115] text-[48px] leading-[1.2] mb-4"
                   style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
@@ -69,26 +87,45 @@ export default function ServicesSection() {
         </div>
 
         {/* Right Side: Sticky Overlapping Images */}
-        <div className="hidden md:block w-1/2 relative pb-[20vh]">
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className={`sticky top-0 flex flex-col items-end ${index === 0 ? 'h-[150vh]' : 'h-screen'}`}
-            >
-              {/* Image Container with shadow dropping onto previous image */}
-              <div 
-                className="relative w-full max-w-[650px] h-[85vh] shadow-[0_-10px_40px_rgba(0,0,0,0.15)] bg-white overflow-hidden"
-                style={{ marginTop: "7.5vh" }}
+        <div className="hidden md:block w-1/2 relative self-start">
+          {services.map((service, index) => {
+            // Rough calculation for the start/end bounds of this specific image
+            // We use standard viewport height estimates for the smooth scale/y calculations
+            const vh = typeof window !== 'undefined' ? window.innerHeight : 800;
+            const startScroll = index * vh;
+            const scrollProgress = Math.max(0, scrollY - startScroll);
+            
+            // Smoother scaling as you scroll down
+            // Starts at 1.0, slowly increases as you scroll deeper into the section
+            const scale = 1 + (scrollProgress * 0.0003);
+            const translateY = scrollProgress * 0.15; // Slow downward pan (smooth parallax)
+
+            return (
+              <div
+                key={index}
+                className={`sticky top-0 flex flex-col items-end ${
+                  index === 0 ? 'h-[150vh]' : 
+                  index === services.length - 1 ? 'h-[92vh]' : 'h-screen'
+                }`}
               >
-                <div className="absolute inset-4 border border-white/40 z-10 pointer-events-none"></div>
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
+                {/* Image Container with shadow dropping onto previous image */}  
+                <div
+                  className="relative w-full max-w-[700px] h-[92vh] shadow-[0_-15px_60px_rgba(0,0,0,0.2)] bg-[#f3f3f3] overflow-hidden"
+                  style={{ marginTop: "4vh" }}
+                >
+                  <div className="absolute inset-[24px] border border-white/50 z-10 pointer-events-none"></div>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-[120%] object-cover object-top origin-top will-change-transform"
+                    style={{
+                      transform: `scale(${Math.min(1.2, scale)}) translateY(${-translateY}px)`
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* --- Mobile View - Simple Stack --- */}

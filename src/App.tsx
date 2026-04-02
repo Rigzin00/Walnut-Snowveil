@@ -8,6 +8,7 @@ import RoomsAndSuites from "./components/RoomsSection";
 import TrustedSection from "./components/Trustedsection";
 import CoreValuesSection from "./components/CoreValuesSection";
 import ServicesSection from "./components/ServicesSection";
+import QuoteSection from "./components/QuoteSection";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
           <TrustedSection />
           <CoreValuesSection />
           <ServicesSection />
+          <QuoteSection />
            <Footer />
         </div>
       )}
