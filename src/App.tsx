@@ -6,7 +6,8 @@ import Hero from "./components/Hero";
 import Introduction from "./components/Introduction";
 import RoomsAndSuites from "./components/RoomsSection";
 import TrustedSection from "./components/Trustedsection";
-
+import CoreValuesSection from "./components/CoreValuesSection";
+import ServicesSection from "./components/ServicesSection";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,8 @@ function App() {
           <Introduction />
           <RoomsAndSuites />
           <TrustedSection />
+          <CoreValuesSection />
+          <ServicesSection />
            <Footer />
         </div>
       )}
