@@ -13,7 +13,7 @@ const AnimatedCounter = ({ target, suffix, label }: { target: number, suffix: st
           observer.disconnect(); // Only animate once
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2, rootMargin: "0px 0px -100px 0px" }
     );
     
     if (ref.current) {
@@ -27,7 +27,8 @@ const AnimatedCounter = ({ target, suffix, label }: { target: number, suffix: st
     if (!isVisible) return;
     
     let startTime: number;
-    const duration = 2000; // 2 seconds animation
+    let animationFrameId: number;
+    const duration = 1500; // 1.5 seconds animation
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -35,18 +36,20 @@ const AnimatedCounter = ({ target, suffix, label }: { target: number, suffix: st
       const percentage = Math.min(progress / duration, 1);
       
       // easeOutExpo function for smooth deceleration
-      const easeProgress = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * percentage);
+      const easeProgress = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * Math.min(percentage, 1));
       
       setCount(Math.floor(easeProgress * target));
 
       if (progress < duration) {
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
       } else {
         setCount(target);
       }
     };
 
-    requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrameId);
   }, [isVisible, target]);
 
   return (
