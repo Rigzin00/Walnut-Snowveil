@@ -22,7 +22,7 @@ function App() {
 
       {/* Website */}
       {!loading && (
-        <div className="min-h-screen overflow-x-hidden w-full flex flex-col relative">
+        <div className="min-h-screen w-full flex flex-col relative">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
