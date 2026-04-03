@@ -1,24 +1,33 @@
 import { ArrowRight } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 
 interface NavLinkProps {
   label: string;
+  href: string;
 }
 
-const NavLink = ({ label }: NavLinkProps) => {
+const NavLink = ({ label, href }: NavLinkProps) => {
   return (
-    <a
-      href="#"
+    <Link
+      to={href}
       className="nav-link-wrapper"
     >
       <div className="nav-link-text">{label}</div>
       <div className="nav-link-text">{label}</div>
-    </a>
+    </Link>
   );
 };
 
 const Footer = () => {
-  const navItems = ['HOME', 'ABOUT US', 'ROOMS', 'EXPERIENCES', 'BLOG', 'RESERVATIONS', 'CONTACT'];
+  const navItems = [
+    { label: 'HOME', href: '/' },
+    { label: 'ABOUT US', href: '/about' },
+    { label: 'ROOMS', href: '/rooms' },
+    { label: 'EXPERIENCES', href: '/experience' },
+    { label: 'BLOG', href: '/blog' },
+    { label: 'RESERVATIONS', href: '/reservations' },
+    { label: 'CONTACT', href: '/contact' }
+  ];
 
   return (
     <footer className="bg-[#2b1207]" style={{ paddingTop: '120px', paddingBottom: '100px' }}>
@@ -63,8 +72,8 @@ const Footer = () => {
 
         <nav className="flex items-center justify-center flex-wrap" style={{ gap: '24px' }}>
           {navItems.map((item, index) => (
-            <div key={item} className="flex items-center" style={{ gap: '24px' }}>
-              <NavLink label={item} />
+            <div key={item.label} className="flex items-center" style={{ gap: '24px' }}>
+              <NavLink label={item.label} href={item.href} />
               {index < navItems.length - 1 && (
                 <span className="text-white" style={{ opacity: 0.6 }}>|</span>
               )}
