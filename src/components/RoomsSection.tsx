@@ -68,7 +68,7 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
   return (
     <div
       ref={cardRef}
-      className="flex flex-col items-center"
+      className="flex flex-col items-center w-full px-4 md:px-0"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
@@ -78,10 +78,8 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
     >
       {/* Card Image */}
       <div
-        className="overflow-hidden rounded-[8px]"
+        className="overflow-hidden rounded-[8px] w-full max-w-[400px] h-[280px] sm:h-[350px] md:h-[452px]"
         style={{
-          width: "400px",
-          height: "452px",
           boxShadow: "0 8px 40px rgba(0,0,0,0.18), 0 2px 10px rgba(0,0,0,0.10)",
         }}
       >
@@ -103,7 +101,7 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
 
       {/* Card Title */}
       <p
-        className="mt-4 text-[30px] text-[#7A3E16] tracking-wide"
+        className="mt-4 text-2xl md:text-[30px] text-[#7A3E16] tracking-wide w-full max-w-[400px] text-left md:text-center"
         style={{ fontFamily: "Jomolhari, Georgia, serif" }}
       >
         {title}
@@ -130,7 +128,7 @@ const rooms = [
 ];
 
 export default function RoomsSection() {
-  const titleRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [titleVisible, setTitleVisible] = useState(false);
 
   useEffect(() => {
@@ -143,21 +141,20 @@ export default function RoomsSection() {
       },
       { threshold: 0.1 }
     );
-    if (titleRef.current) observer.observe(titleRef.current);
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="w-full bg-[#F2F2F2]">
+    <section ref={sectionRef} className="w-full bg-white md:bg-[#F2F2F2]">
 
       {/* ── Background Hero Image ── */}
       <div
-        className="relative w-full"
+        className="relative w-full h-[300px] sm:h-[400px] md:h-[880px]"
         style={{
-          height: "880px",
           backgroundImage: `url('Public/Sitting Room.svg')`,
           backgroundSize: "cover",
-          backgroundPosition: "right center",
+          backgroundPosition: "center",
         }}
       >
         {/* Dark overlay */}
@@ -166,10 +163,9 @@ export default function RoomsSection() {
           style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.05) 100%)" }}
         />
 
-        {/* Section Title — bottom left */}
+        {/* Section Title — bottom left (Desktop) */}
         <div
-          ref={titleRef}
-          className="absolute overflow-hidden"
+          className="hidden md:block absolute overflow-hidden"
           style={{ bottom: "130px", left: "80px" }}
         >
           <h2
@@ -187,10 +183,24 @@ export default function RoomsSection() {
         </div>
       </div>
 
+      {/* Section Title (Mobile) */}
+      <div className="block md:hidden px-4 pt-10 pb-6 w-full max-w-[400px] mx-auto">
+        <h2
+          className="text-[#7A3E16] text-[42px] font-medium leading-tight tracking-wide"
+          style={{
+            fontFamily: "Jomolhari, Georgia, serif",
+            transform: titleVisible ? "translateY(0)" : "translateY(30px)",
+            opacity: titleVisible ? 1 : 0,
+            transition: "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease",
+          }}
+        >
+          Rooms &amp; Suites
+        </h2>
+      </div>
+
       {/* ── Floating Cards Row ── */}
       <div
-        className="relative z-10 flex flex-nowrap justify-center gap-16 px-8"
-        style={{ marginTop: "-100px", paddingBottom: "80px"  }}
+        className="relative z-10 flex flex-col md:flex-row flex-nowrap md:justify-center items-center gap-10 md:gap-16 px-0 md:px-8 mt-4 md:-mt-[100px] pb-16 md:pb-[80px]"
       >
         {rooms.map((room, i) => (
           <RoomCard

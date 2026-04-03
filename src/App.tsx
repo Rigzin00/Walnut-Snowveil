@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rooms from "./pages/Rooms";
 import RoomDetails from "./pages/RoomDetails";
+import Experience from "./pages/Experience";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -18,13 +19,14 @@ function App() {
 
       {/* Website */}
       {!loading && (
-        <div className="min-h-screen">
+        <div className="min-h-screen overflow-x-hidden w-full flex flex-col relative">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/room/:id" element={<RoomDetails />} />
+            <Route path="/experience" element={<Experience />} />
           </Routes>
           <Footer />
         </div>

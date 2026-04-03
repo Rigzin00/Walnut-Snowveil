@@ -26,24 +26,24 @@ export default function TrustedSection() {
   });
 
   return (
-    <section className="w-full bg-[#F3F3F3]" style={{ paddingTop: "100px", paddingBottom: "110px" }}>
+    <section className="w-full bg-[#F3F3F3] py-16 md:py-[100px]">
       <div
         ref={sectionRef}
-        className="w-full px-[80px]"
+        className="w-full px-5 md:px-[80px]"
       >
 
         {/* ── Heading — left aligned, very large ── */}
-        <div className="overflow-hidden mb-[70px]">
+        <div className="overflow-hidden mb-8 md:mb-[70px]">
           <h2
             className="text-left text-[#7A3E16] font-medium leading-[1.15]"
             style={{
               fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(48px, 5.5vw, 88px)",
+              fontSize: "clamp(36px, 8vw, 88px)",
               ...fadeUp(0.05),
             }}
           >
             Experience why we are a trusted
-            <br />
+            <br className="hidden md:block" />
             name in luxury hospitality.
           </h2>
         </div>

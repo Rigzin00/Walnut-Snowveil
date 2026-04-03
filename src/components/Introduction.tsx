@@ -30,9 +30,9 @@ export default function Introduction() {
       <div className="max-w-[2000px] w-full text-center">
 
         {/* Heading */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden px-4 md:px-0">
           <h2
-            className="text-[90px] font-medium leading-tight tracking-tight text-[#6D3207] mb-6"
+            className="text-4xl md:text-[90px] font-medium leading-tight tracking-tight text-[#6D3207] mb-6 md:mb-6"
             style={{
               fontFamily: "Jomolhari",
               transform: visible ? "translateY(0)" : "translateY(80px)",
@@ -42,7 +42,7 @@ export default function Introduction() {
             }}
           >
             An exclusive retreat of comfort
-            <br />
+            <br className="hidden md:block" />
             and sophistication
           </h2>
         </div>
@@ -50,7 +50,7 @@ export default function Introduction() {
         {/* Paragraph */}
         <div className="overflow-hidden">
           <p
-            className="max-w-[1000px] mx-auto text-[20px] font-light leading-relaxed text-[#6d4326]"
+            className="max-w-[1000px] mx-auto text-base md:text-[20px] font-light leading-relaxed text-[#6d4326]"
             style={{
               fontFamily:"Anek Bangla",
               lineHeight: "1.85",

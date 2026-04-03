@@ -5,7 +5,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Rooms', href: '/rooms' },
-  { label: 'Experiences', href: '/experiences' },
+  { label: 'Experiences', href: '/experience' },
   { label: 'Blog', href: '/blog' },
   { label: 'Reservation', href: '/reservation' },
   { label: 'Contact', href: '/contact' },
@@ -36,20 +36,20 @@ const Navbar = () => {
         }`}
         style={{ height: '80px' }}
       >
-        <div className="h-full flex items-center justify-between" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
+        <div className="h-full flex items-center justify-between px-4 md:px-20">
           <Link
             to="/"
             className={`font-serif transition-colors duration-300 ${
               isScrolled ? 'text-[#7a4a23]' : 'text-white'
             }`}
-            style={{ fontFamily: 'Georgia, serif', fontSize: '42px', fontStyle: 'italic', fontWeight: 400, letterSpacing: '0.05em' }}
+            style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontStyle: 'italic', fontWeight: 400, letterSpacing: '0.05em' }}
           >
             Oasila
           </Link>
 
-          <div className="flex items-center" style={{ gap: '24px' }}>
+          <div className="flex items-center gap-4 md:gap-6">
             <button
-              className={`transition-colors duration-300 ${
+              className={`hidden md:block transition-colors duration-300 ${
                 isScrolled ? 'text-[#7a4a23]' : 'text-white'
               }`}
               style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase' }}
@@ -95,13 +95,12 @@ const Navbar = () => {
 
       {/* Menu Panel */}
       <div
-        className="fixed top-0 right-0 h-full z-50 overflow-auto"
+        className="fixed top-0 right-0 h-full z-50 overflow-auto w-full max-w-sm md:w-[420px]"
         style={{
-          width: '420px',
           backgroundColor: '#120a05',
           transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 0.5s cubic-bezier(0.76, 0, 0.24, 1)',
-          padding: '80px 50px 80px 60px',
+          padding: '80px 20px 80px 40px',
         }}
       >
         {/* Close button — X made of two rotated white lines */}
@@ -161,7 +160,7 @@ const Navbar = () => {
               <span
                 style={{
                   fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
-                  fontSize: '48px',
+                  fontSize: 'clamp(32px, 8vw, 48px)',
                   color: 'rgb(255, 255, 255)',
                   lineHeight: '1.1',
                   display: 'block'

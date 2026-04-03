@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+}
+
 body{
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
@@ -68,78 +72,70 @@ font-family: 'Anek Bangla', sans-serif;
 
 /* LEFT TEXT */
 .hero-left {
-  animation: slideLeft 1.6s ease forwards;
+  text-align: center;
+  animation: slideLeft 1.5s ease forwards;
 }
 
 /* RIGHT TEXT */
 .hero-right {
-  animation: slideRight 1.6s ease forwards;
-  animation-delay: 0.2s;
-}
-
-@keyframes slideLeft {
-  0% {
-    transform: translateX(-120px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideRight {
-  0% {
-    transform: translateX(120px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.hero-left,
-.hero-right {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(3rem, 8vw, 5.8rem);
-  letter-spacing: 0.03em;
-}
-
-/* LEFT LINE */
-.hero-left {
-  text-align: left;
-  transform: translateX(-80px);
-  animation: slideLeft 1.5s ease forwards;
-}
-
-/* RIGHT LINE */
-.hero-right {
-  text-align: right;
-  transform: translateX(80px);
+  text-align: center;
   animation: slideRight 1.5s ease forwards;
   animation-delay: 0.25s;
 }
 
+@media (min-width: 768px) {
+  .hero-left {
+    text-align: left;
+    transform: translateX(-80px);
+  }
+  .hero-right {
+    text-align: right;
+    transform: translateX(80px);
+  }
+}
+
 @keyframes slideLeft {
-  from {
-    transform: translateX(-180px);
+  0% {
+    transform: translateX(-120px) scale(0.95);
     opacity: 0;
   }
-  to {
-    transform: translateX(-80px);
+  100% {
+    transform: translateX(0) scale(1);
     opacity: 1;
   }
 }
 
 @keyframes slideRight {
-  from {
-    transform: translateX(180px);
+  0% {
+    transform: translateX(120px) scale(0.95);
     opacity: 0;
   }
-  to {
-    transform: translateX(80px);
+  100% {
+    transform: translateX(0) scale(1);
     opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes slideLeft {
+    from {
+      transform: translateX(-180px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(-80px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      transform: translateX(180px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(80px);
+      opacity: 1;
+    }
   }
 }

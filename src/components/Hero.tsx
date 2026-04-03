@@ -34,7 +34,7 @@ const Hero = () => {
   }, [currentSlide]);
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[85vh] md:h-screen overflow-hidden">
 
       {/* Background Slides */}
       <div className="absolute inset-0 overflow-hidden">
@@ -61,24 +61,22 @@ const Hero = () => {
       </div>
 
       {/* TEXT */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center px-6">
-        <div className="text-white leading-tight">
+      <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
+        <div className="text-white leading-tight flex flex-col items-center">
 
-          <h1 className="hero-left">
+          <h1 className="hero-left text-center">
             Where Luxury
           </h1>
 
-          <h1 className="hero-right">
-            Meets Wanderlust
+          <h1 className="hero-right text-center mt-2 md:mt-0">
+            Meets <br className="block md:hidden" /> Wanderlust
           </h1>
 
         </div>
       </div>
 
-      {/* Scroll Text */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-xs tracking-[0.2em] opacity-70">
-        SCROLL DOWN
-      </div>
+      {/* Scroll Indicator */}
+      
 
     </section>
   );
