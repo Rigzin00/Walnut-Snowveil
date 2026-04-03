@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'Rooms', href: '/rooms' },
   { label: 'Experiences', href: '/experience' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Reservation', href: '/reservation' },
+  { label: 'Reservations', href: '/reservations' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -48,14 +48,15 @@ const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-4 md:gap-6">
-            <button
+            <Link
+              to="/reservations"
               className={`hidden md:block transition-colors duration-300 ${
                 isScrolled ? 'text-[#7a4a23]' : 'text-white'
               }`}
               style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase' }}
             >
               RESERVATIONS
-            </button>
+            </Link>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

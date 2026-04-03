@@ -9,6 +9,8 @@ import Rooms from "./pages/Rooms";
 import RoomDetails from "./pages/RoomDetails";
 import Experience from "./pages/Experience";
 import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import Reservations from "./pages/Reservations";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,6 +31,8 @@ function App() {
             <Route path="/room/:id" element={<RoomDetails />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/reservations" element={<Reservations />} />
           </Routes>
           <Footer />
         </div>
