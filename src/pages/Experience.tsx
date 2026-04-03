@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import ConnectSection from "../components/ConnectSection";
 
 // Scroll animation wrapper component
 const AnimatedImage = ({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: React.CSSProperties }) => {
@@ -79,6 +80,67 @@ const AnimatedImage = ({ src, alt, className, style }: { src: string; alt: strin
         <img src={src} alt={alt} className="w-full h-[115%] -mt-[7.5%] object-cover transition-transform duration-[2000ms] hover:scale-105" />
       </div>
     </div>
+  );
+};
+
+// Parallax Quote Section for ATV
+const ExperienceQuoteSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Check if section is in viewport
+      if (rect.top <= windowHeight && rect.bottom >= 0) {
+        const scrolled = (windowHeight - rect.top) * 0.25; 
+        setOffsetY(scrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger once on mount
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="relative w-full h-[80vh] md:h-[100vh] min-h-[600px] flex items-center justify-start p-[40px] md:p-[80px] overflow-hidden">
+      {/* Background Image Container - Taller than section to allow for parallax translate */}
+      <div 
+        className="absolute left-0 right-0 w-full h-[160%] bg-cover bg-center will-change-transform"
+        style={{ 
+          top: "-30%", // Offset so we have room to animate both up and down
+          backgroundImage: "url('Public/landscape.jpg')", // Ensure you save the image as "landscape.jpg" inside your Public folder!
+          transform: `translateY(${offsetY}px)`,
+          transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Smooths the React state jitter
+        }}
+      ></div>
+
+      {/* Dark Overlay gradient for text readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      {/* Thin inner border overlay */}
+      <div className="absolute inset-[20px] md:inset-[40px] border border-white/20 pointer-events-none z-10"></div>
+
+      {/* Quote Content */}
+      <div className="relative z-10 max-w-[850px] text-white text-left pl-[5px] md:pl-[40px]">
+        <p 
+          className="text-[26px] md:text-[40px] lg:text-[48px] text-left leading-[1.3] font-normal tracking-wide flex"
+          style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+        >
+          <span className="mr-3 md:mr-4">“</span>
+          <span>
+            ATV Experience offers thrilling<br className="hidden md:block" /> 
+            off-road rides through scenic,<br className="hidden md:block" /> 
+            rugged trails.
+          </span>
+        </p>
+      </div>
+    </section>
   );
 };
 
@@ -250,6 +312,69 @@ export default function Experience() {
         </div>
       </div>
 
+      {/* ATV Experience Parallax Quote Section */}
+      <ExperienceQuoteSection />
+
+      {/* Featured Adventure Activities Section */}
+      <div className="w-full bg-[#f8f5f0] py-[100px] md:py-[150px] px-4 md:px-8 lg:px-12">
+        <div className="max-w-full mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-20 lg:gap-28 px-6 md:px-12 lg:px-24">
+            
+            {/* The Gardens: Walk */}
+            <div className="flex flex-col text-left">
+              <div className="w-full aspect-[5/4] mb-12 overflow-hidden rounded-lg">
+                <AnimatedImage 
+                  src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="The Gardens: Walk" 
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-[#6D3207] text-[36px] md:text-[40px] lg:text-[44px] mb-6 leading-tight" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>
+                The Gardens: Walk
+              </h3>
+              <p className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[19px] leading-[1.85] opacity-85" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
+                Garden Walk is a peaceful escape into nature, where you can stroll through lush landscapes, vibrant blooms, and serene pathways. Enjoy fresh air, tranquility, and the beauty of the outdoors.
+              </p>
+            </div>
+
+            {/* Jungle Walk */}
+            <div className="flex flex-col text-left">
+              <div className="w-full aspect-[5/4] mb-12 overflow-hidden rounded-lg">
+                <AnimatedImage 
+                  src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Jungle Walk" 
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-[#6D3207] text-[36px] md:text-[40px] lg:text-[44px] mb-6 leading-tight" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>
+                Jungle Walk
+              </h3>
+              <p className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[19px] leading-[1.85] opacity-85" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
+                Jungle Walk offers an immersive trek through dense forests, rich wildlife, and scenic trails. Experience nature up close, guided by experts who unveil the jungle's hidden wonders.
+              </p>
+            </div>
+
+            {/* Horse Ride */}
+            <div className="flex flex-col text-left">
+              <div className="w-full aspect-[5/4] mb-12 overflow-hidden rounded-lg">
+                <AnimatedImage 
+                  src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                  alt="Horse Ride" 
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-[#6D3207] text-[36px] md:text-[40px] lg:text-[44px] mb-6 leading-tight" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>
+                Horse Ride
+              </h3>
+              <p className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[19px] leading-[1.85] opacity-85" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
+                Horse Ride offers a scenic and relaxing journey through nature on horseback. Whether you're a beginner or an experienced rider, enjoy a guided adventure through picturesque trails.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+       <ConnectSection />
     </main>
   );
 }

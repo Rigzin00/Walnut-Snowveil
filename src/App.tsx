@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs";
 import Rooms from "./pages/Rooms";
 import RoomDetails from "./pages/RoomDetails";
 import Experience from "./pages/Experience";
+import Blog from "./pages/Blog";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/room/:id" element={<RoomDetails />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
           <Footer />
         </div>
