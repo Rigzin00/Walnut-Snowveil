@@ -34,17 +34,18 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? 'bg-white' : 'bg-transparent'
         }`}
-        style={{ height: '80px' }}
+        style={{ height: '100px' }}
       >
         <div className="h-full flex items-center justify-between px-4 md:px-20">
           <Link
             to="/"
-            className={`font-serif transition-colors duration-300 ${
-              isScrolled ? 'text-[#7a4a23]' : 'text-white'
-            }`}
-            style={{ fontFamily: 'Georgia, serif', fontSize: '1.8rem', fontStyle: 'italic', fontWeight: 400, letterSpacing: '0.05em' }}
+            className="flex items-center"
           >
-            Oasila
+            <img 
+              src="/Logo1.svg" 
+              alt="Walnut Snowveil" 
+              className="h-[90px] w-auto transition-all duration-300"
+            />
           </Link>
 
           <div className="flex items-center gap-4 md:gap-6">
