@@ -63,7 +63,7 @@ export default function Loader({ onFinish }: { onFinish: () => void }) {
             ref={logoRef}
             className="translate-y-[80px] transition-transform duration-500 ease-[cubic-bezier(.65,.05,.36,1)]"
           >
-            <img src="img/Logo.svg" alt="Logo" className="h-[80px]" />
+            <img src="/img/Logo.svg" alt="Logo" className="h-[80px]" />
           </div>
         </div>
 
