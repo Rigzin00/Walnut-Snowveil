@@ -58,12 +58,12 @@ export default function Loader({ onFinish }: { onFinish: () => void }) {
     <div className="fixed inset-0 flex items-center justify-center bg-[#ece9e6] z-50">
       <div className="text-center relative">
         {/* Logo mask */}
-        <div className="h-[34px] overflow-hidden flex justify-center">
+        <div className="h-[80px] overflow-hidden flex justify-center">
           <div
             ref={logoRef}
-            className="text-[34px] text-[#203a3d] translate-y-[34px] transition-transform duration-500 ease-[cubic-bezier(.65,.05,.36,1)]"
+            className="translate-y-[80px] transition-transform duration-500 ease-[cubic-bezier(.65,.05,.36,1)]"
           >
-            M
+            <img src="/Logo.svg" alt="Logo" className="h-[80px]" />
           </div>
         </div>
 
