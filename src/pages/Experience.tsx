@@ -114,7 +114,7 @@ const ExperienceQuoteSection = () => {
         className="absolute left-0 right-0 w-full h-[160%] bg-cover bg-center will-change-transform"
         style={{ 
           top: "-30%", // Offset so we have room to animate both up and down
-          backgroundImage: "url('Public/landscape.jpg')", // Ensure you save the image as "landscape.jpg" inside your Public folder!
+          backgroundImage: `url('${import.meta.env.BASE_URL}landscape.jpg')`,
           transform: `translateY(${offsetY}px)`,
           transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Smooths the React state jitter
         }}

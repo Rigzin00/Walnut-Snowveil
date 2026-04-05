@@ -152,7 +152,7 @@ export default function RoomsSection() {
       <div
         className="relative w-full h-[300px] sm:h-[400px] md:h-[880px]"
         style={{
-          backgroundImage: `url('Public/Sitting Room.svg')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}Sitting Room.svg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

@@ -42,7 +42,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <img 
-              src="Public/Logo1.svg" 
+              src={`${import.meta.env.BASE_URL}Logo1.svg`} 
               alt="Walnut Snowveil" 
               className="h-[90px] w-auto transition-all duration-300"
             />
