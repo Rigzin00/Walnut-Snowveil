@@ -114,7 +114,7 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
 
 const rooms = [
   {
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=640&q=80",
+    image: `${import.meta.env.BASE_URL}room.jpg`,
     title: "— Family Suite",
   },
   {
@@ -122,7 +122,7 @@ const rooms = [
     title: "— Executive Junior Suite",
   },
   {
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=640&q=80",
+    image: `${import.meta.env.BASE_URL}room1.jpg`,
     title: "— Retreat Loggia Suite",
   },
 ];
