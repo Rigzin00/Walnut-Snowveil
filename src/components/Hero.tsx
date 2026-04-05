@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const slides = [
-    "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "Public/homebanner6.jpg",
+    "Public/4.jpg",
+    "Public/1.jpg",
   ];
 
   const extendedSlides = [...slides, ...slides];
