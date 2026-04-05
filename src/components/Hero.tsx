@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const slides = [
-    "Public/homebanner6.jpg",
-    "Public/4.jpg",
-    "Public/1.jpg",
+    `${import.meta.env.BASE_URL}homebanner6.jpg`,
+    `${import.meta.env.BASE_URL}4.jpg`,
+    `${import.meta.env.BASE_URL}1.jpg`,
   ];
 
   const extendedSlides = [...slides, ...slides];
