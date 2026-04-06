@@ -4,26 +4,26 @@ const values = [
   {
     image: "https://images.unsplash.com/photo-1592424001807-55df93bb2768?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
     label: "HOMELY",
-    title: "Family\nOwned",
-    description: "As a family, we take great pride in preserving the lakeside retreat our parents lovingly built long before our time. Though they have officially stepped back, don't be surprised if Jackup stops for a friendly chat while keeping a watchful eye on everything!"
+    title: "Warm Hospitality",
+    description: "At Walnut Snowveil Residency, we believe every guest should feel welcomed and cared for. Our team focuses on creating a friendly and comfortable environment where travelers can truly relax during their stay in Nubra Valley."
   },
   {
-    image: "https://images.unsplash.com/photo-1595853035070-59a39fe84de3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    label: "AUTHENTIC",
-    title: "Keep it\nLocal",
-    description: "Oasila exists to honor this extraordinary place we call home, embracing authenticity in every detail. We source locally, highlight seasonal flavors, and create genuine experiences to ensure every moment with us is meaningful and memorable."
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK0Ndtz-Z99axsyDEI3bcUjZdwfrCVScgJ-Q&s",
+    label: "COMFORT STAY",
+    title: "Comfortable Accommodation",
+    description: "Our rooms are thoughtfully prepared to provide a peaceful and comfortable space after a day of exploring Ladakh. Clean interiors, cozy bedding, and a calm atmosphere ensure a restful experience for every guest."
   },
   {
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    label: "WELLNESS",
-    title: "Earth and\nOurs",
-    description: "Wellness is at the heart of everything we do. We strive to create a space where guests leave feeling refreshed while minimizing our impact on the planet through mindful, sustainable practices."
+    image: "download.jpg",
+    label: "AUTHENTICITY",
+    title: "Cultural Experience",
+    description: "Guests can enjoy delicious home-style meals prepared with fresh ingredients. We aim to offer a simple yet authentic taste of Ladakhi hospitality during your stay."
   },
   {
-    image: "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "Public/2.jpg",
     label: "SIMPLICITY",
-    title: "Within\nNature",
-    description: "We believe true luxury lies in nature’s elegant simplicity, guiding everything we do. Using natural materials like wood and stone, we blend sustainability with character, incorporating reclaimed and upcycled pieces into every space."
+    title: "Scenic Surroundings",
+    description: "Located in the beautiful village of Sumoor, our residency is surrounded by breathtaking mountain landscapes and peaceful natural views, offering guests a quiet escape in the heart of Nubra Valley."
   }
 ];
 

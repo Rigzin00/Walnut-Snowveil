@@ -42,9 +42,9 @@ export default function TrustedSection() {
               ...fadeUp(0.05),
             }}
           >
-            Experience why we are a trusted
+          Why Stay With Us
             <br className="hidden md:block" />
-            name in luxury hospitality.
+           
           </h2>
         </div>
 
@@ -62,14 +62,11 @@ export default function TrustedSection() {
                 ...fadeUp(0.25),
               }}
             >
-              For years, we have set the standard in luxury hospitality,
-              delivering exceptional service and unforgettable experiences. Our
-              commitment to excellence, attention to detail, and warm hospitality
-              have earned us a reputation as a trusted name among travelers
-              seeking comfort, elegance, and personalized care. From exquisite
-              accommodations to world-class dining and thoughtful amenities,
-              every aspect of our guest experience is designed to exceed
-              expectations.
+             At Walnut Snowveil Residency, we focus on offering guests a peaceful and comfortable stay in the heart of
+              Nubra Valley. Our rooms are thoughtfully designed to provide a relaxing space where travelers can unwind 
+              after a day of exploring the beautiful landscapes, monasteries, and villages of the region. Surrounded by 
+              mountains and the calm atmosphere of Sumoor village, our residency creates a perfect environment for rest 
+              and relaxation.
             </p>
           </div>
 
@@ -84,12 +81,10 @@ export default function TrustedSection() {
                 ...fadeUp(0.4),
               }}
             >
-              What sets us apart is our dedication to creating memorable stays
-              that go beyond just accommodations. Whether you're here for
-              business or leisure, we ensure that every moment is marked by
-              sophistication, relaxation, and seamless service. With a perfect
-              blend of timeless charm and modern convenience, we invite you to
-              discover why we have become a household name in luxury hospitality.
+              What makes our residency special is the warmth of traditional Ladakhi hospitality combined with a comfortable 
+              and welcoming environment. Guests can enjoy scenic views, fresh mountain air, and a quiet setting that makes 
+              every stay memorable. Whether you are traveling with family, friends, or on a solo adventure, Walnut Snowveil
+               Residency offers a simple and authentic Ladakh experience.
             </p>
           </div>
 

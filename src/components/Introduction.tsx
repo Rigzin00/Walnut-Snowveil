@@ -1,3 +1,4 @@
+import { AlignJustify } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export default function Introduction() {
@@ -41,9 +42,9 @@ export default function Introduction() {
               transitionDelay: "0.1s",
             }}
           >
-            An exclusive retreat of comfort
+            Experience Nubra Valley at
             <br className="hidden md:block" />
-            and sophistication
+            Walnut Snowveil Residency
           </h2>
         </div>
 
@@ -53,22 +54,19 @@ export default function Introduction() {
             className="max-w-[1000px] mx-auto text-base md:text-[20px] font-light leading-relaxed text-[#6d4326]"
             style={{
               fontFamily:"Anek Bangla",
-              lineHeight: "1.85",
+              textAlign: "justify",
+              lineHeight: "1.55",
               transform: visible ? "translateY(0)" : "translateY(60px)",
               opacity: visible ? 1 : 0,
+              fontSize: "clamp(25px, 1.1vw, 18px)",
               transition: "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease",
               transitionDelay: "0.35s",
             }}
           >
-            Nestled in a serene setting, our luxury lodge and hotel offer a perfect
-            blend of elegance, comfort, and world-class hospitality. Designed for
-            discerning travelers, each space is crafted with refined interiors,
-            modern amenities, and breathtaking views. Whether you seek a tranquil
-            escape, a romantic getaway, or a premium business stay, we ensure an
-            unparalleled experience marked by personalized service and timeless
-            sophistication. Indulge in fine dining, rejuvenate in our wellness
-            spaces, and immerse yourself in an ambiance of pure luxury.
-          </p>
+                      Nestled in the peaceful village of Sumoor in Nubra Valley, Walnut Snowveil Residency offers travelers a comfortable and welcoming stay surrounded by the breathtaking landscapes of Ladakh. Our residency combines the warmth of traditional Ladakhi hospitality with modern comforts, creating a relaxing space for guests exploring Nubra Valley.
+                      Wake up to stunning mountain views, fresh mountain air, and the calm atmosphere of the valley. Whether you are visiting Diskit Monastery, Hunder Sand Dunes, or the beautiful villages of Nubra, our location provides a perfect base for discovering the natural beauty and culture of the region.
+                      Guests can enjoy clean and spacious rooms, home-cooked meals, and a peaceful environment that makes every stay memorable. At Walnut Snowveil Residency, we focus on offering a genuine Ladakhi experience where comfort, nature, and hospitality come together.
+                      </p>
         </div>
 
       </div>

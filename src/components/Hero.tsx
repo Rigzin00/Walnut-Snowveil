@@ -65,11 +65,11 @@ const Hero = () => {
         <div className="text-white leading-tight flex flex-col items-center">
 
           <h1 className="hero-left text-center">
-            Where Luxury
+           Experience the
           </h1>
 
           <h1 className="hero-right text-center mt-2 md:mt-0">
-            Meets <br className="block md:hidden" /> Wanderlust
+            Beauty <br className="block md:hidden" /> of Nubra Valley
           </h1>
 
         </div>
