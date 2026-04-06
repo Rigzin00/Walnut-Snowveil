@@ -4,9 +4,9 @@ export default function ConnectSection() {
       {/* Left Column - Image with Overlay */}
       <div className="relative w-full md:w-1/2 flex items-end justify-center p-[40px]">
         <img 
-          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-          alt="Luxury property" 
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/10.jpg" 
+          alt="Travel" 
+          className="absolute inset w-full h-full object-cover"
         />
         
         {/* Dark gradient overlay for text readability */}
@@ -41,9 +41,11 @@ export default function ConnectSection() {
               className="text-[#5c3115] text-[14px] md:text-[15px] leading-[1.8] text-left flex-1"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300, minWidth: "160px" }}
             >
-              1234 Broadway Ave, Apt<br />
-              9868 New York, NY 10001,<br />
-              USA
+              Walnut Snowveil Residency<br />
+              Sumoor Village, Nubra Valley<br />
+              Leh, Ladakh – 194404<br />
+               India
+
             </p>
           </div>
 
@@ -60,8 +62,8 @@ export default function ConnectSection() {
               className="text-[#5c3115] text-[14px] md:text-[15px] leading-[1.8] text-left flex-1"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300, minWidth: "160px" }}
             >
-              info@yourdomain.com<br />
-              hello@yourdomain.com
+              info.walnutsnowveilres@gmail.com<br />
+              
             </p>
           </div>
 
@@ -78,8 +80,8 @@ export default function ConnectSection() {
               className="text-[#5c3115] text-[14px] md:text-[15px] leading-[1.8] text-left flex-1"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300, minWidth: "160px" }}
             >
-              +01 2345 678 091<br />
-              +07 0070 123 732
+              +91 6006672711<br />
+              +91 6005643874
             </p>
           </div>
 
