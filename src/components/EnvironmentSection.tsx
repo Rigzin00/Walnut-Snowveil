@@ -60,10 +60,10 @@ export default function EnvironmentSection() {
             <img 
               src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
               alt="Lush green valley mountain view" 
-              className="w-full h-[140%] -top-[20%] relative object-cover will-change-transform"
+              className="w-full h-[140%] -top-10%] relative object-cover will-change-transform"
               style={{ 
                 transform: `translateY(${-offsetY * 0.15}px)`,
-                transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)" 
+                transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)" 
               }}
             />
           </div>
@@ -81,16 +81,17 @@ export default function EnvironmentSection() {
               className="text-[#5c3115] text-[40px] md:text-[52px] lg:text-[50px] leading-[1.1] mb-[30px] md:mb-[40px]"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
             >
-              An environmentally<br />responsible experience
+             Our Story
             </h2>
             <p 
               className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[20px] leading-[1.8] mb-[40px] opacity-90"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
-              Oasila offers more than just a place to relax and unwind—it embodies a deep commitment to environmental stewardship. With a focus on sustainability, the resort strives to minimize its ecological footprint, safeguarding its delicate ecosystem and preserving the breathtaking natural beauty that surrounds it.
+              Walnut Snowveil Residency was created to offer travelers a peaceful and comfortable place to stay while exploring the beauty of Nubra Valley. Inspired by the simplicity and warmth of Ladakhi culture, our residency focuses on providing genuine hospitality and a welcoming atmosphere for every guest.
+              We believe that a great stay is not only about the room but about the experience. From the calm surroundings of Sumoor village to the friendly interactions with our guests, every moment is meant to reflect the warmth and authenticity of Ladakh.
             </p>
             <a 
-              href="#" 
+              href="about" 
               className="inline-block uppercase tracking-[1px] text-[13px] md:text-[14px] text-[#5c3115] border-b-[2px] border-[#5c3115]/50 pb-1 font-medium hover:border-[#5c3115] transition-colors" 
               style={{ fontFamily: "Anek Bangla, sans-serif" }}
             >
@@ -112,10 +113,10 @@ export default function EnvironmentSection() {
             <img 
               src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
               alt="Mountain peak reflected in turquoise lake" 
-              className="w-full h-[140%] -top-[20%] relative object-cover will-change-transform"
+              className="w-full h-[140%] -top-[60%] relative object-cover will-change-transform"
               style={{ 
                 transform: `translateY(${offsetY * 0.15}px)`,  // Scrolls down (positive offset)
-                transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)" 
+                transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)" 
               }}
             />
           </div>
@@ -127,12 +128,12 @@ export default function EnvironmentSection() {
             }`}
           >
             <img 
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+              src="/Home.png" 
               alt="Outdoor dining table overlooking valley" 
-              className="w-full h-[140%] -top-[20%] relative object-cover will-change-transform"
+              className="w-full h-[140%] top-[15%] relative object-cover will-change-transform"
               style={{ 
                 transform: `translateY(${-offsetY * 0.05}px)`, // Very slow multiplier
-                transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)" 
+                transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)" 
               }}
             />
           </div>

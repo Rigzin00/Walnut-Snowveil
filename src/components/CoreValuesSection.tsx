@@ -20,7 +20,7 @@ const values = [
     description: "Guests can enjoy delicious home-style meals prepared with fresh ingredients. We aim to offer a simple yet authentic taste of Ladakhi hospitality during your stay."
   },
   {
-    image: "Public/2.jpg",
+    image: "/2.jpg",
     label: "SIMPLICITY",
     title: "Scenic Surroundings",
     description: "Located in the beautiful village of Sumoor, our residency is surrounded by breathtaking mountain landscapes and peaceful natural views, offering guests a quiet escape in the heart of Nubra Valley."

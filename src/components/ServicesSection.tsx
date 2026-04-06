@@ -2,19 +2,19 @@
 
 const services = [
   {
-    title: "Dinning",
-    description: "Enjoy fresh, seasonal flavors crafted with care. Our lodge offers a curated menu blending local and international cuisine, served in a warm and inviting setting.",
-    image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    title: "Home-Cooked Dining",
+    description: "Enjoy fresh and delicious home-style meals prepared with care. Our dining experience offers simple, comforting food that reflects the warmth of Ladakhi hospitality.",
+    image: "/Dinning.png",
   },
   {
-    title: "Meetings & Events",
-    description: "From corporate gatherings to special celebrations, our lodge offers elegant spaces, modern amenities, and exceptional service for a seamless experience.",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    title: "Comfortable Accommodation",
+    description: "Our rooms are designed to provide a cozy and peaceful environment where guests can relax after exploring the beautiful landscapes of Nubra Valley.",
+    image: "/room.jpg",
   },
   {
-    title: "Recreations",
-    description: "Enjoy a variety of recreational activities, from refreshing swims to nature walks and outdoor adventures. Whether you seek relaxation or excitement, our lodge offers the perfect blend of leisure.",
-    image: "https://images.unsplash.com/photo-1572331165267-854da2ae7615?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    title: "Local Travel Guidance",
+    description: "We help guests explore the best attractions in Nubra Valley, including Samstanling Monastery, Sumur Sand Dunes, and nearby villages.",
+    image: "/hm-things-2.webp",
   }
 ];
 

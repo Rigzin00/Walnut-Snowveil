@@ -31,16 +31,14 @@ export default function QuoteSection() {
       <div 
         className="absolute left-0 right-0 w-full h-[160%] bg-cover bg-center will-change-transform"
         style={{ 
-          top: "-30%", // Offset so we have room to animate both up and down
-          backgroundImage: "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+          top: "-80%", // Offset so we have room to animate both up and down
+          backgroundImage: "url('/tour12.jpeg')",
           transform: `translateY(${offsetY}px)`,
-          transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Smooths the React state jitter
+          transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)", // Smooths the React state jitter
         }}
       ></div>
 
-      {/* Dark Overlay gradient for text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
-
+      
       {/* Thin inner border overlay */}
       <div className="absolute inset-[20px] md:inset-[40px] border border-white/20 pointer-events-none"></div>
 
@@ -51,7 +49,7 @@ export default function QuoteSection() {
           style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
         >
           <span className="mr-3 md:mr-4">“</span>
-          Escape to breathtaking scenery, wildlife, and serenity to reconnect with what matters.
+          Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.
         </p>
       </div>
     </section>
