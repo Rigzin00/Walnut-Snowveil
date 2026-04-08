@@ -22,13 +22,13 @@ export default function Rooms() {
         
         {/* Parallax Background */}
         <div 
-          className="absolute inset-0 w-full h-[120%] will-change-transform"
+          className="absolute inset-0 w-full h-[100%] will-change-transform"
           style={{ 
             transform: `translateY(${scrollY * 0.4}px)`,
           }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1542314831-c53cd4185af1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            src="room/room1.jpg" 
             alt="Rooms and Suites Hero Bedroom" 
             className="w-full h-full object-cover"
           />
@@ -79,8 +79,8 @@ export default function Rooms() {
                 }`}
                 style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
               >
-                Each room and suite has been thoughtfully designed to<br className="hidden md:block"/>
-                provide you with a unique and enjoyable stay.
+                Comfortable rooms designed for a relaxing stay in <br className="hidden md:block"/>
+               the peaceful surroundings of Nubra Valley.
               </p>
              </div>
 
