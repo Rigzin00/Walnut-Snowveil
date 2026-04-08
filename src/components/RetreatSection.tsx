@@ -38,12 +38,12 @@ export default function RetreatSection() {
           
           {/* Parallax Background Image */}
           <img 
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            src="about/about4.jpg" 
             alt="Relaxing view from bed overlooking lake" 
-            className="w-full h-[160%] -top-[30%] relative object-cover will-change-transform"
+            className="w-full h-[130%] -top-[50%] relative object-cover will-change-transform"
             style={{ 
               transform: `translateY(${offsetY * 0.25}px)`,
-              transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)" 
+              transition: "transform 0.4s cubic-bezier(0.25, 10.46, 10.45, 0.94)" 
             }}
           />
 
@@ -54,7 +54,7 @@ export default function RetreatSection() {
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
             >
               <span className="text-[40px] md:text-[60px] leading-none inline-block align-top mt-[-5px] mr-2">“</span>
-              Every guest will find their own personal haven of peace, a retreat that is uniquely.
+              Find peace, comfort, and the beauty of Nubra Valley in every stay.
             </h2>
           </div>
 
@@ -69,7 +69,7 @@ export default function RetreatSection() {
           }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            src="about/about5.jpg" 
             alt="Bright serene bedroom interior" 
             className="w-full h-full object-cover"
           />

@@ -83,17 +83,17 @@ export default function StatsSection() {
     <section className="w-full bg-white py-[60px] md:py-[100px] px-[20px] md:px-[80px]">
       <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-[20px] md:gap-0">
         
-        <AnimatedCounter target={20} suffix="+" label="Years of experience" />
+        <AnimatedCounter target={10} suffix="+" label="Rooms Available" />
         
         {/* Divider 1 */}
         <div className="w-[100px] h-[1px] md:w-[1px] md:h-[80px] bg-[#5c3115]/10"></div>
         
-        <AnimatedCounter target={12} suffix="+" label="Countries Serving" />
+        <AnimatedCounter target={5} suffix="+" label="Nearby Attractions" />
         
         {/* Divider 2 */}
         <div className="w-[100px] h-[1px] md:w-[1px] md:h-[80px] bg-[#5c3115]/10"></div>
         
-        <AnimatedCounter target={10} suffix="m" label="Satisfied Guest" />
+        <AnimatedCounter target={100} suffix="+" label="Happy Guests Every Season" />
         
       </div>
     </section>

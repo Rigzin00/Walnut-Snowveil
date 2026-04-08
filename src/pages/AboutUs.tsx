@@ -22,13 +22,13 @@ export default function AboutUs() {
       {/* Hero Section for About Us */}
       <div className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 w-full h-[120%] will-change-transform"
+          className="absolute inset-0 w-full h-[100%] will-change-transform"
           style={{ 
             transform: `translateY(${scrollY * 0.4}px)`,
           }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            src="about/about1.jpg" 
             alt="About Us Hero" 
             className="w-full h-full object-cover"
           />
@@ -43,7 +43,7 @@ export default function AboutUs() {
               className="text-white text-[40px] md:text-[70px] lg:text-[90px] leading-tight text-center whitespace-nowrap px-4"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
             >
-              About Our Lodge
+              About Our Residency
             </h1>
             <div className="flex-1 h-[1px] bg-transparent"></div>
           </div>
@@ -54,7 +54,7 @@ export default function AboutUs() {
               className="text-white text-[40px] md:text-[70px] lg:text-[90px] leading-tight text-center whitespace-nowrap px-4"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
             >
-              Legacy of Luxury
+              Nature's Retreat
             </h1>
             <div className="flex-1 h-[1px] bg-white opacity-70"></div>
           </div>
@@ -67,7 +67,7 @@ export default function AboutUs() {
           className="text-[#5c3115] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.1] mb-[60px] md:mb-[80px] max-w-[900px]"
           style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
         >
-          Where every stay becomes an unforgettable experience
+          Location & The Residency
         </h2>
         
         <div className="flex flex-col md:flex-row gap-[40px] md:gap-[80px]">
@@ -75,13 +75,24 @@ export default function AboutUs() {
             className="flex-1 text-[#5c3115] text-[16px] md:text-[18px] leading-[1.8] opacity-80"
             style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
           >
-            Inspired by nature's beauty and a passion for hospitality, Oasila was created as a sanctuary where luxury meets tranquility. Our vision was to craft an escape that blends refined elegance with the warmth of personalized service, offering guests an unforgettable retreat.
-          </p>
+            Nubra Valley is one of Ladakh’s most breathtaking regions, known for its dramatic mountain landscapes,
+            peaceful villages, and ancient monasteries. Surrounded by towering Himalayan ranges and clear blue skies,
+            the valley offers a unique blend of nature, culture, and adventure for travelers exploring Ladakh.
+            Located in the serene village of Sumoor, Walnut Snowveil Residency provides a peaceful retreat in the 
+            heart of Nubra Valley. The residency combines traditional Ladakhi hospitality with modern comfort, creating a
+            welcoming space for guests looking to relax and enjoy the beauty of the region.
+            </p>
           <p 
             className="flex-1 text-[#5c3115] text-[16px] md:text-[18px] leading-[1.8] opacity-80"
             style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
           >
-            From breathtaking landscapes to carefully curated experiences, every detail is designed to provide comfort, relaxation, and adventure. Whether you seek a peaceful getaway or a taste of the extraordinary, Oasila invites you to indulge in the art of luxury.
+           Guests staying at Walnut Snowveil Residency can easily explore some of Nubra Valley’s beautiful cultural and natural
+           attractions. The peaceful Samstanling Monastery (about 1 km) from the residency offers a glimpse into Ladakh’s rich 
+           Buddhist heritage, while the historic Onpo Gompa (around 3 km) provides a quiet spiritual retreat surrounded by 
+           stunning mountain views.Nature lovers can also visit the nearby Sumoor Sand Dunes (about 2 km), where the dramatic 
+           high-altitude desert landscape creates a unique and memorable experience. After a day of exploring monasteries, scenic 
+           valleys, and local villages, guests can return to the comfort and warm hospitality of Walnut Snowveil Residency, making 
+           every stay relaxing and memorable.
           </p>
         </div>
       </div>

@@ -23,12 +23,12 @@ export default function FeaturesSection() {
   }, []);
 
   const features = [
-    { title: "140-acres Estate", desc: "A vast retreat immersed in nature." },
-    { title: "Farm-to-Table Dining", desc: "Fresh ingredients from fields." },
-    { title: "Scenic Surroundings", desc: "Gardens, a bird sanctuary." },
-    { title: "Seamless Luxury", desc: "Open spaces blending nature." },
-    { title: "Exclusive Winery", desc: "Fine wines from Oasis Winery." },
-    { title: "Lakeside Serenity", desc: "Stunning views and tranquility." },
+    { title: "Authentic Ladakhi Hospitality", desc: "Warm and welcoming service for guests." },
+    { title: "Peaceful Village Location", desc: "Located in the serene village of Sumoor." },
+    { title: "Comfortable Accommodation", desc: "Cozy rooms designed for relaxation." },
+    { title: "Local Culture & Tradition", desc: "Experience the charm of Ladakhi lifestyle." },
+    { title: "Scenic Mountain Views", desc: "Surrounded by the dramatic landscapes of Nubra Valley." },
+    { title: "A Home Away From Home", desc: "A relaxing retreat for travelers exploring Ladakh." },
   ];
 
   return (
@@ -45,31 +45,31 @@ export default function FeaturesSection() {
             className="text-[40px] md:text-[50px] leading-[1.3] text-[#5c3115] mb-[30px]"
             style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
           >
-            140 acres of pure bliss. With endless reasons to return to our lodge.
+           A place inspired by the beauty of Nubra Valley.
           </h2>
           
           <p 
             className="text-[#5c3115] text-[16px] md:text-[18px] opacity-80 mb-[30px] leading-[1.8]"
             style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
           >
-            Oasila, alongside Blue heaven winery, is a serene oasis
-            nestled within a sprawling 140-hectare estate, embodying
-            the natural luxury of The Living Circle. Surrounded by lush
-            landscapes and the breathtaking beauty of Ticino, it offers
-            a seamless retreat where nature and tranquility take center
-            stage.
+            Walnut Snowveil Residency was created to offer travelers a peaceful and welcoming stay in the 
+            heart of Sumoor, Nubra Valley. Surrounded by the dramatic landscapes of Ladakh and the quiet 
+            charm of village life, the residency reflects the spirit of the region—simple, warm, and deeply 
+            connected to nature.
+            Inspired by Ladakh’s rich culture and timeless hospitality, Walnut Snowveil Residency combines 
+            traditional warmth with modern comfort to create a relaxing retreat for travelers from around the 
+            world. Guests wake up to breathtaking mountain views, fresh Himalayan air, and the calm atmosphere 
+            that makes Nubra Valley one of Ladakh’s most treasured destinations.
           </p>
           
           <p 
             className="text-[#5c3115] text-[16px] md:text-[18px] opacity-80 leading-[1.8]"
             style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
           >
-            With a bird sanctuary, botanical garden, and orchard along
-            the shores of Lake Maggiore, it is a haven for unforgettable
-            moments. Our "from our farm to your table" philosophy
-            ensures that guests enjoy the freshest rice, corn, fruits,
-            vegetables, and wines, harvested directly from our fields
-            and gardens.
+            Whether you are visiting nearby monasteries, exploring the sand dunes, or simply enjoying 
+            the peaceful surroundings, every stay at Walnut Snowveil Residency is designed to feel 
+            welcoming and memorable. More than just a place to stay, it is a place where guests can 
+            experience the beauty, culture, and hospitality that make Nubra Valley truly special.
           </p>
         </div>
 

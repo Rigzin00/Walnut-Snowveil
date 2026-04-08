@@ -33,12 +33,12 @@ export default function MissionSection() {
             <div className="absolute inset-[10px] md:inset-[20px] border border-white/40 z-10 pointer-events-none"></div>
             {/* The image shifts down meaning positive translateY */}
             <img 
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src="about/about2.jpg" 
               alt="Lobby interior with sun rays" 
               className="w-full h-[130%] -top-[15%] relative object-cover will-change-transform"
               style={{
                 transform: `translateY(${offsetY * 0.15}px)`,
-                transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)"
               }}
             />
           </div>
@@ -51,12 +51,12 @@ export default function MissionSection() {
             <div className="absolute inset-[10px] md:inset-[20px] border border-white/40 z-10 pointer-events-none"></div>
             {/* The image shifts up meaning negative translateY */}
             <img 
-              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+              src="about/about3.jpg" 
               alt="Bright minimalist sitting area" 
-              className="w-full h-[130%] -top-[15%] relative object-cover will-change-transform"
+              className="w-full h-[130%] top-[10%] relative object-cover will-change-transform"
               style={{
                 transform: `translateY(${-offsetY * 0.15}px)`,
-                transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94"
               }}
             />
           </div>
@@ -73,7 +73,7 @@ export default function MissionSection() {
               className="text-[#5c3115] text-[20px] md:text-[26px] leading-[1.6]"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
             >
-              Our mission is to provide a luxurious and serene retreat where nature, comfort, and personalized hospitality come together for an unforgettable experience.
+             Our mission is to create a welcoming retreat where guests can experience the beauty of Nubra Valley with comfort, culture, and genuine Ladakhi hospitality.
             </p>
           </div>
 

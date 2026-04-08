@@ -45,21 +45,21 @@ export default function HistorySection() {
 
   const historyData = [
     {
-      title: "Oasila started from 20th century",
-      desc: "Founded in the early 20th century, our retreat became a serene, sustainable haven of vineyards and orchards—offering timeless hospitality, refined luxury, and an immersive escape into nature's beauty and tranquility.",
-      img: "https://images.unsplash.com/photo-1511634829096-045a111727eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Leh Airport",
+      desc: "Your journey begins at Kushok Bakula Rimpochee Airport, Leh, the main gateway to Ladakh. After arriving in Leh, travelers can explore the town or begin their scenic drive towards Nubra Valley.",
+      img: "about/about6.jpg",
       side: "left",
     },
     {
-      title: "Honoring the past, embrace future",
-      desc: "For generations, our oasis has reflected elegance, nature, and hospitality—honoring tradition, embracing modern comforts, and showcasing our legacy through sustainable vineyards, orchards, and a deep commitment.",
-      img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Khardung La Pass",
+      desc: "The route to Nubra Valley takes you through the famous Khardung La Pass, one of the highest motorable roads in the world. Surrounded by dramatic Himalayan landscapes, the journey itself becomes an unforgettable experience.",
+      img: "about/about7.jpg",
       side: "right",
     },
     {
-      title: "Timeless luxury boutique lodge",
-      desc: "As a family-owned luxury lodge, we offer a warm, personalized experience with bespoke details and tailored hospitality—blending refined elegance and intimacy amid breathtaking landscapes for an unforgettable retreat.",
-      img: "https://images.unsplash.com/photo-1600521503606-da5f3827ba4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Sumoor, Nubra Valley",
+      desc: "After descending into Nubra Valley, the road leads to the peaceful village of Sumoor, home to Walnut Snowveil Residency. Here, guests are welcomed with warm Ladakhi hospitality and breathtaking views of the surrounding mountains.",
+      img: "about/about8.jpg",
       side: "left",
     },
   ];
@@ -73,8 +73,8 @@ export default function HistorySection() {
           className={`text-[#5c3115] text-[36px] md:text-[46px] leading-[1.2] text-center mb-[80px] md:mb-[120px] transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]"}`}
           style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
         >
-          Our roots go back to<br />
-          the 20th century
+          Journey to Walnut Snowveil<br />
+          Residency
         </h2>
 
         {/* Timeline Container */}
