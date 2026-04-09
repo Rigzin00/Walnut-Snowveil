@@ -42,13 +42,120 @@ export default function RoomDetails() {
   const { id } = useParams();
   const [isHeroVisible, setIsHeroVisible] = useState(false);
 
-  const room = state?.room || {
+  const allRooms = [
+    {
+      title: "Standard Room",
+      guests: "2 Guests",
+      bed: "Double Bed",
+      size: "Mountain / Village View",
+      img: "/room.jpg",
+      description: "A cozy and comfortable room ideal for travelers exploring Nubra Valley. Designed with warm interiors and peaceful surroundings for a relaxing stay.",
+      gallery: [
+        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1590490359854-dfba196f3044?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      amenities: [
+        "Comfortable double bed",
+        "Clean attached bathroom with hot water",
+        "Room heating (seasonal)",
+        "High-speed Wi-Fi and family streaming TV",
+        "Fresh towels and toiletries",
+        "Peaceful village surroundings"
+      ],
+      quote: {
+        text: "A peaceful stay surrounded by mountains and fresh Nubra Valley air.",
+        author: "Guest Review"
+      }
+    },
+    {
+      title: "Double Room",
+      guests: "2 Guests",
+      bed: "King size bed",
+      size: "Mountain View",
+      img: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      description: "The Double Room is perfect for couples or friends seeking a comfortable and relaxing stay in Nubra Valley. Designed with spacious interiors and cozy bedding, the room offers a welcoming atmosphere to unwind and enjoy the mountain surroundings.",
+      gallery: [
+        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      amenities: [
+        "King size bed",
+        "Private bathroom with hot water",
+        "Comfortable seating area",
+        "High-speed Wi-Fi and executive desk",
+        "Daily housekeeping",
+        "Mountain or village view"
+      ],
+      quote: {
+        text: "Perfect comfort after a long journey through the breathtaking valleys of Ladakh.",
+        author: "Guest Review"
+      }
+    },
+    {
+      title: "Family Room",
+      guests: "2 Adults & a Child",
+      bed: "King size bed",
+      size: "Spacious Room",
+      img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      description: "A larger room designed for families or small groups visiting Nubra Valley, providing extra space and comfort for a memorable stay.",
+      gallery: [
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      amenities: [
+        "King bed with extra bedding option",
+        "Spacious room for families",
+        "Private bathroom with hot water",
+        "High-speed Wi-Fi and smart TV",
+        "Comfortable seating area",
+        "24/7 room service and housekeeping"
+      ],
+      quote: {
+        text: "A warm and welcoming place where our family felt at home in the heart of Nubra.",
+        author: "Guest Review"
+      }
+    },
+    {
+      title: "Deluxe Room",
+      guests: "2 Guests",
+      bed: "King size bed",
+      size: "Mountain View",
+      img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      description: "A spacious and comfortable room offering a relaxing atmosphere with beautiful views of the surrounding mountains of Nubra Valley. Perfect for guests seeking extra comfort during their stay.",
+      gallery: [
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      amenities: [
+        "King size bed",
+        "Spacious room layout",
+        "Private bathroom with hot water",
+        "High-speed Wi-Fi and entertainment system",
+        "Comfortable sitting area",
+        "Scenic mountain surroundings"
+      ],
+      quote: {
+        text: "Waking up to the quiet beauty of Nubra Valley made the stay truly unforgettable.",
+        author: "Guest Review"
+      }
+    }
+  ];
+
+  const room = state?.room || allRooms.find(r => r.title.toLowerCase().replace(/\s+/g, '-') === id) || {
     title: id?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
     img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3",
-    guests: "2 Adults & 1 Child",
-    bed: "King size bed for couple",
-    size: "39.56 meter",
-    description: "The Executive Lounge is a perfect blend of style, comfort, and functionality, offering a spacious layout with premium amenities and modern decor. Designed for both business and leisure travelers, it provides a refined stay with elegant furnishings and thoughtful details, ensuring a seamless and enjoyable experience.",
+    guests: "2 Adults & a Child",
+    bed: "King size bed",
+    size: "Spacious Room",
+    description: "A larger room designed for families or small groups visiting Nubra Valley, providing extra space and comfort for a memorable stay.",
     gallery: [
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -56,16 +163,16 @@ export default function RoomDetails() {
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     ],
     amenities: [
-      "Spacious, elegantly designed interior",
-      "Premium king-size or queen-size bed",
-      "Luxurious en-suite bathroom with premium toiletries",
+      "King bed with extra bedding option",
+      "Spacious room for families",
+      "Private bathroom with hot water",
       "High-speed Wi-Fi and smart TV",
-      "Fully equipped kitchenette or mini-bar",
+      "Comfortable seating area",
       "24/7 room service and housekeeping"
     ],
     quote: {
       text: `The ${id?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) || "room"} is a perfect blend of comfort and elegance. The brilliant design, cozy bed, and premium amenities made my stay exceptional. I didn't want to leave!`,
-      author: "JOHN DOE - NEW YORK, USA"
+      author: "Guest Review"
     }
   };
 
@@ -224,7 +331,7 @@ export default function RoomDetails() {
             className="text-[#5c3115] text-[36px] md:text-[50px] lg:text-[60px] text-center leading-tight mb-[80px]"
             style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
           >
-            The exclusive highlights of your<br/>luxury stay in Oasila
+          Signature Experiences of Your<br/>Stay Our Residency
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
@@ -234,13 +341,13 @@ export default function RoomDetails() {
                 className="text-[#5c3115] text-[26px] md:text-[32px] mb-8 leading-tight"
                 style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
               >
-                Health & Well-<br/>being
+                Nubra Valley <br/>Tranquility
               </h3>
               <p 
                 className="text-[#5c3115] opacity-80 text-[15px] md:text-[16px] leading-[1.8] flex-grow"
                 style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
               >
-                The well-being features of the lodge are designed to promote relaxation and rejuvenation. Guests can enjoy serene surroundings, wellness-focused amenities, and thoughtfully curated spaces that encourage rest and mindfulness. From spa treatments and yoga sessions to nature-inspired retreats, every detail is crafted to enhance physical and mental well-being.
+                Located in the serene village of Sumoor, Walnut Snowveil Residency offers a peaceful retreat surrounded by the dramatic landscapes of Nubra Valley. Guests can enjoy quiet mornings, fresh mountain air, and breathtaking views of the valley that create a truly relaxing atmosphere away from busy city life.
               </p>
             </div>
             {/* Box 2 */}
@@ -249,13 +356,13 @@ export default function RoomDetails() {
                 className="text-[#5c3115] text-[26px] md:text-[32px] mb-8 leading-tight"
                 style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
               >
-                Unique<br/>Experience
+                Authentic Ladakhi<br/>Hospitality
               </h3>
               <p 
                 className="text-[#5c3115] opacity-80 text-[15px] md:text-[16px] leading-[1.8] flex-grow"
                 style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
               >
-                It's an experience of comfort, convenience, and hospitality. From the moment you arrive, warm welcomes and thoughtful service set the tone for a relaxing stay. Cozy, well-appointed rooms, premium amenities, and delightful dining options create a home-away-from-home atmosphere whether traveling for business or leisure, every detail is designed to ensure a memorable experience.
+                At Walnut Snowveil Residency, hospitality is rooted in the traditions of Ladakh. Guests are welcomed with warmth and genuine care, ensuring a stay that feels both comfortable and personal. Our goal is to create an environment where visitors experience the culture, kindness, and simplicity of local life.
               </p>
             </div>
             {/* Box 3 */}
@@ -264,13 +371,13 @@ export default function RoomDetails() {
                 className="text-[#5c3115] text-[26px] md:text-[32px] mb-8 leading-tight"
                 style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
               >
-                High-end-service
+                Gateway to Nubra Adventures
               </h3>
               <p 
                 className="text-[#5c3115] opacity-80 text-[15px] md:text-[16px] leading-[1.8] flex-grow"
                 style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
               >
-                We provide high-end service with personalized care, seamless experiences, and luxurious accommodations. From 24/7 concierge assistance to gourmet dining and bespoke experiences, every detail is crafted for an unforgettable stay. Our guests indulge in luxurious accommodations, gourmet dining, and bespoke experiences, all enhanced by our commitment to excellence.
+                Walnut Snowveil Residency serves as an ideal base for discovering the natural and cultural wonders of Nubra Valley. From scenic drives and monastery visits to peaceful village walks and photography opportunities, every experience allows guests to connect with the region’s extraordinary landscape.
               </p>
             </div>
           </div>
@@ -284,51 +391,33 @@ export default function RoomDetails() {
             className="text-[#5c3115] text-[32px] md:text-[40px] text-center mb-[60px]"
             style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
           >
-            Other Accommodations
+            Other Rooms
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/room/family-suite" className="group cursor-pointer">
-              <AnimatedImage
-                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="Family Suite" 
-                className="w-full aspect-[4/3] mb-4"
-              />
-              <p 
-                className="text-[#5c3115] text-[18px] md:text-[20px]"
-                style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
-              >
-                Family Suite
-              </p>
-            </Link>
-            
-            <Link to="/room/executive-junior-suite" className="group cursor-pointer">
-              <AnimatedImage
-                src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="Executive Junior Suite" 
-                className="w-full aspect-[4/3] mb-4"
-              />
-              <p 
-                className="text-[#5c3115] text-[18px] md:text-[20px]"
-                style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
-              >
-                Executive Junior Suite
-              </p>
-            </Link>
-            
-            <Link to="/room/retreat-loggia-suite" className="group cursor-pointer">
-              <AnimatedImage
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                alt="Retreat Loggia Suite" 
-                className="w-full aspect-[4/3] mb-4"
-              />
-              <p 
-                className="text-[#5c3115] text-[18px] md:text-[20px]"
-                style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
-              >
-                Retreat Loggia Suite
-              </p>
-            </Link>
+            {allRooms
+              .filter(r => r.title !== room.title)
+              .slice(0, 3)
+              .map((otherRoom, index) => (
+                <Link 
+                  key={index} 
+                  to={`/room/${encodeURIComponent(otherRoom.title.toLowerCase().replace(/\s+/g, '-'))}`} 
+                  state={{ room: otherRoom }}
+                  className="group cursor-pointer"
+                >
+                  <AnimatedImage
+                    src={otherRoom.img} 
+                    alt={otherRoom.title} 
+                    className="w-full aspect-[4/3] mb-4"
+                  />
+                  <p 
+                    className="text-[#5c3115] text-[18px] md:text-[20px] group-hover:opacity-80 transition-opacity"
+                    style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+                  >
+                    {otherRoom.title}
+                  </p>
+                </Link>
+              ))}
           </div>
         </div>
       </div>
