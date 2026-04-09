@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function EnvironmentSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,8 +45,8 @@ export default function EnvironmentSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-[80px] md:py-[150px] px-[20px] md:px-[80px]">
-      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[40px] md:gap-[80px] relative">
+    <section ref={sectionRef} className="w-full bg-white py-12 md:py-[120px] lg:py-[150px] px-5 sm:px-6 md:px-[80px]">
+      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-10 md:gap-[80px] relative">
         
         {/* Left Column */}
         <div className="w-full md:w-1/2 flex flex-col justify-between">
@@ -78,13 +78,13 @@ export default function EnvironmentSection() {
             }`}
           >
             <h2 
-              className="text-[#5c3115] text-[40px] md:text-[52px] lg:text-[50px] leading-[1.1] mb-[30px] md:mb-[40px]"
+              className="text-[#5c3115] text-[36px] sm:text-[40px] md:text-[48px] lg:text-[50px] leading-[1.1] mb-[24px] md:mb-[40px]"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
             >
              Our Story
             </h2>
             <p 
-              className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[20px] leading-[1.8] mb-[40px] opacity-90"
+              className="text-[#5c3115] text-[15px] sm:text-[16px] md:text-[18px] lg:text-[20px] leading-[1.8] mb-[34px] md:mb-[40px] opacity-90"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
               Walnut Snowveil Residency was created to offer travelers a peaceful and comfortable place to stay while exploring the beauty of Nubra Valley. Inspired by the simplicity and warmth of Ladakhi culture, our residency focuses on providing genuine hospitality and a welcoming atmosphere for every guest.

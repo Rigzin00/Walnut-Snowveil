@@ -1,84 +1,79 @@
 export default function ConnectSection() {
   return (
-    <section className="relative z-20 w-full flex flex-col md:flex-row min-h-[500px] md:min-h-[700px] bg-white">
-      {/* Left Column - Image with Overlay */}
-      <div className="relative w-full md:w-1/2 flex items-end justify-center p-[40px]">
-        <img 
-          src="/10.jpg" 
-          alt="Travel" 
-          className="absolute inset w-full h-full object-cover"
+    <section className="relative z-20 w-full bg-[#f4efea] py-6 md:py-8 px-4 md:px-8">
+      {/* Banner Image */}
+      <div className="relative w-full min-h-[350px] md:min-h-[420px] lg:min-h-[460px] flex items-end justify-end p-6 md:p-[36px] lg:p-[42px] overflow-hidden">
+        <img
+          src="/10.jpg"
+          alt="Travel"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        
-        {/* Dark gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-        
-        {/* Inner thin border */}
-        <div className="absolute inset-[20px] md:inset-[40px] border border-white/30 pointer-events-none"></div>
 
-        {/* Text */}
-        <h2 
-          className="relative z-10 text-white text-[40px] md:text-[60px] lg:text-[72px] leading-tight text-center"
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div className="absolute inset-[12px] md:inset-[16px] lg:inset-[14px] border border-white/30 pointer-events-none"></div>
+
+        <h2
+          className="relative z-10 text-white text-[44px] md:text-[56px] lg:text-[64px] leading-tight text-right"
           style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
         >
           Let's Connect
         </h2>
       </div>
 
-      {/* Right Column - Contact Information */}
-      <div className="relative w-full md:w-1/2 bg-[#f4efea] flex flex-col justify-center py-[80px] px-[40px] md:px-[60px] lg:px-[100px]">
-        <div className="flex flex-col gap-[60px] w-full max-w-[600px] mx-auto">
+      {/* Contact Information */}
+      <div className="w-full py-8 md:py-[56px] lg:py-[64px] px-4 md:px-[24px] lg:px-[28px]">
+        <div className="flex flex-col gap-8 md:gap-[46px] lg:gap-[56px] w-full">
           
           {/* Visit */}
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-[28px] lg:gap-[36px]">
             <h3 
-              className="text-[#5c3115] text-[28px] md:text-[36px] lg:text-[40px]"
-              style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+              className="text-[#5c3115] text-[36px] md:text-[52px] lg:text-[58px] md:min-w-[170px] lg:min-w-[190px]"
+              style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", lineHeight: 1 }}
             >
               Visit
             </h3>
-            <span className="text-[#a89f91] mx-[20px] md:mx-[40px]">→</span>
+            <span className="hidden md:inline text-[#b9b1a8] text-[36px] lg:text-[42px] leading-none">→</span>
             <p 
-              className="text-[#5c3115] text-[14px] md:text-[15px] leading-[1.8] text-left flex-1"
-              style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300, minWidth: "160px" }}
+              className="text-[#5c3115] text-[16px] md:text-[20px] lg:text-[24px] leading-[1.45] text-left md:flex-1"
+              style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
               Walnut Snowveil Residency<br />
               Sumoor Village, Nubra Valley<br />
               Leh, Ladakh – 194404<br />
-               India
-
+              India
             </p>
           </div>
 
           {/* Write */}
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-[28px] lg:gap-[36px]">
             <h3 
-              className="text-[#5c3115] text-[28px] md:text-[36px] lg:text-[40px] w-[80px] md:w-[100px]"
-              style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+              className="text-[#5c3115] text-[36px] md:text-[52px] lg:text-[58px] md:min-w-[170px] lg:min-w-[190px]"
+              style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", lineHeight: 1 }}
             >
               Write
             </h3>
-            <span className="text-[#a89f91] mx-[20px] md:mx-[40px]">→</span>
+            <span className="hidden md:inline text-[#b9b1a8] text-[36px] lg:text-[42px] leading-none">→</span>
             <p 
-              className="text-[#5c3115] text-[14px] md:text-[15px] leading-[1.8] text-left flex-1"
-              style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300, minWidth: "160px" }}
+              className="text-[#5c3115] text-[16px] md:text-[20px] lg:text-[24px] leading-[1.45] text-left md:flex-1"
+              style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
-              info.walnutsnowveilres@gmail.com<br />
-              
+              info.walnutsnowveilres@gmail.com
             </p>
           </div>
+          {/* ewjfni */}
 
           {/* Call */}
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-[28px] lg:gap-[36px]">
             <h3 
-              className="text-[#5c3115] text-[28px] md:text-[36px] lg:text-[40px] w-[80px] md:w-[100px]"
-              style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+              className="text-[#5c3115] text-[36px] md:text-[52px] lg:text-[58px] md:min-w-[170px] lg:min-w-[190px]"
+              style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", lineHeight: 1 }}
             >
               Call
             </h3>
-            <span className="text-[#a89f91] mx-[20px] md:mx-[40px]">→</span>
+            <span className="hidden md:inline text-[#b9b1a8] text-[36px] lg:text-[42px] leading-none">→</span>
             <p 
-              className="text-[#5c3115] text-[14px] md:text-[15px] leading-[1.8] text-left flex-1"
-              style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300, minWidth: "160px" }}
+              className="text-[#5c3115] text-[16px] md:text-[20px] lg:text-[24px] leading-[1.45] text-left md:flex-1"
+              style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
               +91 6006672711<br />
               +91 6005643874
