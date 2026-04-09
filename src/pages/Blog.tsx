@@ -73,7 +73,7 @@ const Blog = () => {
           <div className="lg:w-[70%]">
               <div className="mb-20 pb-16 border-b border-gray-200 last:border-b-0">
                 {/* Image */}
-                <div className="relative mb-8 w-full h-[300px] md:h-[500px] bg-gray-100 flex items-center justify-center text-gray-400 overflow-hidden">
+                <div className="relative mb-8 w-fit h-[300px] md:h-[500px] bg-gray-100 flex items-center justify-center text-gray-400 overflow-hidden">
                   {/* Load the current post image dynamically */}
                   <img src={activePost.image} alt={activePost.title} className="w-full h-full object-cover" />
                   
@@ -91,12 +91,41 @@ const Blog = () => {
                 </h2>
                 
                 <div className="prose prose-lg text-gray-600 max-w-none">
-                  {/* Split the long description by periods and map to paragraphs for better reading if needed, or simply render normally. */}
-                  {activePost.description.split(/(?<=\.)(?=[A-Z])/).map((paragraph, index) => (
-                    <p key={index} className="mb-4 leading-relaxed">
-                      {paragraph.trim()}
-                    </p>
-                  ))}
+                  {/* Handle multiline structured text or standard split paragraphs */}
+                  {activePost.description.includes('\n') ? (
+                    <div className="space-y-2">
+                      {activePost.description.split('\n').map((line, index) => {
+                        const trimmed = line.trim();
+                        if (!trimmed) return null;
+
+                        // Check if it's a heading section (no period, no colon, short line)
+                        // Or if it's a known section like "A Surprising Desert in the Mountains"
+                        if (!trimmed.includes('.') && trimmed.length < 80 && (
+                          (!trimmed.includes(':') && trimmed === line.trim()) || 
+                          (trimmed.includes(' - ') && !trimmed.split(' - ')[0].includes(':'))
+                        )) {
+                          return (
+                            <h3 key={index} className="text-xl md:text-2xl font-serif text-gray-800 mt-10 mb-4 font-medium border-b pb-2">
+                              {trimmed}
+                            </h3>
+                          );
+                        }
+
+                        // Default normal paragraph (no bolding for colons unless explicitly wanted)
+                        return (
+                          <p key={index} className="leading-relaxed mt-2">
+                            {trimmed}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    activePost.description.split(/(?<=\.)(?=[A-Z])/).map((paragraph, index) => (
+                      <p key={index} className="mb-4 leading-relaxed">
+                        {paragraph.trim()}
+                      </p>
+                    ))
+                  )}
                   
                   {/* Highlights/Bullet Points from the second image style */}
                   <h3 className="text-xl font-serif text-gray-800 mb-4 mt-8">Things to Know</h3>
