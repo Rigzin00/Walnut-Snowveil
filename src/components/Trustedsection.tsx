@@ -48,43 +48,94 @@ export default function TrustedSection() {
           </h2>
         </div>
 
-        {/* ── Two Column Paragraphs ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-[80px]">
+        {/* ── Image Cards with Labels, Titles, and Descriptions ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[40px] lg:gap-x-[60px] gap-y-10 md:gap-y-[60px]">
 
-          {/* Left Column */}
-          <div className="overflow-hidden">
-            <p
-              className="text-left text-[#4B2205] leading-[1.65]"
-              style={{
-                fontFamily: "Anek Bangla",
-                fontSize: "clamp(16px, 2.1vw, 20px)",
-                fontWeight: 300,
-                ...fadeUp(0.25),
+          {/* Family Owned Card */}
+          <div 
+            className="flex flex-col"
+            style={fadeUp(0.15)}
+          >
+            {/* Image Container with Label */}
+            <div className="relative w-full aspect-[4/5] overflow-hidden mb-8">
+              <img
+                src="https://images.unsplash.com/photo-1592424001807-55df93bb2768?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Family Owned"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute bottom-4 left-4 bg-white px-4 py-2 text-[#7A3E16] text-sm font-bold" style={{ fontFamily: "Anek Bangla, sans-serif" }}>
+                HOMELY
+              </div>
+            </div>
+            
+            {/* Heading below image */}
+            <h3 
+              className="text-left text-[#5c3115]"
+              style={{ 
+                fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(30px, 3vw, 36px)",
+                lineHeight: "1.2",
+                fontWeight: 400
               }}
             >
-             At Walnut Snowveil Residency, we focus on offering guests a peaceful and comfortable stay in the heart of
-              Nubra Valley. Our rooms are thoughtfully designed to provide a relaxing space where travelers can unwind 
-              after a day of exploring the beautiful landscapes, monasteries, and villages of the region. Surrounded by 
-              mountains and the calm atmosphere of Sumoor village, our residency creates a perfect environment for rest 
-              and relaxation.
+              Warm Hospitality
+            </h3>
+            
+            {/* Description below heading */}
+            <p
+              className="mt-6 text-left text-[#5c3115]"
+              style={{
+                fontFamily: "Anek Bangla, sans-serif",
+                fontSize: "clamp(16px, 1.8vw, 18px)",
+                lineHeight: "2",
+                fontWeight: 400,
+              }}
+            >
+             At Walnut Snowveil Residency, we focus on offering guests a peaceful and comfortable stay in the heart of Nubra Valley. Our rooms are thoughtfully designed to provide a relaxing space where travelers can unwind after a day of exploring the beautiful landscapes, monasteries, and villages of the region. Surrounded by mountains and the calm atmosphere of Sumoor village, our residency creates a perfect environment for rest and relaxation.
             </p>
           </div>
 
-          {/* Right Column */}
-          <div className="overflow-hidden">
-            <p
-              className="text-left text-[#4B2205] leading-[1.65]"
-              style={{
-                fontFamily: "Anek Bangla",
-                fontSize: "clamp(16px, 2.1vw, 20px)",
-                fontWeight: 300,
-                ...fadeUp(0.4),
+          {/* Authentic Card */}
+          <div 
+            className="flex flex-col"
+            style={fadeUp(0.3)}
+          >
+            {/* Image Container with Label */}
+            <div className="relative w-full aspect-[4/5] overflow-hidden mb-8">
+              <img
+                src="https://images.unsplash.com/photo-1488749807830-63789f68bb65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Authentic"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute bottom-4 left-4 bg-white px-4 py-2 text-[#7A3E16] text-sm font-bold" style={{ fontFamily: "Anek Bangla, sans-serif" }}>
+                AUTHENTIC
+              </div>
+            </div>
+            
+            {/* Heading below image */}
+            <h3 
+              className="text-left text-[#5c3115]"
+              style={{ 
+                fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
+                fontSize: "clamp(30px, 3vw, 36px)",
+                lineHeight: "1.2",
+                fontWeight: 400
               }}
             >
-              What makes our residency special is the warmth of traditional Ladakhi hospitality combined with a comfortable 
-              and welcoming environment. Guests can enjoy scenic views, fresh mountain air, and a quiet setting that makes 
-              every stay memorable. Whether you are traveling with family, friends, or on a solo adventure, Walnut Snowveil
-               Residency offers a simple and authentic Ladakh experience.
+              Cultural Experience
+            </h3>
+            
+            {/* Description below heading */}
+            <p
+              className="mt-6 text-left text-[#5c3115]"
+              style={{
+                fontFamily: "Anek Bangla, sans-serif",
+                fontSize: "clamp(16px, 1.8vw, 18px)",
+                lineHeight: "2",
+                fontWeight: 400,
+              }}
+            >
+              What makes our residency special is the warmth of traditional Ladakhi hospitality combined with a comfortable and welcoming environment. Guests can enjoy scenic views, fresh mountain air, and a quiet setting that makes every stay memorable. Whether you are traveling with family, friends, or on a solo adventure, Walnut Snowveil Residency offers a simple and authentic Ladakh experience.
             </p>
           </div>
 

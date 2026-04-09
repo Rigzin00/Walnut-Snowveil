@@ -40,12 +40,31 @@ export default function QuoteSection() {
         {/* Mobile Quote */}
         <div className="px-6 sm:px-8 py-12 sm:py-[60px] pb-14 sm:pb-[80px]">
           <p 
-            className="text-[28px] sm:text-[32px] leading-[1.3] font-normal text-[#5c3115]"
+            className="text-[24px] sm:text-[32px] leading-[1.35] font-normal text-[#5c3115] text-left"
             style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
           >
-            <span className="text-[36px] sm:text-[40px] leading-none mr-2 font-bold float-left mt-1 text-[#5c3115]">“</span>
-            Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.
+            <span className="inline-block text-[32px] sm:text-[40px] leading-none mr-1 align-top text-[#5c3115]">“</span>
+            <span>Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.</span>
           </p>
+
+          {/* Mobile-only image stack under quote */}
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="Green valley view"
+              className="w-full max-w-[360px] h-[180px] object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+              alt="Mountain and lake"
+              className="w-full max-w-[360px] h-[180px] object-cover"
+            />
+            <img
+              src="/Home.png"
+              alt="Residency exterior"
+              className="w-full max-w-[360px] h-[180px] object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -66,9 +85,9 @@ export default function QuoteSection() {
         <div className="absolute inset-6 lg:inset-[40px] border border-white/20 pointer-events-none"></div>
 
         {/* Quote Content */}
-        <div className="relative z-10 max-w-[800px] text-white text-right pr-5 lg:pr-[40px] pb-8 lg:pb-[60px]">
+        <div className="relative z-10 max-w-[800px] ml-auto text-white text-right pr-5 lg:pr-[40px] pb-8 lg:pb-[60px]">
           <p 
-            className="text-[32px] lg:text-[40px] text-justify leading-[1.3] font-normal tracking-wide"
+            className="text-[32px] lg:text-[40px] text-right leading-[1.3] font-normal tracking-wide"
             style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
           >
             <span className="mr-4">“</span>
