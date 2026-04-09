@@ -1,55 +1,12 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ConnectSection from '../components/ConnectSection';
-
-const blogPosts = [
-  {
-    id: 1,
-    category: "EXPERIENCES",
-    date: "JAN 12, 2025",
-    title: "Exclusive experiences only luxury resorts offer",
-    image: "https://images.unsplash.com/photo-1590490359683-658d3d23f972?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 2,
-    category: "VACATION GUIDES",
-    date: "DEC 2, 2024",
-    title: "Ultimate packing guide for a luxurious resort getaway",
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    category: "ECO-FRIENDLY",
-    date: "NOV 29, 2024",
-    title: "Eco-friendly resorts that redefine high-end travel",
-    image: "https://images.unsplash.com/photo-1542315147-75d1fdef6bd6?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 4,
-    category: "EXPERIENCES",
-    date: "NOV 12, 2024",
-    title: "How to get the best perks & upgrades at lodges",
-    image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 5,
-    category: "ECO-FRIENDLY",
-    date: "OCT 12, 2024",
-    title: "Top 10 luxury lodges for an unforgettable getaway",
-    image: "https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 6,
-    category: "ECO-FRIENDLY",
-    date: "OCT 12, 2024",
-    title: "The future of luxury travel: sustainability, and personalization",
-    image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800&auto=format&fit=crop"
-  }
-];
+import { blogPosts } from '../data/blogPosts';
 
 const Blog = () => {
   const location = useLocation();
+  const [activePost, setActivePost] = useState(blogPosts[0]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -101,43 +58,93 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Blog Grid Section */}
-      <section className="w-full bg-white py-16 md:py-24 px-4 md:px-8 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {blogPosts.map((post) => (
-            <div key={post.id} className="relative group overflow-hidden cursor-pointer aspect-[3/4] flex flex-col justify-end bg-gray-100">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-              
-              <div className="absolute top-0 right-0 bg-white text-gray-800 text-[10px] md:text-xs font-sans font-semibold py-2 px-4 shadow-sm tracking-widest z-20">
-                {post.category}
-              </div>
-              
-              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end text-left h-full">
-                <span className="text-white/90 text-xs md:text-sm font-sans font-bold mb-2 md:mb-3">
-                  {post.date}
-                </span>
-                <h2 
-                  className="text-white text-2xl md:text-[1.75rem] leading-tight" 
-                  style={{ fontFamily: '"Playfair Display", serif' }}
-                >
-                  {post.title}
-                </h2>
-              </div>
-            </div>
-          ))}
+      {/* Blog Feed Section */}
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 uppercase tracking-wider" style={{ fontFamily: '"Playfair Display", serif' }}>Things To Do</h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            To make the most of your trip to Nubra Valley, Ladakh, read and research our expert bloggers' tips and tricks about what to do and what not to do.
+          </p>
         </div>
 
-        <div className="flex justify-center mt-12 md:mt-16">
-          <button className="text-[#a18276] uppercase text-sm font-sans font-bold tracking-widest border-b-2 border-[#a18276] pb-1 hover:text-black hover:border-black transition-colors">
-            Load More
-          </button>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          
+          {/* Left Column: Main Content */}
+          <div className="lg:w-[70%]">
+              <div className="mb-20 pb-16 border-b border-gray-200 last:border-b-0">
+                {/* Image */}
+                <div className="relative mb-8 w-full h-[300px] md:h-[500px] bg-gray-100 flex items-center justify-center text-gray-400 overflow-hidden">
+                  {/* Load the current post image dynamically */}
+                  <img src={activePost.image} alt={activePost.title} className="w-full h-full object-cover" />
+                  
+                  {/* Date Badge */}
+                  <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 text-center border shadow-sm">
+                    <span className="block text-gray-500 font-bold text-sm tracking-wider uppercase border-b border-gray-300 pb-1 mb-1">{activePost.month}</span>
+                    <span className="block text-gray-800 font-serif text-2xl">{activePost.day}</span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <p className="text-sm text-gray-500 uppercase tracking-widest mb-3">{activePost.category}</p>
+                <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-6" style={{ fontFamily: '"Playfair Display", serif' }}>
+                  {activePost.title}
+                </h2>
+                
+                <div className="prose prose-lg text-gray-600 max-w-none">
+                  {/* Split the long description by periods and map to paragraphs for better reading if needed, or simply render normally. */}
+                  {activePost.description.split(/(?<=\.)(?=[A-Z])/).map((paragraph, index) => (
+                    <p key={index} className="mb-4 leading-relaxed">
+                      {paragraph.trim()}
+                    </p>
+                  ))}
+                  
+                  {/* Highlights/Bullet Points from the second image style */}
+                  <h3 className="text-xl font-serif text-gray-800 mb-4 mt-8">Things to Know</h3>
+                  <ul className="list-disc pl-5 space-y-2 mb-6">
+                    <li><strong className="text-gray-800">Distance:</strong> {activePost.distance}</li>
+                    {activePost.highlights.map((highlight, idx) => (
+                      <li key={idx}>{highlight}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+          </div>
+
+          {/* Right Column: Sidebar */}
+          <div className="lg:w-[30%]">
+            <div className="bg-[#f8f7f5] p-8 sticky top-32">
+              <h3 className="text-2xl font-serif text-gray-900 mb-8 border-b pb-4" style={{ fontFamily: '"Playfair Display", serif' }}>
+                Recent Posts
+              </h3>
+              
+              <div className="space-y-6">
+                {blogPosts.filter(post => post.title !== activePost.title).map((recent, idx) => (
+                  <div 
+                    key={idx} 
+                    className="flex gap-4 group cursor-pointer"
+                    onClick={() => {
+                        setActivePost(recent);
+                        // Optional: slide view up so user sees the newly selected post
+                        window.scrollTo({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+                    }}
+                  >
+                    <div className="w-20 h-16 bg-gray-200 flex-shrink-0 overflow-hidden flex items-center justify-center">
+                      <img src={recent.image} alt={recent.title} className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-800 group-hover:text-gray-500 transition-colors line-clamp-2">
+                        {recent.title}
+                      </h4>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
+
       <ConnectSection />
     </main>
   );
