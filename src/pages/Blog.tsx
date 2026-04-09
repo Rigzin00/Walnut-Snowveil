@@ -58,13 +58,13 @@ const Blog = () => {
   return (
     <main className="w-full flex-grow relative bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop"
+            src="blog/blog3.jpg"
             alt="Blog Hero - Resort"
-            className="w-full h-full object-cover brightness-[0.7]"
+            className="w-full h-full object-fit brightness-[0.7]"
           />
         </div>
 

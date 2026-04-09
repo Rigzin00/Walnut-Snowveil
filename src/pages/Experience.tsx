@@ -111,12 +111,12 @@ const ExperienceQuoteSection = () => {
     <section ref={sectionRef} className="relative w-full h-[80vh] md:h-[100vh] min-h-[600px] flex items-center justify-start p-[40px] md:p-[80px] overflow-hidden">
       {/* Background Image Container - Taller than section to allow for parallax translate */}
       <div 
-        className="absolute left-0 right-0 w-full h-[160%] bg-cover bg-center will-change-transform"
+        className="absolute left-0 right-0 w-full h-[110%] bg-cover bg-center will-change-transform"
         style={{ 
           top: "-30%", // Offset so we have room to animate both up and down
-          backgroundImage: `url('${import.meta.env.BASE_URL}landscape.jpg')`,
+          backgroundImage: `url('${import.meta.env.BASE_URL}exp/exp6.jpg')`,
           transform: `translateY(${offsetY}px)`,
-          transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Smooths the React state jitter
+        transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"// Smooths the React state jitter
         }}
       ></div>
 
@@ -127,16 +127,16 @@ const ExperienceQuoteSection = () => {
       <div className="absolute inset-[20px] md:inset-[40px] border border-white/20 pointer-events-none z-10"></div>
 
       {/* Quote Content */}
-      <div className="relative z-10 max-w-[850px] text-white text-left pl-[5px] md:pl-[40px]">
-        <p 
-          className="text-[26px] md:text-[40px] lg:text-[48px] text-left leading-[1.3] font-normal tracking-wide flex"
+     <div className="absolute bottom-8 left-6 md:bottom-12 md:left-12 z-10 max-w-[850px] text-white text-left">
+        <p
+          className="text-[26px] md:text-[40px] lg:text-[32px] leading-[1.3] font-normal tracking-wide flex"
           style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
         >
           <span className="mr-3 md:mr-4">“</span>
           <span>
-            ATV Experience offers thrilling<br className="hidden md:block" /> 
-            off-road rides through scenic,<br className="hidden md:block" /> 
-            rugged trails.
+            From golden sand dunes to ancient monasteries,
+            <br className="hidden md:block" />
+            Nubra Valley offers adventures that stay with you forever.
           </span>
         </p>
       </div>
@@ -163,11 +163,11 @@ export default function Experience() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-black">
           <img 
-            src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            src="exp/exp2.jpg" 
             alt="Mountain Biking Adventure" 
-            className={`w-full h-full object-cover object-bottom transition-all duration-[2000ms] ease-out ${
-              isHeroVisible ? "scale-100 opacity-75" : "scale-110 opacity-0"
-            }`} 
+            className={`absolute w-full h-full object-cover object-top transition-all duration-[2000ms] ease-out ${
+            isHeroVisible ? "scale-100 opacity-75" : "scale-110 opacity-0"
+            }`}
           />
         </div>
 
@@ -188,7 +188,7 @@ export default function Experience() {
               className="text-white text-[40px] md:text-[90px] lg:text-[120px] leading-tight whitespace-nowrap"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
             >
-              Experience Our
+              Experiences 
             </h1>
           </div>
           
@@ -205,7 +205,7 @@ export default function Experience() {
               className="text-white text-[40px] md:text-[90px] lg:text-[120px] leading-tight whitespace-nowrap"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
             >
-              Luxury Adventure
+              in Nubra Valley
             </h1>
           </div>
         </div>
@@ -229,7 +229,7 @@ export default function Experience() {
             className="text-[#5c3115] text-[40px] md:text-[60px] lg:text-[75px] leading-[1.1] mb-[60px] md:mb-[100px] max-w-[900px]"
             style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
           >
-            Experience why we are a trusted name in luxury hospitality.
+          Discover Experiences in Nubra Valley
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 text-[#5c3115]">
@@ -238,18 +238,28 @@ export default function Experience() {
               className="text-[14px] md:text-[16px] leading-[2] md:leading-[2.2] opacity-80"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
-              For years, we have set the standard in luxury hospitality, delivering exceptional service and unforgettable experiences. Our commitment to excellence, attention to detail, and warm hospitality have earned us a reputation as a trusted name among travelers seeking comfort, elegance, and personalized care. From exquisite accommodations to world-class dining and thoughtful amenities, every aspect of our guest experience is designed to exceed expectations.
+              Walnut Snowveil Residency offers more than just a stay — it is a gateway to the unforgettable experiences of Nubra Valley. Surrounded by dramatic mountain landscapes and peaceful villages, guests can explore the region’s rich culture, natural beauty, and timeless traditions.
+              From visiting ancient monasteries to walking across the iconic sand dunes, every moment in Nubra Valley creates memories that last a lifetime. Whether you seek adventure, photography, or peaceful exploration, our location in Sumoor provides the perfect base to discover the wonders of Ladakh.
             </p>
 
-            <p 
-              className="text-[14px] md:text-[16px] leading-[2] md:leading-[2.2] opacity-80"
-              style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
-            >
-              What sets us apart is our dedication to creating memorable stays that go beyond just accommodations. Whether you're here for business or leisure, we ensure that every moment is marked by sophistication, relaxation, and seamless service. With a perfect blend of timeless charm and modern convenience, we invite you to discover why we have become a household name in luxury hospitality.
-            </p>
-
+                    <ul
+            className="text-[14px] md:text-[16px] leading-[2] md:leading-[2.2] opacity-80 list-disc pl-5 space-y-3"
+            style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
+          >
+            <li>
+              <strong>Samstanling Monastery:</strong> A beautiful monastery near Sumoor known for its peaceful surroundings and spiritual significance.
+            </li>
+            <li>
+              <strong>Onpo Gompa:</strong> A historic monastery offering stunning views of the Nubra Valley landscape.
+            </li>
+            <li>
+              <strong>Sumoor Sand Dunes:</strong> Explore the rare desert-like sand dunes surrounded by the dramatic mountains of Nubra Valley.
+            </li>
+            <li>
+              <strong>Siachen Base Camp:</strong> Known as the world’s highest battlefield, where visitors can witness the gateway to the famous Siachen Glacier and learn about its historical importance.
+            </li>
+          </ul>
           </div>
-
         </div>
       </div>
 
@@ -257,54 +267,54 @@ export default function Experience() {
       <div className="w-full bg-[#f8f5f0] pb-[100px] md:pb-[150px] px-6 md:px-12 lg:px-24">
         <div className="max-w-[1100px] mx-auto flex flex-col gap-16 md:gap-32">
           
-          {/* Wellness Immersions */}
+          {/* Monastery & Cultural Visits */}
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-24">
             <div className="flex-1 order-2 md:order-1">
-              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>Wellness Immersions</h3>
+              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>Monastery & Cultural Visits</h3>
               <p className="text-[#5c3115] text-[14px] md:text-[16px] leading-[2] opacity-80" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
-                We offers transformative retreats and experiences designed to rejuvenate the mind, body, and soul. Through a blend of mindfulness, holistic healing, and immersive activities, we create spaces for deep relaxation, self-discovery, and personal growth. Whether it's a nature escape, a digital detox, or a wellness workshop, our programs are thoughtfully curated to help you reset, recharge, and reconnect with yourself.
+              Explore the spiritual heritage of Nubra Valley by visiting nearby monasteries such as Samstanling Monastery and Onpo Gompa. These peaceful sites offer a glimpse into Ladakh’s rich Buddhist traditions, beautiful murals, and breathtaking valley views.
               </p>
             </div>
             <div className="flex-1 order-1 md:order-2 w-full">
-              <AnimatedImage src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wellness Immersions" className="w-full aspect-[4/3] rounded-sm" />
+              <AnimatedImage src="exp/exp1.jpg" alt="Monastery & Cultural Visits" className="w-full aspect-[4/3] rounded-sm" />
             </div>
           </div>
 
-          {/* Hiking Trails Adventure */}
+          {/* Camel Safari at Sumoor Sand Dunes */}
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-24">
             <div className="flex-1 order-1 md:order-1 w-full">
-              <AnimatedImage src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hiking Trails Adventure" className="w-full aspect-[4/3] rounded-sm" />
+              <AnimatedImage src="exp/exp3.jpg" alt="Camel Safari" className="w-full aspect-[4/3] rounded-sm" />
             </div>
             <div className="flex-1 order-2 md:order-2">
-              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>Hiking Trails Adventure</h3>
+              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>Camel Safari at Sumoor Sand Dunes</h3>
               <p className="text-[#5c3115] text-[14px] md:text-[16px] leading-[2] opacity-80" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
-                Hiking Trails Adventure offers exhilarating outdoor experiences for nature enthusiasts and adventure seekers. Explore scenic trails, breathtaking landscapes, and hidden gems with expert guides leading the way. Whether you're a beginner or a seasoned hiker, our curated adventures provide the perfect blend of challenge, exploration, and unforgettable memories in the great outdoors.
+                Embark on a unique camel safari through the golden sands of Sumoor. Experience the thrill of desert exploration while enjoying the serene beauty of the surrounding landscape.
               </p>
             </div>
           </div>
 
-          {/* Live Cooking Class */}
+          {/* Local Ladakhi Fruits Experience */}
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-24">
             <div className="flex-1 order-2 md:order-1">
-              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>Live Cooking Class</h3>
+              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}> Ladakhi Fruits & Sea Buckthorn Experience</h3>
               <p className="text-[#5c3115] text-[14px] md:text-[16px] leading-[2] opacity-80" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
-                We offers transformative retreats and experiences designed to rejuvenate the mind, body, and soul. Through a blend of mindfulness, holistic healing, and immersive activities, we create spaces for deep relaxation, self-discovery, and personal growth. Whether it's a nature escape, a digital detox, or a wellness workshop, our programs are thoughtfully curated to help you reset, recharge, and reconnect with yourself.
+               Discover the unique taste of Ladakh’s locally grown fruits, cultivated in the pristine environment of Nubra Valley. Guests can enjoy seasonal produce such as apricots and the famous Sea Buckthorn, a nutrient-rich Himalayan berry known for its health benefits. This experience offers a glimpse into the region’s agricultural traditions while allowing visitors to taste fresh, locally sourced flavors of Ladakh.
               </p>
             </div>
             <div className="flex-1 order-1 md:order-2 w-full">
-              <AnimatedImage src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Live Cooking Class" className="w-full aspect-[4/3] rounded-sm" />
+              <AnimatedImage src="exp/exp4.jpg" alt="Local Ladakhi Fruits Experience" className="w-full aspect-[4/3] rounded-sm" />
             </div>
           </div>
 
           {/* Cycling & Village Walk */}
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-24">
             <div className="flex-1 order-1 md:order-1 w-full">
-              <AnimatedImage src="https://images.unsplash.com/photo-1541625602330-2277a4c4618c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cycling and Village Walk" className="w-full aspect-[4/3] rounded-sm" />
+              <AnimatedImage src="exp/exp5.jpg" alt="Cycling and Village Walk" className="w-full aspect-[4/3] rounded-sm" />
             </div>
             <div className="flex-1 order-2 md:order-2">
-              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>Cycling &amp; Village Walk</h3>
+              <h3 className="text-[#5c3115] text-[32px] md:text-[42px] mb-4" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>Village Walks &amp; Cultural Life</h3>
               <p className="text-[#5c3115] text-[14px] md:text-[16px] leading-[2] opacity-80" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
-                Hiking Trails Adventure offers exhilarating outdoor experiences for nature enthusiasts and adventure seekers. Explore scenic trails, breathtaking landscapes, and hidden gems with expert guides leading the way. Whether you're a beginner or a seasoned hiker, our curated adventures provide the perfect blend of challenge, exploration, and unforgettable memories in the great outdoors.
+                Take peaceful walks through the charming village of Sumoor and experience everyday Ladakhi life. Meet friendly locals, see traditional homes, and enjoy the calm rhythm of village culture.
               </p>
             </div>
           </div>
@@ -312,68 +322,7 @@ export default function Experience() {
         </div>
       </div>
 
-      {/* ATV Experience Parallax Quote Section */}
       <ExperienceQuoteSection />
-
-      {/* Featured Adventure Activities Section */}
-      <div className="w-full bg-[#f8f5f0] py-[100px] md:py-[150px] px-4 md:px-8 lg:px-12">
-        <div className="max-w-full mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-20 lg:gap-28 px-6 md:px-12 lg:px-24">
-            
-            {/* The Gardens: Walk */}
-            <div className="flex flex-col text-left">
-              <div className="w-full aspect-[5/4] mb-12 overflow-hidden rounded-lg">
-                <AnimatedImage 
-                  src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                  alt="The Gardens: Walk" 
-                  className="w-full h-full"
-                />
-              </div>
-              <h3 className="text-[#6D3207] text-[36px] md:text-[40px] lg:text-[44px] mb-6 leading-tight" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>
-                The Gardens: Walk
-              </h3>
-              <p className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[19px] leading-[1.85] opacity-85" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
-                Garden Walk is a peaceful escape into nature, where you can stroll through lush landscapes, vibrant blooms, and serene pathways. Enjoy fresh air, tranquility, and the beauty of the outdoors.
-              </p>
-            </div>
-
-            {/* Jungle Walk */}
-            <div className="flex flex-col text-left">
-              <div className="w-full aspect-[5/4] mb-12 overflow-hidden rounded-lg">
-                <AnimatedImage 
-                  src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                  alt="Jungle Walk" 
-                  className="w-full h-full"
-                />
-              </div>
-              <h3 className="text-[#6D3207] text-[36px] md:text-[40px] lg:text-[44px] mb-6 leading-tight" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>
-                Jungle Walk
-              </h3>
-              <p className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[19px] leading-[1.85] opacity-85" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
-                Jungle Walk offers an immersive trek through dense forests, rich wildlife, and scenic trails. Experience nature up close, guided by experts who unveil the jungle's hidden wonders.
-              </p>
-            </div>
-
-            {/* Horse Ride */}
-            <div className="flex flex-col text-left">
-              <div className="w-full aspect-[5/4] mb-12 overflow-hidden rounded-lg">
-                <AnimatedImage 
-                  src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                  alt="Horse Ride" 
-                  className="w-full h-full"
-                />
-              </div>
-              <h3 className="text-[#6D3207] text-[36px] md:text-[40px] lg:text-[44px] mb-6 leading-tight" style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}>
-                Horse Ride
-              </h3>
-              <p className="text-[#5c3115] text-[16px] md:text-[18px] lg:text-[19px] leading-[1.85] opacity-85" style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}>
-                Horse Ride offers a scenic and relaxing journey through nature on horseback. Whether you're a beginner or an experienced rider, enjoy a guided adventure through picturesque trails.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </div>
        <ConnectSection />
     </main>
   );
