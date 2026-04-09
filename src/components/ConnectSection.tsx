@@ -60,6 +60,7 @@ export default function ConnectSection() {
               info.walnutsnowveilres@gmail.com
             </p>
           </div>
+          {/* ewjfni */}
 
           {/* Call */}
           <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-[28px] lg:gap-[36px]">
