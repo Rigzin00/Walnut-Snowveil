@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const AnimatedCounter = ({ target, suffix, label }: { target: number, suffix: string, label: string }) => {
   const [count, setCount] = useState(0);
@@ -69,7 +69,7 @@ const AnimatedCounter = ({ target, suffix, label }: { target: number, suffix: st
         </span>
       </div>
       <p 
-        className="text-[#5c3115] text-[16px] md:text-[18px] opacity-80 mt-2 text-center whitespace-nowrap"
+        className="text-[#5c3115] text-[16px] md:text-[18px] opacity-80 mt-2 text-center whitespace-normal md:whitespace-nowrap max-w-[230px]"
         style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
       >
         {label}

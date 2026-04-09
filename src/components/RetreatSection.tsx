@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function RetreatSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,11 +24,11 @@ export default function RetreatSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-[60px] md:py-[100px] mb-[60px] md:mb-[150px]">
+    <section ref={sectionRef} className="w-full bg-white py-[60px] md:py-[100px] mb-[60px] md:mb-[120px] lg:mb-[150px]">
       <div className="w-full relative">
         
         {/* Main Large Image Container */}
-        <div className="relative w-full h-[80vh] md:h-[120vh] overflow-hidden">
+        <div className="relative w-full h-[80vh] md:h-[100vh] lg:h-[120vh] overflow-hidden">
           
           {/* Thin Inner Border / Grid Lines */}
           <div className="absolute inset-[20px] md:inset-[40px] border-[1px] border-white/20 z-20 pointer-events-none"></div>
@@ -62,7 +62,7 @@ export default function RetreatSection() {
 
         {/* Overlapping Secondary Image */}
         <div 
-          className="absolute -bottom-[60px] md:-bottom-[100px] right-[5%] md:right-[12%] w-[40%] md:w-[18%] aspect-[4/5] z-30 shadow-2xl bg-white p-[5px] md:p-[10px]"
+          className="absolute -bottom-[52px] md:-bottom-[82px] lg:-bottom-[100px] right-[6%] md:right-[9%] lg:right-[12%] w-[45%] md:w-[24%] lg:w-[18%] aspect-[4/5] z-30 shadow-2xl bg-white p-[5px] md:p-[8px] lg:p-[10px]"
           style={{
             transform: `translateY(${-offsetY * 0.15}px) rotate(4deg)`,
             transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)" 
