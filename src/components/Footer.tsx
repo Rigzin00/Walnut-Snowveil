@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <nav className="flex flex-col items-start gap-4 md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-x-4 md:gap-y-3 md:text-center">
+        <nav className="flex flex-col items-start gap-4 md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-x-4 md:gap-y-3 md:text-center mt-8 md:mt-0">
           {navItems.map((item, index) => (
             <div key={item.label} className="flex items-center gap-4 md:gap-6">
               <NavLink label={item.label} href={item.href} />

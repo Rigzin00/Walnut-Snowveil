@@ -26,14 +26,14 @@ export default function Introduction() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[#fffefd] py-28 px-6 flex items-center justify-center overflow-hidden"
+      className="w-full bg-[#fffefd] py-16 md:py-28 px-4 md:px-6 flex items-center justify-center overflow-hidden"
     >
       <div className="max-w-[2000px] w-full text-center">
 
         {/* Heading */}
         <div className="overflow-hidden px-4 md:px-0">
           <h2
-            className="text-4xl md:text-[90px] font-medium leading-tight tracking-tight text-[#6D3207] mb-6 md:mb-6"
+            className="text-[40px] sm:text-[48px] md:text-[72px] lg:text-[90px] font-medium leading-tight tracking-tight text-[#6D3207] mb-6 md:mb-6"
             style={{
               fontFamily: "Jomolhari",
               transform: visible ? "translateY(0)" : "translateY(80px)",
@@ -58,7 +58,7 @@ export default function Introduction() {
               lineHeight: "1.55",
               transform: visible ? "translateY(0)" : "translateY(60px)",
               opacity: visible ? 1 : 0,
-              fontSize: "clamp(25px, 1.1vw, 18px)",
+              fontSize: "clamp(16px, 2.2vw, 20px)",
               transition: "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease",
               transitionDelay: "0.35s",
             }}

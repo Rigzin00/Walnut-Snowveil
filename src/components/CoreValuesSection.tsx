@@ -53,9 +53,9 @@ export default function CoreValuesSection() {
   });
 
   return (
-    <section className="w-full bg-[#F3F3F3] pb-[120px]">
-      <div className="w-full px-[80px]" ref={sectionRef}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-[40px] lg:gap-x-[60px] gap-y-[60px]">
+    <section className="w-full bg-[#F3F3F3] pb-16 md:pb-[120px]">
+      <div className="w-full px-6 md:px-[80px]" ref={sectionRef}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-[40px] lg:gap-x-[60px] gap-y-10 md:gap-y-[60px]">
           {values.map((item, index) => (
             <div 
               key={index} 
@@ -79,7 +79,7 @@ export default function CoreValuesSection() {
                 className="text-left text-[#5c3115]"
                 style={{ 
                   fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
-                  fontSize: "36px",
+                  fontSize: "clamp(30px, 3vw, 36px)",
                   lineHeight: "1.2",
                   fontWeight: 400
                 }}
@@ -97,7 +97,7 @@ export default function CoreValuesSection() {
                 className="mt-6 text-left text-[#5c3115]"
                 style={{
                   fontFamily: "Anek Bangla, sans-serif",
-                  fontSize: "18px",
+                  fontSize: "clamp(16px, 1.8vw, 18px)",
                   lineHeight: "2",
                   fontWeight: 400,
                 }}
