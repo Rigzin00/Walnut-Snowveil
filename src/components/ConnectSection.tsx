@@ -26,16 +26,16 @@ export default function ConnectSection() {
           <div className="flex flex-col gap-8 md:gap-[46px] lg:gap-[56px] min-[1200px]:gap-10 w-full">
           
             {/* Visit */}
-            <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-[28px] lg:gap-[36px]">
+            <div className="flex flex-col items-start gap-4 min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-start min-[1200px]:gap-[28px]">
             <h3 
-              className="text-[#5c3115] text-[36px] md:text-[52px] lg:text-[58px] md:min-w-[170px] lg:min-w-[190px]"
+              className="text-[#5c3115] text-[36px] sm:text-[40px] md:text-[44px] lg:text-[48px] min-[1200px]:text-[58px] min-[1200px]:min-w-[190px]"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", lineHeight: 1 }}
             >
               Visit
             </h3>
-            <span className="hidden md:inline text-[#b9b1a8] text-[36px] lg:text-[42px] leading-none">→</span>
+            <span className="hidden min-[1200px]:inline text-[#b9b1a8] text-[42px] leading-none">→</span>
             <p 
-              className="text-[#5c3115] text-[16px] md:text-[20px] lg:text-[24px] leading-[1.45] text-left md:flex-1"
+              className="text-[#5c3115] text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] min-[1200px]:text-[24px] leading-[1.45] text-left min-[1200px]:flex-1"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
               Walnut Snowveil Residency<br />
@@ -46,16 +46,16 @@ export default function ConnectSection() {
             </div>
 
             {/* Write */}
-            <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-[28px] lg:gap-[36px]">
+            <div className="flex flex-col items-start gap-4 min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-start min-[1200px]:gap-[28px]">
             <h3 
-              className="text-[#5c3115] text-[36px] md:text-[52px] lg:text-[58px] md:min-w-[170px] lg:min-w-[190px]"
+              className="text-[#5c3115] text-[36px] sm:text-[40px] md:text-[44px] lg:text-[48px] min-[1200px]:text-[58px] min-[1200px]:min-w-[190px]"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", lineHeight: 1 }}
             >
               Write
             </h3>
-            <span className="hidden md:inline text-[#b9b1a8] text-[36px] lg:text-[42px] leading-none">→</span>
+            <span className="hidden min-[1200px]:inline text-[#b9b1a8] text-[42px] leading-none">→</span>
             <p 
-              className="text-[#5c3115] text-[16px] md:text-[20px] lg:text-[24px] leading-[1.45] text-left md:flex-1"
+              className="text-[#5c3115] text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] min-[1200px]:text-[24px] leading-[1.45] text-left min-[1200px]:flex-1"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
               info.walnutsnowveilres@gmail.com
@@ -64,16 +64,16 @@ export default function ConnectSection() {
           {/* ewjfni */}
 
             {/* Call */}
-            <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-start md:gap-[28px] lg:gap-[36px]">
+            <div className="flex flex-col items-start gap-4 min-[1200px]:flex-row min-[1200px]:items-center min-[1200px]:justify-start min-[1200px]:gap-[28px]">
             <h3 
-              className="text-[#5c3115] text-[36px] md:text-[52px] lg:text-[58px] md:min-w-[170px] lg:min-w-[190px]"
+              className="text-[#5c3115] text-[36px] sm:text-[40px] md:text-[44px] lg:text-[48px] min-[1200px]:text-[58px] min-[1200px]:min-w-[190px]"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", lineHeight: 1 }}
             >
               Call
             </h3>
-            <span className="hidden md:inline text-[#b9b1a8] text-[36px] lg:text-[42px] leading-none">→</span>
+            <span className="hidden min-[1200px]:inline text-[#b9b1a8] text-[42px] leading-none">→</span>
             <p 
-              className="text-[#5c3115] text-[16px] md:text-[20px] lg:text-[24px] leading-[1.45] text-left md:flex-1"
+              className="text-[#5c3115] text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] min-[1200px]:text-[24px] leading-[1.45] text-left min-[1200px]:flex-1"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
               +91 6006672711<br />
