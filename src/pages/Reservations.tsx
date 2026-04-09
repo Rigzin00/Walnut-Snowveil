@@ -4,32 +4,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ConnectSection from "../components/ConnectSection";
 const faqs = [
   {
-    question: "Can I modify or cancel my reservation?",
-    answer: "Yes, you can change or cancel, depending on your booking's policy. Check your confirmation email or contact support."
-  },
-  {
     question: "What time is check-in and check-out?",
-    answer: "Check-in time is at 3:00 PM and check-out is at 11:00 AM. Early check-in or late check-out can be requested but depends on availability."
+    answer: "Check-in starts from 12:00 PM, and check-out is by 10:00 AM. Early check-in or late check-out may be available depending on availability."
   },
   {
-    question: "Do I need a credit card to make a reservation?",
-    answer: "Yes, a valid credit card is required to guarantee your reservation. We do not charge the card until your arrival."
+    question: "Where is Walnut Snowveil Residency located?",
+    answer: "Walnut Snowveil Residency is located in Sumoor Village, Nubra Valley, Ladakh, close to popular attractions like Samstanling Monastery, Onpo Gompa, and the Sumoor Sand Dunes."
   },
   {
-    question: "Do you offer early check-in or late check-out?",
-    answer: "Early check-in and late check-out are subject to room availability and may incur an extra fee. Please contact us in advance to arrange."
+    question: "How far is the property from Leh?",
+    answer: "The residency is approximately 120 km from Leh, and the journey takes around 4–5 hours via the famous Khardung La Pass."
   },
   {
-    question: "Is breakfast included in the reservation?",
-    answer: "Many of our room packages include a complimentary breakfast. You can confirm this on your booking summary or by contacting us directly."
+    question: "Do you provide meals at the residency?",
+    answer: "Yes, guests can enjoy fresh home-style meals and traditional Ladakhi dishes prepared with locally sourced ingredients."
   },
   {
-    question: "What happens if I don't show up for my reservation?",
-    answer: "If you fail to arrive on your scheduled check-in date without prior notice, a no-show fee equivalent to one night's stay will be charged."
+    question: "Is parking available at the property?",
+    answer: "Yes, free parking is available for guests traveling by car or motorcycle."
   },
   {
-    question: "Do you offer group reservations?",
-    answer: "Yes, we offer special rates for group bookings. Please reach out to our reservations team directly to discuss your group's specific needs."
+    question: "Do you help arrange local sightseeing?",
+    answer: "Yes, we can assist guests in planning visits to nearby attractions such as Samstanling Monastery, Sumoor Sand Dunes, and other scenic spots in Nubra Valley."
+  },
+  {
+    question: "Is Wi-Fi available at the residency?",
+    answer: "Yes, Wi-Fi is available, although connectivity may vary due to the remote mountain location."
   }
 ];
 
@@ -98,7 +98,7 @@ const Reservations = () => {
             className="text-4xl md:text-5xl text-[#8E5E4D] mb-4"
             style={{ fontFamily: '"Playfair Display", serif' }}
           >
-            Check availability
+            Book Your Stay
           </h2>
           <p className="text-gray-600 text-sm md:text-base font-sans">
             Fill out the form below to check availability and get a quick response. Let us know your preferred date and details, and we'll get back to you shortly!
@@ -159,9 +159,10 @@ const Reservations = () => {
                 <label className="text-gray-600 text-sm mb-2" htmlFor="roomType">Room type</label>
                 <select id="roomType" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
                   <option value="">Select room type</option>
+                  <option value="standard">Standard Room</option>
+                  <option value="double">Double Room</option>
+                  <option value="family">Family Room</option>
                   <option value="deluxe">Deluxe Room</option>
-                  <option value="suite">Luxury Suite</option>
-                  <option value="villa">Private Villa</option>
                 </select>
               </div>
             </div>
@@ -198,10 +199,7 @@ const Reservations = () => {
                 <label className="text-gray-600 text-sm mb-2" htmlFor="resAddress">Address</label>
                 <input type="text" id="resAddress" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
               </div>
-              <div className="flex flex-col">
-                <label className="text-gray-600 text-sm mb-2" htmlFor="contactTime">Best time to contact</label>
-                <input type="time" id="contactTime" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500" />
-              </div>
+              
             </div>
           </div>
 
@@ -213,16 +211,16 @@ const Reservations = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="flex flex-col">
-                <label className="text-gray-600 text-sm mb-2" htmlFor="hearAbout">How did you hear about us?</label>
+                <label className="text-gray-600 text-sm mb-2" htmlFor="hearAbout">Special Requests</label>
                 <input type="text" id="hearAbout" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
               </div>
               <div className="flex flex-col">
-                <label className="text-gray-600 text-sm mb-2" htmlFor="extraRequest">Any extra request</label>
+                <label className="text-gray-600 text-sm mb-2" htmlFor="extraRequest">Arrival Time</label>
                 <input type="text" id="extraRequest" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
               </div>
             </div>
             <div className="flex flex-col mb-8">
-              <label className="text-gray-600 text-sm mb-2" htmlFor="resMessage">Message to us</label>
+              <label className="text-gray-600 text-sm mb-2" htmlFor="resMessage">How did you hear about us?</label>
               <textarea 
                 id="resMessage" 
                 rows={6}
@@ -236,7 +234,7 @@ const Reservations = () => {
             type="submit" 
             className="w-full bg-[#4A3021] hover:bg-[#342217] text-white font-sans text-sm tracking-wider uppercase py-4 transition-colors rounded-sm"
           >
-            Check availability
+           Send Booking Request
           </button>
         </form>
       </section>

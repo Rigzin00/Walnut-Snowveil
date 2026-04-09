@@ -12,13 +12,13 @@ const Contact = () => {
   return (
     <main className="w-full flex-grow relative bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
         {/* Background Image - Map */}
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop"
+            src="features-2.jpg"
             alt="Contact Map Reference"
-            className="w-full h-full object-cover brightness-[0.6]"
+            className="w-full h-full object-fit brightness-[0.6]"
           />
         </div>
 
@@ -68,7 +68,6 @@ const Contact = () => {
             Say Hello! - Whether you're planning a stay or just have a question, we'd love to hear from you.
           </p>
         </div>
-
         <form className="w-full font-sans">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* First Name */}
@@ -124,7 +123,7 @@ const Contact = () => {
 
           {/* Select Rooms / Message */}
           <div className="flex flex-col mb-8">
-            <label className="text-gray-600 text-sm mb-2" htmlFor="message">Select rooms</label>
+            <label className="text-gray-600 text-sm mb-2" htmlFor="message">Your Message</label>
             <textarea 
               id="message" 
               rows={8}
@@ -143,7 +142,22 @@ const Contact = () => {
           </button>
         </form>
       </section>
-    <ConnectSection />
+
+      {/* Google Map - Full Width */}
+      <section className="w-full h-[50vh] md:h-[60vh] my-16 md:my-24">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2701.881508712242!2d77.6254068!3d34.6218824!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38fc3507cf39f2ad%3A0x1056feacd7dcb5b5!2sWalnut%20Snowveil%20Residency!5e1!3m2!1sen!2sin!4v1775743736698!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen={false} 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Location Map"
+        ></iframe>
+      </section>
+
+      <ConnectSection />
     </main>
   );
 };
