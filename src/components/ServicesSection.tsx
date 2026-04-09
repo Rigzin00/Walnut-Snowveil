@@ -94,12 +94,12 @@ export default function ServicesSection() {
         </div>
 
         {/* --- Mobile View - Simple Stack --- */}
-        <div className="md:hidden w-full px-[40px] py-[80px] flex flex-col gap-12">
+        <div className="md:hidden w-full px-6 sm:px-8 py-12 sm:py-16 flex flex-col gap-12">
           <h2
             className="text-left text-[#5c3115]"
             style={{
               fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
-              fontSize: "clamp(48px, 6vw, 80px)",
+              fontSize: "clamp(40px, 11vw, 64px)",
               lineHeight: "1.1",
             }}
           >
@@ -119,7 +119,7 @@ export default function ServicesSection() {
 
               <div className="mt-2">
                 <h3
-                  className="text-[#5c3115] text-[2.5rem] md:text-[3rem] leading-[1.2] mb-4"
+                  className="text-[#5c3115] text-[34px] sm:text-[40px] leading-[1.2] mb-4"
                   style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
                 >
                   {service.title}

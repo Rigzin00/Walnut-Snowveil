@@ -29,7 +29,7 @@ export default function TrustedSection() {
     <section className="w-full bg-[#F3F3F3] py-16 md:py-[100px]">
       <div
         ref={sectionRef}
-        className="w-full px-5 md:px-[80px]"
+        className="w-full px-6 md:px-[80px]"
       >
 
         {/* ── Heading — left aligned, very large ── */}
@@ -57,7 +57,7 @@ export default function TrustedSection() {
               className="text-left text-[#4B2205] leading-[1.65]"
               style={{
                 fontFamily: "Anek Bangla",
-                fontSize: "clamp(25px, 1.1vw, 18px)",
+                fontSize: "clamp(16px, 2.1vw, 20px)",
                 fontWeight: 300,
                 ...fadeUp(0.25),
               }}
@@ -76,7 +76,7 @@ export default function TrustedSection() {
               className="text-left text-[#4B2205] leading-[1.65]"
               style={{
                 fontFamily: "Anek Bangla",
-                fontSize: "clamp(25px, 1.1vw, 18px)",
+                fontSize: "clamp(16px, 2.1vw, 20px)",
                 fontWeight: 300,
                 ...fadeUp(0.4),
               }}

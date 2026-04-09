@@ -26,32 +26,56 @@ export default function QuoteSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-[120vh] md:h-[130vh] min-h-[800px] flex items-end justify-end p-[40px] md:p-[80px] overflow-hidden">
-      {/* Background Image Container - Taller than section to allow for parallax translate */}
-      <div 
-        className="absolute left-0 right-0 w-full h-[160%] bg-cover bg-center will-change-transform"
-        style={{ 
-          top: "-80%", // Offset so we have room to animate both up and down
-          backgroundImage: "url('/tour12.jpeg')",
-          transform: `translateY(${offsetY}px)`,
-          transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)", // Smooths the React state jitter
-        }}
-      ></div>
+    <>
+      <section className="block md:hidden bg-white w-full">
+        {/* Mobile Image */}
+        <div className="relative w-full h-[360px] sm:h-[400px] p-4">
+          <div 
+            className="absolute inset-4 bg-cover bg-center"
+            style={{ backgroundImage: "url('/tour12.jpeg')" }}
+          ></div>
+          <div className="absolute inset-8 border border-white/20 pointer-events-none"></div>
+        </div>
 
-      
-      {/* Thin inner border overlay */}
-      <div className="absolute inset-[20px] md:inset-[40px] border border-white/20 pointer-events-none"></div>
+        {/* Mobile Quote */}
+        <div className="px-6 sm:px-8 py-12 sm:py-[60px] pb-14 sm:pb-[80px]">
+          <p 
+            className="text-[28px] sm:text-[32px] leading-[1.3] font-normal text-[#5c3115]"
+            style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+          >
+            <span className="text-[36px] sm:text-[40px] leading-none mr-2 font-bold float-left mt-1 text-[#5c3115]">“</span>
+            Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.
+          </p>
+        </div>
+      </section>
 
-      {/* Quote Content */}
-      <div className="relative z-10 max-w-[800px] text-white text-right pr-[20px] md:pr-[40px] pb-[30px] md:pb-[60px]">
-        <p 
-          className="text-[28px] md:text-[40px] lg:text-[40px] text-justify leading-[1.3] font-normal tracking-wide"
-          style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
-        >
-          <span className="mr-3 md:mr-4">“</span>
-          Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.
-        </p>
-      </div>
-    </section>
+      <section ref={sectionRef} className="hidden md:flex relative w-full h-[120vh] lg:h-[130vh] min-h-[700px] lg:min-h-[800px] items-end justify-end p-10 lg:p-[80px] overflow-hidden">
+        {/* Background Image Container - Taller than section to allow for parallax translate */}
+        <div 
+          className="absolute left-0 right-0 w-full h-[160%] bg-cover bg-center will-change-transform"
+          style={{ 
+            top: "-80%", // Offset so we have room to animate both up and down
+            backgroundImage: "url('/tour12.jpeg')",
+            transform: `translateY(${offsetY}px)`,
+            transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)", // Smooths the React state jitter
+          }}
+        ></div>
+
+        
+        {/* Thin inner border overlay */}
+        <div className="absolute inset-6 lg:inset-[40px] border border-white/20 pointer-events-none"></div>
+
+        {/* Quote Content */}
+        <div className="relative z-10 max-w-[800px] text-white text-right pr-5 lg:pr-[40px] pb-8 lg:pb-[60px]">
+          <p 
+            className="text-[32px] lg:text-[40px] text-justify leading-[1.3] font-normal tracking-wide"
+            style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+          >
+            <span className="mr-4">“</span>
+            Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.
+          </p>
+        </div>
+      </section>
+    </>
   );
 }
