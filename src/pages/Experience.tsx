@@ -108,39 +108,67 @@ const ExperienceQuoteSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-[80vh] md:h-[100vh] min-h-[600px] flex items-center justify-start p-[40px] md:p-[80px] overflow-hidden">
-      {/* Background Image Container - Taller than section to allow for parallax translate */}
-      <div 
-        className="absolute left-0 right-0 w-full h-[110%] bg-cover bg-center will-change-transform"
-        style={{ 
-          top: "-30%", // Offset so we have room to animate both up and down
-          backgroundImage: `url('${import.meta.env.BASE_URL}exp/exp6.jpg')`,
-          transform: `translateY(${offsetY}px)`,
-        transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"// Smooths the React state jitter
-        }}
-      ></div>
+    <>
+      {/* Desktop View */}
+      <section ref={sectionRef} className="hidden md:flex relative w-full h-[100vh] min-h-[600px] items-center justify-start p-[80px] overflow-hidden">
+        {/* Background Image Container - Taller than section to allow for parallax translate */}
+        <div 
+          className="absolute left-0 right-0 w-full h-[110%] bg-cover bg-center will-change-transform"
+          style={{ 
+            top: "-30%", // Offset so we have room to animate both up and down
+            backgroundImage: `url('${import.meta.env.BASE_URL}exp/exp6.jpg')`,
+            transform: `translateY(${offsetY}px)`,
+          transition: "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)"// Smooths the React state jitter
+          }}
+        ></div>
 
-      {/* Dark Overlay gradient for text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+        {/* Dark Overlay gradient for text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Thin inner border overlay */}
-      <div className="absolute inset-[20px] md:inset-[40px] border border-white/20 pointer-events-none z-10"></div>
+        {/* Thin inner border overlay */}
+        <div className="absolute inset-[40px] border border-white/20 pointer-events-none z-10"></div>
 
-      {/* Quote Content */}
-     <div className="absolute bottom-8 left-6 md:bottom-12 md:left-12 z-10 max-w-[850px] text-white text-left">
-        <p
-          className="text-[26px] md:text-[40px] lg:text-[32px] leading-[1.3] font-normal tracking-wide flex"
-          style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
-        >
-          <span className="mr-3 md:mr-4">“</span>
-          <span>
-            From golden sand dunes to ancient monasteries,
-            <br className="hidden md:block" />
-            Nubra Valley offers adventures that stay with you forever.
-          </span>
-        </p>
-      </div>
-    </section>
+        {/* Quote Content */}
+       <div className="absolute bottom-12 left-12 z-10 max-w-[850px] text-white text-left">
+          <p
+            className="text-[40px] lg:text-[32px] leading-[1.3] font-normal tracking-wide flex"
+            style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+          >
+            <span className="mr-4">“</span>
+            <span>
+              From golden sand dunes to ancient monasteries,
+              <br className="block" />
+              Nubra Valley offers adventures that stay with you forever.
+            </span>
+          </p>
+        </div>
+      </section>
+
+      {/* Mobile View */}
+      <section className="block md:hidden bg-[#f8f5f0] w-full">
+        {/* Mobile Image */}
+        <div className="relative w-full h-[360px] sm:h-[400px] p-4 text-center">
+          <div 
+            className="absolute inset-4 bg-cover bg-center"
+            style={{ backgroundImage: `url('${import.meta.env.BASE_URL}exp/exp6.jpg')` }}
+          ></div>
+          <div className="absolute inset-8 border border-white/20 pointer-events-none z-10"></div>
+        </div>
+
+        {/* Mobile Quote */}
+        <div className="px-6 sm:px-8 py-12 sm:py-[60px] pb-14 sm:pb-[80px]">
+          <p 
+            className="text-[24px] sm:text-[32px] leading-[1.35] font-normal text-[#5c3115] text-left"
+            style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
+          >
+            <span className="inline-block text-[32px] sm:text-[40px] leading-none mr-2 align-top text-[#5c3115]">“</span>
+            <span>
+              From golden sand dunes to ancient monasteries, Nubra Valley offers adventures that stay with you forever.
+            </span>
+          </p>
+        </div>
+      </section>
+    </>
   );
 };
 
@@ -158,7 +186,7 @@ export default function Experience() {
     <main className="w-full bg-[#f8f5f0] min-h-screen">
       
       {/* Hero Section */}
-      <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         
         {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-black">

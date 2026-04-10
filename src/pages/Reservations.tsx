@@ -48,7 +48,7 @@ const Reservations = () => {
   return (
     <main className="w-full flex-grow relative bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
+     <section className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image - Room */}
         <div className="absolute inset-0 w-full h-full">
           <img

@@ -12,13 +12,13 @@ const Contact = () => {
   return (
     <main className="w-full flex-grow relative bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[450px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image - Map */}
         <div className="absolute inset-0 w-full h-full">
           <img
             src="features-2.jpg"
             alt="Contact Map Reference"
-            className="w-full h-full object-fit brightness-[0.6]"
+            className="w-full h-full object-cover object-[75%_center] md:object-center brightness-[0.6]"
           />
         </div>
 

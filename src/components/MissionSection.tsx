@@ -1,65 +1,100 @@
-import React, { useRef, useEffect, useState } from "react";
+﻿import React, { useRef, useEffect, useState } from "react";
 
-export default function MissionSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [offsetY, setOffsetY] = useState(0);
+const AnimatedImage = ({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: React.CSSProperties }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [parallaxY, setParallaxY] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate parallax offset when in view
-      if (rect.top <= windowHeight && rect.bottom >= 0) {
-        // Amount of pixels scrolled past the top entering the viewport
-        const scrolled = windowHeight - rect.top;
-        setOffsetY(scrolled);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const updateParallax = () => {
+      if (!ref.current) {
+        ticking = false;
+        return;
+      }
+
+      const rect = ref.current.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const elementCenter = rect.top + rect.height / 2;
+
+      // Parallax effect: image translates slightly based on scroll
+      const nextY = (viewportCenter - elementCenter) * 0.08;
+      const clampedY = Math.max(-25, Math.min(25, nextY));
+      setParallaxY(clampedY);
+      ticking = false;
+    };
+
+    const onScrollOrResize = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateParallax);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); 
-    return () => window.removeEventListener("scroll", handleScroll);
+    onScrollOrResize();
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+    };
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-[80px] md:py-[150px] px-[20px] md:px-[80px] overflow-hidden">
+    <div
+      ref={ref}
+      className={`relative overflow-hidden transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] transform ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[80px]"
+      } ${className || ""}`}
+      style={style}
+    >
+      <div 
+        className="w-full h-full"
+        style={{
+          transform: `translateY(${parallaxY}px)`,
+          transition: "transform 200ms linear",
+          willChange: "transform"
+        }}
+      >
+        <img src={src} alt={alt} className="w-full h-[115%] -mt-[7.5%] object-cover transition-transform duration-[2000ms] hover:scale-105" />
+      </div>
+    </div>
+  );
+};
+
+export default function MissionSection() {
+  return (
+    <section className="w-full bg-white py-[80px] md:py-[150px] px-[20px] md:px-[80px] overflow-hidden">
       <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[40px] md:gap-[80px] items-center md:items-start">
         
-        {/* Left Column - Portrait Image (Moves Down) */}
+        {/* Left Column - Portrait Image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-          <div className="w-full max-w-[500px] aspect-[3/4] relative overflow-hidden border border-gray-200 p-2">
-            <div className="absolute inset-[10px] md:inset-[20px] border border-white/40 z-10 pointer-events-none"></div>
-            {/* The image shifts down meaning positive translateY */}
-            <img 
-              src="about/about2.jpg" 
-              alt="Lobby interior with sun rays" 
-              className="w-full h-[130%] -top-[15%] relative object-cover will-change-transform"
-              style={{
-                transform: `translateY(${offsetY * 0.15}px)`,
-                transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94)"
-              }}
-            />
-          </div>
+          <AnimatedImage src="about/about2.jpg" alt="Lobby interior with sun rays" className="w-full aspect-[4/3] rounded-sm" />
         </div>
 
-        {/* Right Column - Landscape Image (Moves Up) + Text */}
+        {/* Right Column - Landscape Image + Text */}
         <div className="w-full md:w-1/2 flex flex-col pt-0 md:pt-[60px] gap-[60px] md:gap-[100px]">
           
-          <div className="w-full max-w-[600px] aspect-[16/10] relative overflow-hidden border border-gray-200">
-            <div className="absolute inset-[10px] md:inset-[20px] border border-white/40 z-10 pointer-events-none"></div>
-            {/* The image shifts up meaning negative translateY */}
-            <img 
-              src="about/about3.jpg" 
-              alt="Bright minimalist sitting area" 
-              className="w-full h-[130%] top-[10%] relative object-cover will-change-transform"
-              style={{
-                transform: `translateY(${-offsetY * 0.15}px)`,
-                transition: "transform 0.4s cubic-bezier(0.25, 10.46, 0.45, 0.94"
-              }}
-            />
-          </div>
+          <AnimatedImage src="about/about3.jpg" alt="Bright minimalist sitting area" className="w-full aspect-[4/3] rounded-sm" />
 
           {/* Quote Text */}
           <div className="w-full max-w-[500px]">

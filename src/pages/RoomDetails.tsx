@@ -36,118 +36,13 @@ const AnimatedImage = ({ src, alt, className, style }: { src: string; alt: strin
   );
 };
 
+import { allRooms } from "../data/roomsData";
+
 export default function RoomDetails() {
   const { state } = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
   const [isHeroVisible, setIsHeroVisible] = useState(false);
-
-  const allRooms = [
-    {
-      title: "Standard Room",
-      guests: "2 Guests",
-      bed: "Double Bed",
-      size: "Mountain / Village View",
-      img: "/room.jpg",
-      description: "A cozy and comfortable room ideal for travelers exploring Nubra Valley. Designed with warm interiors and peaceful surroundings for a relaxing stay.",
-      gallery: [
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1590490359854-dfba196f3044?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-      ],
-      amenities: [
-        "Comfortable double bed",
-        "Clean attached bathroom with hot water",
-        "Room heating (seasonal)",
-        "High-speed Wi-Fi and family streaming TV",
-        "Fresh towels and toiletries",
-        "Peaceful village surroundings"
-      ],
-      quote: {
-        text: "A peaceful stay surrounded by mountains and fresh Nubra Valley air.",
-        author: "Guest Review"
-      }
-    },
-    {
-      title: "Double Room",
-      guests: "2 Guests",
-      bed: "King size bed",
-      size: "Mountain View",
-      img: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "The Double Room is perfect for couples or friends seeking a comfortable and relaxing stay in Nubra Valley. Designed with spacious interiors and cozy bedding, the room offers a welcoming atmosphere to unwind and enjoy the mountain surroundings.",
-      gallery: [
-        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-      ],
-      amenities: [
-        "King size bed",
-        "Private bathroom with hot water",
-        "Comfortable seating area",
-        "High-speed Wi-Fi and executive desk",
-        "Daily housekeeping",
-        "Mountain or village view"
-      ],
-      quote: {
-        text: "Perfect comfort after a long journey through the breathtaking valleys of Ladakh.",
-        author: "Guest Review"
-      }
-    },
-    {
-      title: "Family Room",
-      guests: "2 Adults & a Child",
-      bed: "King size bed",
-      size: "Spacious Room",
-      img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "A larger room designed for families or small groups visiting Nubra Valley, providing extra space and comfort for a memorable stay.",
-      gallery: [
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-      ],
-      amenities: [
-        "King bed with extra bedding option",
-        "Spacious room for families",
-        "Private bathroom with hot water",
-        "High-speed Wi-Fi and smart TV",
-        "Comfortable seating area",
-        "24/7 room service and housekeeping"
-      ],
-      quote: {
-        text: "A warm and welcoming place where our family felt at home in the heart of Nubra.",
-        author: "Guest Review"
-      }
-    },
-    {
-      title: "Deluxe Room",
-      guests: "2 Guests",
-      bed: "King size bed",
-      size: "Mountain View",
-      img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      description: "A spacious and comfortable room offering a relaxing atmosphere with beautiful views of the surrounding mountains of Nubra Valley. Perfect for guests seeking extra comfort during their stay.",
-      gallery: [
-        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-      ],
-      amenities: [
-        "King size bed",
-        "Spacious room layout",
-        "Private bathroom with hot water",
-        "High-speed Wi-Fi and entertainment system",
-        "Comfortable sitting area",
-        "Scenic mountain surroundings"
-      ],
-      quote: {
-        text: "Waking up to the quiet beauty of Nubra Valley made the stay truly unforgettable.",
-        author: "Guest Review"
-      }
-    }
-  ];
 
   const room = state?.room || allRooms.find(r => r.title.toLowerCase().replace(/\s+/g, '-') === id) || {
     title: id?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
@@ -188,7 +83,7 @@ export default function RoomDetails() {
     <main className="w-full bg-[#f8f5f0] min-h-screen">
       
       {/* 1. Hero Section */}
-      <div className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden pt-20">
+      <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={room.img} alt={room.title} className="w-full h-full object-cover brightness-[0.6]" />
         </div>
@@ -203,7 +98,7 @@ export default function RoomDetails() {
             {room.title}
           </h1>
           <p 
-            className={`text-sm md:text-lg max-w-2xl font-light tracking-wide opacity-90 transition-all duration-[1500ms] delay-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] transform ${
+            className={`text-base md:text-xl max-w-2xl font-light tracking-wide opacity-90 transition-all duration-[1500ms] delay-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] transform ${
               isHeroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[50px]"
             }`}
             style={{ fontFamily: "Anek Bangla, sans-serif" }}
@@ -214,13 +109,13 @@ export default function RoomDetails() {
       </div>
 
       {/* Container for content */}
-      <div className="max-w-[1200px] mx-auto px-[20px] md:px-[60px] py-[80px] md:py-[120px]">
+      <div className="max-w-[1200px] mx-auto px-[20px] md:px-[60px] py-[80px] md:py-[80px]">
         
         {/* 2. Intro Text */}
         <div className="text-center mb-[80px] md:mb-[120px]">
           <button 
             onClick={() => navigate(-1)}
-            className="uppercase tracking-[3px] text-[#5c3115] opacity-60 text-[10px] md:text-[11px] font-semibold mb-10 hover:opacity-100 transition-opacity"
+            className="uppercase tracking-[3px] text-[#5c3115] opacity-60 text-[14px] md:text-[16px] font-semibold mb-10 hover:opacity-100 transition-opacity"
           >
             GO BACK
           </button>
@@ -231,13 +126,13 @@ export default function RoomDetails() {
             The {room.title}: A perfect blend of comfort and elegance
           </h2>
           <p 
-            className="text-[#5c3115] opacity-80 text-[14px] md:text-[15px] leading-relaxed max-w-3xl mx-auto mb-10"
+            className="text-[#5c3115] opacity-80 text-[16px] md:text-[18px] leading-relaxed max-w-3xl mx-auto mb-10"
             style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
           >
             {room.description}
           </p>
           <button 
-            className="border border-[#5c3115]/40 text-[#5c3115] px-6 py-3 uppercase tracking-[2px] text-[11px] font-medium hover:bg-[#5c3115] hover:text-white transition-colors"
+            className="border border-[#5c3115]/40 text-[#5c3115] px-6 py-3 uppercase tracking-[2px] text-[13px] md:text-[14px] font-medium hover:bg-[#5c3115] hover:text-white transition-colors"
             style={{ fontFamily: "Anek Bangla, sans-serif" }}
           >
             Book Room &rarr;
@@ -263,7 +158,7 @@ export default function RoomDetails() {
         </div>
 
         {/* 4. Room Amenities */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-[40px] md:gap-[80px] mb-[80px] md:mb-[120px]">
+        <div className="flex flex-col-reverse md:flex-row justify-between items-start gap-[40px] md:gap-[80px] mb-[80px] md:mb-[120px]">
           <div className="w-full md:w-[45%]">
             <h3 
               className="text-[#5c3115] text-[32px] md:text-[40px] mb-8"
@@ -272,7 +167,7 @@ export default function RoomDetails() {
               Room amenities
             </h3>
             <ul 
-              className="text-[#5c3115] opacity-80 text-[14px] md:text-[15px] space-y-4 list-disc pl-5"
+              className="text-[#5c3115] opacity-80 text-[16px] md:text-[18px] space-y-4 list-disc pl-5"
               style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
             >
               {room.amenities.map((amenity: string, index: number) => (
@@ -316,7 +211,7 @@ export default function RoomDetails() {
             {room.quote.text}
           </p>
           <p 
-            className="text-[#5c3115] opacity-60 uppercase tracking-[2px] text-[12px] font-medium"
+            className="text-[#5c3115] opacity-60 uppercase tracking-[2px] text-[14px] md:text-[16px] font-medium"
             style={{ fontFamily: "Anek Bangla, sans-serif" }}
           >
             - {room.quote.author}
@@ -344,7 +239,7 @@ export default function RoomDetails() {
                 Nubra Valley <br/>Tranquility
               </h3>
               <p 
-                className="text-[#5c3115] opacity-80 text-[15px] md:text-[16px] leading-[1.8] flex-grow"
+                className="text-[#5c3115] opacity-80 text-[16px] md:text-[18px] leading-[1.8] flex-grow"
                 style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
               >
                 Located in the serene village of Sumoor, Walnut Snowveil Residency offers a peaceful retreat surrounded by the dramatic landscapes of Nubra Valley. Guests can enjoy quiet mornings, fresh mountain air, and breathtaking views of the valley that create a truly relaxing atmosphere away from busy city life.
@@ -359,7 +254,7 @@ export default function RoomDetails() {
                 Authentic Ladakhi<br/>Hospitality
               </h3>
               <p 
-                className="text-[#5c3115] opacity-80 text-[15px] md:text-[16px] leading-[1.8] flex-grow"
+                className="text-[#5c3115] opacity-80 text-[16px] md:text-[18px] leading-[1.8] flex-grow"
                 style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
               >
                 At Walnut Snowveil Residency, hospitality is rooted in the traditions of Ladakh. Guests are welcomed with warmth and genuine care, ensuring a stay that feels both comfortable and personal. Our goal is to create an environment where visitors experience the culture, kindness, and simplicity of local life.
@@ -374,7 +269,7 @@ export default function RoomDetails() {
                 Gateway to Nubra Adventures
               </h3>
               <p 
-                className="text-[#5c3115] opacity-80 text-[15px] md:text-[16px] leading-[1.8] flex-grow"
+                className="text-[#5c3115] opacity-80 text-[16px] md:text-[18px] leading-[1.8] flex-grow"
                 style={{ fontFamily: "Anek Bangla, sans-serif", fontWeight: 300 }}
               >
                 Walnut Snowveil Residency serves as an ideal base for discovering the natural and cultural wonders of Nubra Valley. From scenic drives and monastery visits to peaceful village walks and photography opportunities, every experience allows guests to connect with the region’s extraordinary landscape.

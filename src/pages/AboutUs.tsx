@@ -20,7 +20,7 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section for About Us */}
-      <div className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 w-full h-[100%] will-change-transform"
           style={{ 
