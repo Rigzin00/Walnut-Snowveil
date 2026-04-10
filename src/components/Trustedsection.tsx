@@ -56,30 +56,7 @@ export default function TrustedSection() {
             className="flex flex-col"
             style={fadeUp(0.15)}
           >
-            {/* Image Container with Label */}
-            <div className="relative w-full aspect-[4/5] overflow-hidden mb-8">
-              <img
-                src="https://images.unsplash.com/photo-1592424001807-55df93bb2768?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Family Owned"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute bottom-4 left-4 bg-white px-4 py-2 text-[#7A3E16] text-sm font-bold" style={{ fontFamily: "Anek Bangla, sans-serif" }}>
-                HOMELY
-              </div>
-            </div>
-            
-            {/* Heading below image */}
-            <h3 
-              className="text-left text-[#5c3115]"
-              style={{ 
-                fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
-                fontSize: "clamp(30px, 3vw, 36px)",
-                lineHeight: "1.2",
-                fontWeight: 400
-              }}
-            >
-              Warm Hospitality
-            </h3>
+         
             
             {/* Description below heading */}
             <p
@@ -100,31 +77,9 @@ export default function TrustedSection() {
             className="flex flex-col"
             style={fadeUp(0.3)}
           >
-            {/* Image Container with Label */}
-            <div className="relative w-full aspect-[4/5] overflow-hidden mb-8">
-              <img
-                src="https://images.unsplash.com/photo-1488749807830-63789f68bb65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Authentic"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute bottom-4 left-4 bg-white px-4 py-2 text-[#7A3E16] text-sm font-bold" style={{ fontFamily: "Anek Bangla, sans-serif" }}>
-                AUTHENTIC
-              </div>
-            </div>
+           
             
-            {/* Heading below image */}
-            <h3 
-              className="text-left text-[#5c3115]"
-              style={{ 
-                fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
-                fontSize: "clamp(30px, 3vw, 36px)",
-                lineHeight: "1.2",
-                fontWeight: 400
-              }}
-            >
-              Cultural Experience
-            </h3>
-            
+           
             {/* Description below heading */}
             <p
               className="mt-6 text-left text-[#5c3115]"
