@@ -19,10 +19,11 @@ export default function Home() {
     url: "https://walnutsnowveil.in/",
     description:
       "Walnut Snowveil Residency is a peaceful hotel located in Sumoor Village, Nubra Valley, Ladakh offering comfortable rooms, stunning mountain views, and authentic Ladakhi hospitality.",
-    image: "https://walnutsnowveil.in/images/Logo_walnut.png",
+    image: "https://walnutsnowveil.in/Logo_walnut.png",
     telephone: "+91-6006672711",
     checkinTime: "11:00",
     checkoutTime: "09:00",
+    priceRange: "₹1500 - ₹2500 per night",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Sumoor Village",
@@ -30,15 +31,14 @@ export default function Home() {
       addressRegion: "Ladakh",
       postalCode: "194404",
       addressCountry: "IN"
-    },
-    priceRange: "₹₹",
+    }
   };
 
   return (
     <>
       <Helmet>
 
-        {/* Basic SEO */}
+        {/* Primary SEO */}
         <title>Walnut Snowveil Residency | Hotel in Nubra Valley, Sumoor Ladakh</title>
 
         <meta
@@ -51,16 +51,11 @@ export default function Home() {
           content="hotel in Nubra Valley, hotel in Sumoor Ladakh, stay in Nubra Valley, guest house Nubra Valley, Samstanling Monastery hotel, Sumoor hotel Nubra"
         />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <meta name="author" content="Walnut Snowveil Residency" />
 
         <link rel="canonical" href="https://walnutsnowveil.in/" />
 
-        {/* Favicon */}
-        <link rel="icon" href="/images/Logo_walnut.png" />
-
-        {/* Open Graph (Facebook / Google preview) */}
+        {/* Open Graph */}
         <meta property="og:title" content="Walnut Snowveil Residency | Hotel in Nubra Valley Ladakh" />
         <meta property="og:description" content="Stay at Walnut Snowveil Residency in Sumoor Nubra Valley Ladakh with mountain views and authentic hospitality." />
         <meta property="og:url" content="https://walnutsnowveil.in/" />
@@ -68,7 +63,7 @@ export default function Home() {
         <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
         <meta property="og:site_name" content="Walnut Snowveil Residency" />
 
-        {/* Twitter Preview */}
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Walnut Snowveil Residency | Hotel in Nubra Valley" />
         <meta name="twitter:description" content="Peaceful stay in Sumoor Nubra Valley Ladakh near Samstanling Monastery." />
