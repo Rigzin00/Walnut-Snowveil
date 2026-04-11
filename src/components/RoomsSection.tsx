@@ -11,7 +11,6 @@ interface RoomCardProps {
 function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [parallaxY, setParallaxY] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,44 +24,6 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
     );
     if (cardRef.current) observer.observe(cardRef.current);
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const updateParallax = () => {
-      if (!cardRef.current) {
-        ticking = false;
-        return;
-      }
-
-      const rect = cardRef.current.getBoundingClientRect();
-      const viewportCenter = window.innerHeight / 2;
-      const elementCenter = rect.top + rect.height / 2;
-
-      // Opposite-direction parallax: while the page content moves up,
-      // the image drifts slightly down for a subtle depth effect.
-      const nextY = (viewportCenter - elementCenter) * 0.08;
-      const clampedY = Math.max(-22, Math.min(22, nextY));
-      setParallaxY(clampedY);
-      ticking = false;
-    };
-
-    const onScrollOrResize = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(updateParallax);
-      }
-    };
-
-    onScrollOrResize();
-    window.addEventListener("scroll", onScrollOrResize, { passive: true });
-    window.addEventListener("resize", onScrollOrResize);
-
-    return () => {
-      window.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
-    };
   }, []);
 
   return (
@@ -83,20 +44,11 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
           boxShadow: "0 8px 40px rgba(0,0,0,0.18), 0 2px 10px rgba(0,0,0,0.10)",
         }}
       >
-        <div
-          className="w-full h-full"
-          style={{
-            transform: `translateY(${parallaxY}px)`,
-            transition: "transform 200ms linear",
-            willChange: "transform",
-          }}
-        >
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-[112%] -mt-[6%] object-cover transition-transform duration-700 hover:scale-105"
-          />
-        </div>
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+        />
       </div>
 
       {/* Card Title */}
@@ -114,15 +66,15 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
 
 const rooms = [
   {
-    image: `${import.meta.env.BASE_URL}room.jpg`,
+    image: `${import.meta.env.BASE_URL}room/room2.jpeg`,
     title: "— Standard Room",
   },
   {
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=640&q=80",
+    image: `${import.meta.env.BASE_URL}room/room.jpg`,
     title: "— Double Room",
   },
   {
-    image: `${import.meta.env.BASE_URL}room1.jpg`,
+    image: `${import.meta.env.BASE_URL}room/room4.jpeg`,
     title: "— Family Room",
   },
 ];

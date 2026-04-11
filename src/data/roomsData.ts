@@ -4,7 +4,7 @@ export const allRooms = [
     guests: "2 Guests",
     bed: "Double Bed",
     size: "Mountain / Village View",
-    img: "/room.jpg",
+    img: "room/room2.jpeg",
     description: "A cozy and comfortable room ideal for travelers exploring Nubra Valley. Designed with warm interiors and peaceful surroundings for a relaxing stay.",
     gallery: [
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -30,7 +30,7 @@ export const allRooms = [
     guests: "2 Guests",
     bed: "King size bed",
     size: "Mountain View",
-    img: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    img: "room/room.jpg",
     description: "The Double Room is perfect for couples or friends seeking a comfortable and relaxing stay in Nubra Valley. Designed with spacious interiors and cozy bedding, the room offers a welcoming atmosphere to unwind and enjoy the mountain surroundings.",
     gallery: [
       "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -56,7 +56,7 @@ export const allRooms = [
     guests: "2 Adults & a Child",
     bed: "King size bed",
     size: "Spacious Room",
-    img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    img: "room/room4.jpeg",
     description: "A larger room designed for families or small groups visiting Nubra Valley, providing extra space and comfort for a memorable stay.",
     gallery: [
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
