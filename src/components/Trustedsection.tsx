@@ -48,43 +48,49 @@ export default function TrustedSection() {
           </h2>
         </div>
 
-        {/* ── Two Column Paragraphs ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-[80px]">
+        {/* ── Image Cards with Labels, Titles, and Descriptions ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[40px] lg:gap-x-[60px] gap-y-10 md:gap-y-[60px]">
 
-          {/* Left Column */}
-          <div className="overflow-hidden">
+          {/* Family Owned Card */}
+          <div 
+            className="flex flex-col"
+            style={fadeUp(0.15)}
+          >
+         
+            
+            {/* Description below heading */}
             <p
-              className="text-left text-[#4B2205] leading-[1.65]"
+              className="mt-6 text-left text-[#5c3115]"
               style={{
-                fontFamily: "Anek Bangla",
-                fontSize: "clamp(16px, 2.1vw, 20px)",
-                fontWeight: 300,
-                ...fadeUp(0.25),
+                fontFamily: "Anek Bangla, sans-serif",
+                fontSize: "clamp(16px, 1.8vw, 18px)",
+                lineHeight: "2",
+                fontWeight: 400,
               }}
             >
-             At Walnut Snowveil Residency, we focus on offering guests a peaceful and comfortable stay in the heart of
-              Nubra Valley. Our rooms are thoughtfully designed to provide a relaxing space where travelers can unwind 
-              after a day of exploring the beautiful landscapes, monasteries, and villages of the region. Surrounded by 
-              mountains and the calm atmosphere of Sumoor village, our residency creates a perfect environment for rest 
-              and relaxation.
+             At Walnut Snowveil Residency, we focus on offering guests a peaceful and comfortable stay in the heart of Nubra Valley. Our rooms are thoughtfully designed to provide a relaxing space where travelers can unwind after a day of exploring the beautiful landscapes, monasteries, and villages of the region. Surrounded by mountains and the calm atmosphere of Sumoor village, our residency creates a perfect environment for rest and relaxation.
             </p>
           </div>
 
-          {/* Right Column */}
-          <div className="overflow-hidden">
+          {/* Authentic Card */}
+          <div 
+            className="flex flex-col"
+            style={fadeUp(0.3)}
+          >
+           
+            
+           
+            {/* Description below heading */}
             <p
-              className="text-left text-[#4B2205] leading-[1.65]"
+              className="mt-6 text-left text-[#5c3115]"
               style={{
-                fontFamily: "Anek Bangla",
-                fontSize: "clamp(16px, 2.1vw, 20px)",
-                fontWeight: 300,
-                ...fadeUp(0.4),
+                fontFamily: "Anek Bangla, sans-serif",
+                fontSize: "clamp(16px, 1.8vw, 18px)",
+                lineHeight: "2",
+                fontWeight: 400,
               }}
             >
-              What makes our residency special is the warmth of traditional Ladakhi hospitality combined with a comfortable 
-              and welcoming environment. Guests can enjoy scenic views, fresh mountain air, and a quiet setting that makes 
-              every stay memorable. Whether you are traveling with family, friends, or on a solo adventure, Walnut Snowveil
-               Residency offers a simple and authentic Ladakh experience.
+              What makes our residency special is the warmth of traditional Ladakhi hospitality combined with a comfortable and welcoming environment. Guests can enjoy scenic views, fresh mountain air, and a quiet setting that makes every stay memorable. Whether you are traveling with family, friends, or on a solo adventure, Walnut Snowveil Residency offers a simple and authentic Ladakh experience.
             </p>
           </div>
 

@@ -18,7 +18,7 @@ export default function Rooms() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section for Rooms */}
-      <div className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         
         {/* Parallax Background */}
         <div 

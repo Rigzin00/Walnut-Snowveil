@@ -21,10 +21,10 @@ const services = [
 export default function ServicesSection() {
   return (
     <section className="relative w-full bg-white text-[#5c3115]">
-      <div className="flex flex-col md:flex-row w-full max-w-[1400px] mx-auto md:px-[80px]">
+      <div className="flex flex-col lg:flex-row w-full max-w-[1400px] mx-auto lg:px-[80px]">
 
         {/* Left Side: Scrolling Text Content with Sticky "Our Services" Header */}
-        <div className="hidden md:flex w-1/2 relative pr-8 flex-col">
+        <div className="hidden lg:flex w-1/2 relative pr-8 flex-col">
           
           {/* Sticky Heading Container - stays fully fixed as text scrolls cleanly under it */}
           <div className="sticky top-0 z-30 w-full bg-white pt-[12vh] pb-[4vh]">
@@ -69,7 +69,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Right Side: Sticky Overlapping Images */}
-        <div className="hidden md:block w-1/2 relative">
+        <div className="hidden lg:block w-1/2 relative">
           <div className="w-full pt-[25vh] pb-[25vh]">
             {services.map((service, index) => (
               <div
@@ -94,7 +94,7 @@ export default function ServicesSection() {
         </div>
 
         {/* --- Mobile View - Simple Stack --- */}
-        <div className="md:hidden w-full px-6 sm:px-8 py-12 sm:py-16 flex flex-col gap-12">
+        <div className="lg:hidden w-full px-6 sm:px-8 md:px-12 py-12 sm:py-16 flex flex-col gap-12">
           <h2
             className="text-left text-[#5c3115]"
             style={{

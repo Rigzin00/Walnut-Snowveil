@@ -69,7 +69,7 @@ export default function CoreValuesSection() {
                   alt={item.title.replace('\n', ' ')}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute bottom-0 left-0 bg-white px-6 py-4 text-[#4B2205] text-xs tracking-[0.2em] font-bold uppercase" style={{ fontFamily: "Anek Bangla, sans-serif" }}>
+                <div className="absolute bottom-4 left-4 bg-white px-4 py-2 text-[#7A3E16] text-sm font-bold" style={{ fontFamily: "Anek Bangla, sans-serif" }}>
                   {item.label}
                 </div>
               </div>

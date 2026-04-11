@@ -11,6 +11,9 @@ import Experience from "./pages/Experience";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Reservations from "./pages/Reservations";
+import Policy from "./pages/Policy";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +41,9 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/reservations" element={<Reservations />} />
+            <Route path="/policy" element={<Policy />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
           <Footer />
         </div>

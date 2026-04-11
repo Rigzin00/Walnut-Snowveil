@@ -78,11 +78,15 @@ const Footer = () => {
           ))}
         </nav>
 
-        <div className="mt-8 sm:mt-10 md:mt-14 border-t border-white/10 pt-8 text-center">
+        <div className="mt-8 sm:mt-10 md:mt-14 border-t border-white/10 pt-8 flex flex-col-reverse md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-white/80 text-[14px] md:text-[15px] font-medium" style={{ letterSpacing: '0.01em' }}>
             Copyright © 2025 WalnutSnowveil. All Rights Reserved.
           </p>
-          
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-8 text-[13px] sm:text-[14px] text-white/70">
+            <Link to="/policy" className="hover:text-white transition-colors">Payment & Cancellation Policy</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>

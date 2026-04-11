@@ -20,7 +20,7 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section for About Us */}
-      <div className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 w-full h-[100%] will-change-transform"
           style={{ 
@@ -40,7 +40,7 @@ export default function AboutUs() {
           <div className="flex items-center w-full max-w-[1200px] gap-4 mb-2">
             <div className="flex-1 h-[1px] bg-white opacity-70"></div>
             <h1 
-              className="text-white text-[40px] md:text-[70px] lg:text-[90px] leading-tight text-center whitespace-nowrap px-4"
+              className="text-white text-[30px] sm:text-[40px] md:text-[58px] lg:text-[90px] leading-tight text-center px-2 sm:px-4"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
             >
               About Our Residency
@@ -51,7 +51,7 @@ export default function AboutUs() {
           <div className="flex items-center w-full max-w-[1200px] gap-4">
             <div className="flex-1 h-[1px] bg-transparent"></div>
             <h1 
-              className="text-white text-[40px] md:text-[70px] lg:text-[90px] leading-tight text-center whitespace-nowrap px-4"
+              className="text-white text-[30px] sm:text-[40px] md:text-[58px] lg:text-[90px] leading-tight text-center px-2 sm:px-4"
               style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}
             >
               Nature's Retreat
@@ -62,7 +62,7 @@ export default function AboutUs() {
       </div>
 
       {/* Content Section */}
-      <div className="w-full max-w-[1200px] mx-auto py-[100px] md:py-[150px] px-[40px] md:px-[80px]">
+      <div className="w-full max-w-[1200px] mx-auto py-[100px] md:py-[150px] px-5 sm:px-8 md:px-[60px] lg:px-[80px]">
         <h2 
           className="text-[#5c3115] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.1] mb-[60px] md:mb-[80px] max-w-[900px]"
           style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif", fontWeight: 400 }}

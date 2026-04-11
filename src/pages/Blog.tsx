@@ -7,21 +7,33 @@ import { blogPosts } from '../data/blogPosts';
 const Blog = () => {
   const location = useLocation();
   const [activePost, setActivePost] = useState(blogPosts[0]);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="w-full flex-grow relative bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-[100%] will-change-transform"
+          style={{ 
+            transform: `translateY(${scrollY * 0.4}px)`,
+          }}>
           <img
             src="blog/blog3.jpg"
             alt="Blog Hero - Resort"
-            className="w-full h-full object-fit brightness-[0.7]"
+            className="w-full h-full object-cover brightness-[0.7]"
           />
         </div>
 
@@ -62,7 +74,7 @@ const Blog = () => {
       <section className="w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 uppercase tracking-wider" style={{ fontFamily: '"Playfair Display", serif' }}>Things To Do</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed text-justify md:text-center">
             To make the most of your trip to Nubra Valley, Ladakh, read and research our expert bloggers' tips and tricks about what to do and what not to do.
           </p>
         </div>
@@ -70,7 +82,7 @@ const Blog = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           
           {/* Left Column: Main Content */}
-          <div className="lg:w-[70%]">
+          <div className="w-full lg:w-[70%]">
               <div className="mb-20 pb-16 border-b border-gray-200 last:border-b-0">
                 {/* Image */}
                 <div className="relative mb-8 w-full h-[300px] md:h-[500px] bg-gray-100 flex items-center justify-center text-gray-400 overflow-hidden">
@@ -91,12 +103,41 @@ const Blog = () => {
                 </h2>
                 
                 <div className="prose prose-lg text-gray-600 max-w-none">
-                  {/* Split the long description by periods and map to paragraphs for better reading if needed, or simply render normally. */}
-                  {activePost.description.split(/(?<=\.)(?=[A-Z])/).map((paragraph, index) => (
-                    <p key={index} className="mb-4 leading-relaxed">
-                      {paragraph.trim()}
-                    </p>
-                  ))}
+                  {/* Handle multiline structured text or standard split paragraphs */}
+                  {activePost.description.includes('\n') ? (
+                    <div className="space-y-2">
+                      {activePost.description.split('\n').map((line, index) => {
+                        const trimmed = line.trim();
+                        if (!trimmed) return null;
+
+                        // Check if it's a heading section (no period, no colon, short line)
+                        // Or if it's a known section like "A Surprising Desert in the Mountains"
+                        if (!trimmed.includes('.') && trimmed.length < 80 && (
+                          (!trimmed.includes(':') && trimmed === line.trim()) || 
+                          (trimmed.includes(' - ') && !trimmed.split(' - ')[0].includes(':'))
+                        )) {
+                          return (
+                            <h3 key={index} className="text-xl md:text-2xl font-serif text-gray-800 mt-10 mb-4 font-medium border-b pb-2">
+                              {trimmed}
+                            </h3>
+                          );
+                        }
+
+                        // Default normal paragraph (no bolding for colons unless explicitly wanted)
+                        return (
+                          <p key={index} className="leading-relaxed mt-2 text-justify">
+                            {trimmed}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    activePost.description.split(/(?<=\.)(?=[A-Z])/).map((paragraph, index) => (
+                      <p key={index} className="mb-4 leading-relaxed text-justify">
+                        {paragraph.trim()}
+                      </p>
+                    ))
+                  )}
                   
                   {/* Highlights/Bullet Points from the second image style */}
                   <h3 className="text-xl font-serif text-gray-800 mb-4 mt-8">Things to Know</h3>
@@ -111,7 +152,7 @@ const Blog = () => {
           </div>
 
           {/* Right Column: Sidebar */}
-          <div className="lg:w-[30%]">
+          <div className="w-full lg:w-[30%]">
             <div className="bg-[#f8f7f5] p-8 sticky top-32">
               <h3 className="text-2xl font-serif text-gray-900 mb-8 border-b pb-4" style={{ fontFamily: '"Playfair Display", serif' }}>
                 Recent Posts
