@@ -36,28 +36,120 @@
     <meta name="twitter:description" content="Peaceful stay in Sumoor Nubra Valley Ladakh near Samstanling Monastery." />
     <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
 
-    <!-- Structured Data -->
+    <!-- Hotel Schema -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Hotel",
-        "name": "Walnut Snowveil Residency",
-        "url": "https://walnutsnowveil.in/",
-        "description": "Walnut Snowveil Residency is a peaceful hotel located in Sumoor Village, Nubra Valley, Ladakh offering comfortable rooms, stunning mountain views, and authentic Ladakhi hospitality.",
-        "image": "https://walnutsnowveil.in/Logo_walnut.png",
-        "telephone": "+91-6006672711",
-        "checkinTime": "11:00",
-        "checkoutTime": "09:00",
-        "priceRange": "₹1500 - ₹2500 per night",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Sumoor Village",
-          "addressLocality": "Nubra Valley",
-          "addressRegion": "Ladakh",
-          "postalCode": "194404",
-          "addressCountry": "IN"
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Walnut Snowveil Residency",
+      "url": "https://walnutsnowveil.in/",
+      "description": "Walnut Snowveil Residency is a peaceful hotel located in Sumoor Village, Nubra Valley, Ladakh offering comfortable rooms, stunning mountain views, and authentic Ladakhi hospitality.",
+      "image": "https://walnutsnowveil.in/Logo_walnut.png",
+      "telephone": "+91-6006672711",
+      "checkinTime": "11:00",
+      "checkoutTime": "09:00",
+      "priceRange": "₹1500 - ₹2500 per night",
+
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sumoor Village",
+        "addressLocality": "Nubra Valley",
+        "addressRegion": "Ladakh",
+        "postalCode": "194404",
+        "addressCountry": "IN"
+      },
+
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1"
+      },
+
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Mountain View",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Free Parking",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Family Rooms",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Free WiFi",
+          "value": true
         }
-      }
+      ]
+    }
+    </script>
+
+    <!-- Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Walnut Snowveil Residency",
+      "alternateName": "Walnut Snowveil",
+      "url": "https://walnutsnowveil.in/"
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Walnut Snowveil Residency",
+      "url": "https://walnutsnowveil.in/",
+      "logo": "https://walnutsnowveil.in/Logo_walnut.png"
+    }
+    </script>
+
+    <!-- Navigation Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Rooms",
+          "url": "https://walnutsnowveil.in/rooms"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Experience",
+          "url": "https://walnutsnowveil.in/experience"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Blog",
+          "url": "https://walnutsnowveil.in/blog"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Reservation",
+          "url": "https://walnutsnowveil.in/reservation"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Contact",
+          "url": "https://walnutsnowveil.in/contact"
+        }
+      ]
+    }
     </script>
 
   </head>
