@@ -48,11 +48,8 @@ font-family: 'Anek Bangla', sans-serif;
   transition: transform 0.35s ease-out;
 }
 
-.nav-link-wrapper:hover, .nav-link-wrapper:active .nav-link-text:first-child {
-  transform: translateY(-16px);
-}
-
-.nav-link-wrapper:hover, .nav-link-wrapper:active .nav-link-text:last-child {
+.nav-link-wrapper:hover .nav-link-text,
+.nav-link-wrapper:active .nav-link-text {
   transform: translateY(-16px);
 }
 

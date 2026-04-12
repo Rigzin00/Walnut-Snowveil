@@ -46,7 +46,7 @@ export default function RoomDetails() {
 
   const room = state?.room || allRooms.find(r => r.title.toLowerCase().replace(/\s+/g, '-') === id) || {
     title: id?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-    img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3",
+    img: "room/room4.jpeg",
     guests: "2 Adults & a Child",
     bed: "King size bed",
     size: "Spacious Room",

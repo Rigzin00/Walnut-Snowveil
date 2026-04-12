@@ -9,7 +9,7 @@ const services = [
   {
     title: "Comfortable Accommodation",
     description: "Our rooms are designed to provide a cozy and peaceful environment where guests can relax after exploring the beautiful landscapes of Nubra Valley.",
-    image: "/room.jpg",
+    image: "/room1.jpeg",
   },
   {
     title: "Local Travel Guidance",
