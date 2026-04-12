@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // ─── RoomCard Component ───────────────────────────────────────────────────────
 
@@ -9,7 +10,7 @@ interface RoomCardProps {
 }
 
 function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -26,16 +27,20 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
     return () => observer.disconnect();
   }, []);
 
+  const slug = title.replace('— ', '').trim().toLowerCase().replace(/\s+/g, '-');
+
   return (
-    <div
+    <Link
+      to={`/room/${slug}`}
       ref={cardRef}
-      className="flex flex-col items-center w-full px-4 md:px-0 min-[1140px]:w-[31%]"
+      className="flex flex-col items-center w-full px-4 md:px-0 min-[1140px]:w-[31%] cursor-pointer group"
       style={{
         transform: visible ? "translateY(0)" : "translateY(60px)",
         opacity: visible ? 1 : 0,
         transition: `transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.85s ease`,
         transitionDelay: `${delay}s`,
       }}
+      aria-label={`View details for ${title.replace('— ', '')}`}
     >
       {/* Card Image */}
       <div
@@ -46,19 +51,19 @@ function RoomCard({ image, title, delay = 0 }: RoomCardProps) {
       >
         <img
           src={image}
-          alt={title}
-          className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+          alt={title.replace('— ', '')}
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
         />
       </div>
 
       {/* Card Title */}
       <p
-        className="mt-4 text-2xl md:text-[26px] lg:text-[30px] text-[#7A3E16] tracking-wide w-full max-w-[400px] md:max-w-none text-left"
+        className="mt-4 text-2xl md:text-[26px] lg:text-[30px] text-[#7A3E16] tracking-wide w-full max-w-[400px] md:max-w-none text-left group-hover:text-[#5c2e10] transition-colors"
         style={{ fontFamily: "Jomolhari, Georgia, serif" }}
       >
         {title}
       </p>
-    </div>
+    </Link>
   );
 }
 
