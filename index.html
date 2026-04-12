@@ -19,7 +19,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://walnutsnowveil.in/Logo_walnut.png" />
 
-    <!-- Google Font -->
+    <!-- Google Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Open Graph -->
@@ -36,28 +38,149 @@
     <meta name="twitter:description" content="Peaceful stay in Sumoor Nubra Valley Ladakh near Samstanling Monastery." />
     <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
 
-    <!-- Structured Data -->
+    <!-- Hotel Schema -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Hotel",
-        "name": "Walnut Snowveil Residency",
-        "url": "https://walnutsnowveil.in/",
-        "description": "Walnut Snowveil Residency is a peaceful hotel located in Sumoor Village, Nubra Valley, Ladakh offering comfortable rooms, stunning mountain views, and authentic Ladakhi hospitality.",
-        "image": "https://walnutsnowveil.in/Logo_walnut.png",
-        "telephone": "+91-6006672711",
-        "checkinTime": "11:00",
-        "checkoutTime": "09:00",
-        "priceRange": "₹1500 - ₹2500 per night",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Sumoor Village",
-          "addressLocality": "Nubra Valley",
-          "addressRegion": "Ladakh",
-          "postalCode": "194404",
-          "addressCountry": "IN"
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Walnut Snowveil Residency",
+      "url": "https://walnutsnowveil.in/",
+      "description": "Walnut Snowveil Residency is a peaceful hotel located in Sumoor Village, Nubra Valley, Ladakh offering comfortable rooms, stunning mountain views, and authentic Ladakhi hospitality.",
+      "image": "https://walnutsnowveil.in/Logo_walnut.png",
+      "telephone": "+91-6006672711",
+      "checkinTime": "11:00",
+      "checkoutTime": "09:00",
+      "priceRange": "₹1500 - ₹2500 per night",
+
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sumoor Village",
+        "addressLocality": "Nubra Valley",
+        "addressRegion": "Ladakh",
+        "postalCode": "194404",
+        "addressCountry": "IN"
+      },
+
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1"
+      },
+
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Mountain View",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Free Parking",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Family Rooms",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Free WiFi",
+          "value": true
         }
+      ]
+    }
+    </script>
+
+    <!-- Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Walnut Snowveil Residency",
+      "alternateName": "Walnut Snowveil",
+      "url": "https://walnutsnowveil.in/"
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Walnut Snowveil Residency",
+      "url": "https://walnutsnowveil.in/",
+      "logo": "https://walnutsnowveil.in/Logo_walnut.png"
+    }
+    </script>
+
+    <!-- Navigation Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Rooms",
+          "url": "https://walnutsnowveil.in/rooms"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Experience",
+          "url": "https://walnutsnowveil.in/experience"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Blog",
+          "url": "https://walnutsnowveil.in/blog"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Reservation",
+          "url": "https://walnutsnowveil.in/reservation"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Contact",
+          "url": "https://walnutsnowveil.in/contact"
+        }
+      ]
+    }
+    </script>
+
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Walnut Snowveil Residency",
+      "image": "https://walnutsnowveil.in/Logo_walnut.png",
+      "url": "https://walnutsnowveil.in/",
+      "telephone": "+91-6006672711",
+      "priceRange": "₹1500 - ₹2500",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sumoor Village",
+        "addressLocality": "Nubra Valley",
+        "addressRegion": "Ladakh",
+        "postalCode": "194404",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.6205",
+        "longitude": "77.5536"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Nubra Valley"
       }
+    }
     </script>
 
   </head>
