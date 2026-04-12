@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState, CSSProperties } from "react";
 
 const values = [
   {
-    image: "https://images.unsplash.com/photo-1592424001807-55df93bb2768?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "Hospitality.jpg",
     label: "HOMELY",
     title: "Warm Hospitality",
     description: "At Walnut Snowveil Residency, we believe every guest should feel welcomed and cared for. Our team focuses on creating a friendly and comfortable environment where travelers can truly relax during their stay in Nubra Valley."
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK0Ndtz-Z99axsyDEI3bcUjZdwfrCVScgJ-Q&s",
+    image: "room.jpeg",
     label: "COMFORT STAY",
     title: "Comfortable Accommodation",
     description: "Our rooms are thoughtfully prepared to provide a peaceful and comfortable space after a day of exploring Ladakh. Clean interiors, cozy bedding, and a calm atmosphere ensure a restful experience for every guest."
@@ -20,7 +20,7 @@ const values = [
     description: "Guests can enjoy delicious home-style meals prepared with fresh ingredients. We aim to offer a simple yet authentic taste of Ladakhi hospitality during your stay."
   },
   {
-    image: "/2.jpg",
+    image: "Scenic.jpg",
     label: "SIMPLICITY",
     title: "Scenic Surroundings",
     description: "Located in the beautiful village of Sumoor, our residency is surrounded by breathtaking mountain landscapes and peaceful natural views, offering guests a quiet escape in the heart of Nubra Valley."

@@ -7,10 +7,10 @@ export const allRooms = [
     img: "room/room2.jpeg",
     description: "A cozy and comfortable room ideal for travelers exploring Nubra Valley. Designed with warm interiors and peaceful surroundings for a relaxing stay.",
     gallery: [
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1590490359854-dfba196f3044?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/room/room_details/room1.jpeg",
+      "/room/room_details/room2.jpeg",
+      "/room/room_details/room3.jpeg",
+      "/room/room_details/room4.jpeg"
     ],
     amenities: [
       "Comfortable double bed",
@@ -30,13 +30,13 @@ export const allRooms = [
     guests: "2 Guests",
     bed: "King size bed",
     size: "Mountain View",
-    img: "room/room.jpg",
+    img: "room/room11.jpeg",
     description: "The Double Room is perfect for couples or friends seeking a comfortable and relaxing stay in Nubra Valley. Designed with spacious interiors and cozy bedding, the room offers a welcoming atmosphere to unwind and enjoy the mountain surroundings.",
     gallery: [
-      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/room/room_details/room5.jpg",
+      "/room/room_details/room6.jpg",
+      "/room/room_details/room7.jpg",
+      "/room/room_details/room5.jpg"
     ],
     amenities: [
       "King size bed",
@@ -59,10 +59,10 @@ export const allRooms = [
     img: "room/room4.jpeg",
     description: "A larger room designed for families or small groups visiting Nubra Valley, providing extra space and comfort for a memorable stay.",
     gallery: [
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/room/room_details/room1.jpeg",
+      "/room/room_details/room2.jpeg",
+      "/room/room_details/room3.jpeg",
+      "/room/room_details/room4.jpeg"
     ],
     amenities: [
       "King bed with extra bedding option",
@@ -85,10 +85,10 @@ export const allRooms = [
     img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     description: "A spacious and comfortable room offering a relaxing atmosphere with beautiful views of the surrounding mountains of Nubra Valley. Perfect for guests seeking extra comfort during their stay.",
     gallery: [
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/room/room_details/room1.jpeg",
+      "/room/room_details/room2.jpeg",
+      "/room/room_details/room3.jpeg",
+      "/room/room_details/room4.jpeg"
     ],
     amenities: [
       "King size bed",
