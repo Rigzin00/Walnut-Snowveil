@@ -1,9 +1,52 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ConnectSection from "../components/ConnectSection";
+
 const Contact = () => {
   const location = useLocation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(form);
+    // Be sure to use your valid Web3Forms access key
+    formData.append("access_key", "7fff8ca0-b3a7-4850-bb0c-0258462dcecf");
+    
+    const object = Object.fromEntries(formData.entries());
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: json
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+        form.reset();
+      } else {
+        console.error("Web3Forms error details:", result);
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error("Form submission catch error:", error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,7 +111,7 @@ const Contact = () => {
             Say Hello! - Whether you're planning a stay or just have a question, we'd love to hear from you.
           </p>
         </div>
-        <form className="w-full font-sans">
+        <form className="w-full font-sans" onSubmit={onSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* First Name */}
             <div className="flex flex-col">
@@ -76,6 +119,7 @@ const Contact = () => {
               <input 
                 type="text" 
                 id="firstName" 
+                name="First Name"
                 className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors"
                 placeholder="Enter your first name"
                 required
@@ -88,6 +132,7 @@ const Contact = () => {
               <input 
                 type="text" 
                 id="lastName" 
+                name="Last Name"
                 className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors"
                 placeholder="Enter your last name"
                 required
@@ -102,6 +147,7 @@ const Contact = () => {
               <input 
                 type="tel" 
                 id="phone" 
+                name="Phone Number"
                 className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors"
                 placeholder="Enter your phone number"
                 required
@@ -114,6 +160,7 @@ const Contact = () => {
               <input 
                 type="email" 
                 id="email" 
+                name="Email Address"
                 className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors"
                 placeholder="Enter your email address"
                 required
@@ -126,6 +173,7 @@ const Contact = () => {
             <label className="text-gray-600 text-sm mb-2" htmlFor="message">Your Message</label>
             <textarea 
               id="message" 
+              name="Message"
               rows={8}
               className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors resize-y"
               placeholder="Tell us more about your request..."
@@ -133,12 +181,25 @@ const Contact = () => {
             ></textarea>
           </div>
 
+          {/* Form Status Messages */}
+          {submitStatus === 'success' && (
+            <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-sm border border-green-200">
+              Thank you! Your message has been sent successfully. We will get back to you soon.
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-sm border border-red-200">
+              There was an error sending your message. Please try again later.
+            </div>
+          )}
+
           {/* Submit Button */}
           <button 
             type="submit" 
-            className="w-full bg-[#4A3021] hover:bg-[#342217] text-white font-sans text-sm tracking-wider uppercase py-4 transition-colors rounded-sm"
+            disabled={isSubmitting}
+            className="w-full bg-[#4A3021] hover:bg-[#342217] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-sans text-sm tracking-wider uppercase py-4 transition-colors rounded-sm"
           >
-            Send Message
+            {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
         </form>
       </section>
