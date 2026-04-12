@@ -36,9 +36,51 @@ const faqs = [
 const Reservations = () => {
   const location = useLocation();
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const toggleFAQ = (index: number) => {
     setOpenFAQIndex(openFAQIndex === index ? null : index);
+  };
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget; // Save a reference to the form before awaiting
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(form);
+    formData.append("access_key", "7fff8ca0-b3a7-4850-bb0c-0258462dcecf");
+    
+    // Converting FormData to JSON is the recommended way for Web3Forms React integration
+    const object = Object.fromEntries(formData.entries());
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: json
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+        form.reset(); // Use the saved reference
+      } else {
+        console.error("Web3Forms error details:", result);
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error("Form submission catch error:", error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -105,7 +147,7 @@ const Reservations = () => {
           </p>
         </div>
 
-        <form className="w-full font-sans">
+        <form className="w-full font-sans" onSubmit={onSubmit}>
           {/* Booking details */}
           <div className="mb-10">
             <h3 className="text-2xl text-[#8E5E4D] mb-6 flex items-center gap-4" style={{ fontFamily: '"Playfair Display", serif' }}>
@@ -115,17 +157,17 @@ const Reservations = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="checkin">Check-in</label>
-                <input type="date" id="checkin" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500" required />
+                <input type="date" id="checkin" name="Check-in Date" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500" required />
               </div>
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="checkout">Check-out</label>
-                <input type="date" id="checkout" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500" required />
+                <input type="date" id="checkout" name="Check-out Date" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500" required />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="adults">Guest (adult)</label>
-                <select id="adults" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
+                <select id="adults" name="Adult Guests" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
                   <option value="">Select adults</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -135,7 +177,7 @@ const Reservations = () => {
               </div>
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="children">Guest (child)</label>
-                <select id="children" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
+                <select id="children" name="Child Guests" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
                   <option value="">Select children</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -147,7 +189,7 @@ const Reservations = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="rooms">Select rooms</label>
-                <select id="rooms" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
+                <select id="rooms" name="Number of Rooms" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
                   <option value="">Select number of rooms</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -157,7 +199,7 @@ const Reservations = () => {
               </div>
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="roomType">Room type</label>
-                <select id="roomType" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
+                <select id="roomType" name="Room Type" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors text-gray-500 bg-white appearance-none">
                   <option value="">Select room type</option>
                   <option value="standard">Standard Room</option>
                   <option value="double">Double Room</option>
@@ -177,27 +219,27 @@ const Reservations = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="resFirstName">First name</label>
-                <input type="text" id="resFirstName" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
+                <input type="text" id="resFirstName" name="First Name" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
               </div>
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="resLastName">Last name</label>
-                <input type="text" id="resLastName" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
+                <input type="text" id="resLastName" name="Last Name" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="resEmail">Email address</label>
-                <input type="email" id="resEmail" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
+                <input type="email" id="resEmail" name="Email Address" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
               </div>
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="resPhone">Phone number</label>
-                <input type="tel" id="resPhone" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
+                <input type="tel" id="resPhone" name="Phone Number" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" required />
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="resAddress">Address</label>
-                <input type="text" id="resAddress" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
+                <input type="text" id="resAddress" name="Address" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
               </div>
               
             </div>
@@ -212,29 +254,43 @@ const Reservations = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="hearAbout">Special Requests</label>
-                <input type="text" id="hearAbout" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
+                <input type="text" id="hearAbout" name="Special Requests" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
               </div>
               <div className="flex flex-col">
                 <label className="text-gray-600 text-sm mb-2" htmlFor="extraRequest">Arrival Time</label>
-                <input type="text" id="extraRequest" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
+                <input type="text" id="extraRequest" name="Arrival Time" className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors" />
               </div>
             </div>
             <div className="flex flex-col mb-8">
               <label className="text-gray-600 text-sm mb-2" htmlFor="resMessage">How did you hear about us?</label>
               <textarea 
                 id="resMessage" 
+                name="How heard about us"
                 rows={6}
                 className="border border-gray-200 rounded-sm px-4 py-3 outline-none focus:border-[#8E5E4D] transition-colors resize-y"
               ></textarea>
             </div>
           </div>
 
+          {/* Form Status Messages */}
+          {submitStatus === 'success' && (
+            <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-sm border border-green-200">
+              Thank you! Your booking request has been sent successfully. We will get back to you soon.
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-sm border border-red-200">
+              There was an error sending your request. Please try again later.
+            </div>
+          )}
+
           {/* Submit Button */}
           <button 
             type="submit" 
-            className="w-full bg-[#4A3021] hover:bg-[#342217] text-white font-sans text-sm tracking-wider uppercase py-4 transition-colors rounded-sm"
+            disabled={isSubmitting}
+            className="w-full bg-[#4A3021] hover:bg-[#342217] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-sans text-sm tracking-wider uppercase py-4 transition-colors rounded-sm"
           >
-           Send Booking Request
+           {isSubmitting ? 'Sending...' : 'Send Booking Request'}
           </button>
         </form>
       </section>
