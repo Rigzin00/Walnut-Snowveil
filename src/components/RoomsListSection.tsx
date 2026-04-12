@@ -35,7 +35,7 @@ const RoomCard = ({ room, index }: { room: any; index: number }) => {
       <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square overflow-hidden mb-[30px] cursor-pointer">
         <Link to={`/room/${encodeURIComponent(room.title.toLowerCase().replace(/\s+/g, '-'))}`} state={{ room }}>
           <img
-            src={room.img}
+            src={room.img.startsWith('http') ? room.img : `${import.meta.env.BASE_URL}${room.img}`}
             alt={room.title}
             className="w-full h-full object-cover transition-transform duration-[1500ms] hover:scale-105"
           />

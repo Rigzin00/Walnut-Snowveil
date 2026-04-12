@@ -75,7 +75,7 @@ const rooms = [
     title: "— Standard Room",
   },
   {
-    image: `${import.meta.env.BASE_URL}room/room.jpg`,
+    image: `${import.meta.env.BASE_URL}room/room11.jpeg`,
     title: "— Double Room",
   },
   {

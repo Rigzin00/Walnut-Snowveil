@@ -85,7 +85,7 @@ export default function RoomDetails() {
       {/* 1. Hero Section */}
       <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={room.img} alt={room.title} className="w-full h-full object-cover brightness-[0.6]" />
+          <img src={room.img.startsWith('http') ? room.img : `${import.meta.env.BASE_URL}${room.img}`} alt={room.title} className="w-full h-full object-cover brightness-[0.6]" />
         </div>
         <div className="relative z-10 flex flex-col items-center text-white mt-10">
           {/* Decorative lines could go here */}
