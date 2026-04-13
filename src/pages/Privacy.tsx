@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import ConnectSection from '../components/ConnectSection';
 
@@ -36,6 +37,10 @@ const Privacy = () => {
 
   return (
     <main className="w-full flex-grow relative bg-[#FDFBF9]">
+      <Helmet>
+        <title>Privacy Policy | Walnut Snowveil Residency</title>
+        <meta name="description" content="Our privacy policy outlines how we protect and handle your personal information at Walnut Snowveil Residency." />
+      </Helmet>
       {/* Elegant Hero Section */}
       <section className="relative w-full pt-40 pb-20 md:pt-48 md:pb-32 flex items-center justify-center border-b border-[#E8E2D9] overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#F3EFEA] to-transparent opacity-50 pointer-events-none"></div>

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import ConnectSection from '../components/ConnectSection';
 
@@ -36,6 +37,10 @@ const Terms = () => {
 
   return (
     <main className="w-full flex-grow relative bg-[#FDFBF9]">
+      <Helmet>
+        <title>Terms & Conditions | Walnut Snowveil Residency</title>
+        <meta name="description" content="Terms and conditions for booking and staying at Walnut Snowveil Residency in Nubra Valley." />
+      </Helmet>
       {/* Elegant Hero Section */}
       <section className="relative w-full pt-40 pb-20 md:pt-48 md:pb-32 flex items-center justify-center border-b border-[#E8E2D9] overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#F3EFEA] to-transparent opacity-50 pointer-events-none"></div>
