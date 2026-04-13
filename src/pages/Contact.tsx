@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ConnectSection from "../components/ConnectSection";
@@ -54,6 +55,10 @@ const Contact = () => {
 
   return (
     <main className="w-full flex-grow relative bg-white">
+      <Helmet>
+        <title>Contact Walnut Snowveil | Walnut Snowveil Residency</title>
+        <meta name="description" content="Get in touch with Walnut Snowveil Residency in Nubra Valley. Contact us for bookings, inquiries, and travel assistance." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[450px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image - Map */}

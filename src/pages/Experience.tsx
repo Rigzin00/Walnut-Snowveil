@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet";
 import ConnectSection from "../components/ConnectSection";
 
 // Scroll animation wrapper component

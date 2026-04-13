@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLocation, useNavigate, useParams, Link } from "react-router-dom";
 
 // Scroll animation wrapper component
@@ -81,6 +82,10 @@ export default function RoomDetails() {
 
   return (
     <main className="w-full bg-[#f8f5f0] min-h-screen">
+      <Helmet>
+        <title>{room?.title ? `${room.title} | Walnut Snowveil Residency` : 'Room Details | Walnut Snowveil Residency'}</title>
+        <meta name="description" content={room?.description ? room.description.substring(0, 150) + "..." : "View the detailed amenities, pricing, and features of our rooms at Walnut Snowveil Residency in Nubra Valley."} />
+      </Helmet>
       
       {/* 1. Hero Section */}
       <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">

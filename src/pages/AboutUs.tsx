@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import MissionSection from "../components/MissionSection";
 import StatsSection from "../components/StatsSection";
 import FeaturesSection from "../components/FeaturesSection";
@@ -19,6 +20,10 @@ export default function AboutUs() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>About Us | Walnut Snowveil Residency</title>
+        <meta name="description" content="Learn about Walnut Snowveil Residency in Sumoor, Nubra Valley. Discover our history, mission, and commitment to Ladakhi hospitality." />
+      </Helmet>
       {/* Hero Section for About Us */}
       <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         <div 

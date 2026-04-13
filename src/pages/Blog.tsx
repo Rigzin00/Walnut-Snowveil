@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ConnectSection from '../components/ConnectSection';
@@ -23,6 +24,10 @@ const Blog = () => {
 
   return (
     <main className="w-full flex-grow relative bg-white">
+      <Helmet>
+        <title>Nubra Valley Travel Blog | Walnut Snowveil Residency</title>
+        <meta name="description" content="Read our travel blog for tips, guides, and stories about exploring Nubra Valley, Ladakh and staying at Walnut Snowveil Residency." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

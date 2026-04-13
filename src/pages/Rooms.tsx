@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import RoomsListSection from "../components/RoomsListSection";
 import ConnectSection from "../components/ConnectSection";
 
@@ -17,6 +18,10 @@ export default function Rooms() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Rooms – Walnut Snowveil Residency</title>
+        <meta name="description" content="Comfortable rooms in Walnut Snowveil Residency, Sumoor Nubra Valley Ladakh with mountain views and peaceful stay." />
+      </Helmet>
       {/* Hero Section for Rooms */}
       <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         
