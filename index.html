@@ -3,9 +3,16 @@
 <head>
 
 <meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<!-- Viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Viewport & PWA -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1a202c" media="(prefers-color-scheme: dark)" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Walnut Snowveil" />
 
 <!-- SEO Title -->
 <title>Walnut Snowveil Residency | Hotel in Nubra Valley, Sumoor Ladakh</title>
@@ -13,28 +20,21 @@
 <!-- Primary SEO -->
 <meta name="description" content="Walnut Snowveil Residency is a peaceful hotel in Sumoor Village, Nubra Valley Ladakh near Samstanling Monastery. Enjoy comfortable rooms, scenic mountain views and authentic Ladakhi hospitality." />
 
-<meta name="keywords" content="
-hotel in nubra valley,
-hotel in sumoor ladakh,
-stay near samstanling monastery,
-guest house nubra valley,
-best hotel in nubra valley,
-budget hotel ladakh nubra valley,
-stay in sumoor village ladakh,
-nubra valley accommodation,
-walnut snowveil residency
-"/>
+<meta name="keywords" content="hotel in nubra valley, hotel in sumoor ladakh, stay near samstanling monastery, guest house nubra valley, best hotel in nubra valley, budget hotel ladakh nubra valley, stay in sumoor village ladakh, nubra valley accommodation, walnut snowveil residency" />
 
 <meta name="author" content="Walnut Snowveil Residency" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
 <link rel="canonical" href="https://walnutsnowveil.in/" />
 
 <!-- Google Search Console verification (replace later if needed) -->
 <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE" />
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="https://walnutsnowveil.in/Logo_walnut.png" />
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/Logo_walnut.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/Logo_walnut.png" />
+<link rel="apple-touch-icon" href="/Logo_walnut.png" />
+<link rel="mask-icon" href="/Logo_walnut.png" color="#5bbad5" />
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,19 +42,23 @@ walnut snowveil residency
 
 <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Open Graph -->
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:site_name" content="Walnut Snowveil Residency" />
 <meta property="og:title" content="Walnut Snowveil Residency | Hotel in Nubra Valley Ladakh" />
 <meta property="og:description" content="Comfortable stay in Sumoor Nubra Valley Ladakh near Samstanling Monastery." />
 <meta property="og:url" content="https://walnutsnowveil.in/" />
-<meta property="og:type" content="website" />
 <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
-<meta property="og:site_name" content="Walnut Snowveil Residency" />
+<meta property="og:image:alt" content="Walnut Snowveil Residency Logo" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://walnutsnowveil.in/" />
 <meta name="twitter:title" content="Walnut Snowveil Residency | Hotel in Nubra Valley" />
 <meta name="twitter:description" content="Peaceful stay in Nubra Valley Ladakh with mountain views." />
 <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+<meta name="twitter:image:alt" content="Walnut Snowveil Residency Logo" />
 
 <!-- Hotel Schema -->
 <script type="application/ld+json">
@@ -159,13 +163,19 @@ walnut snowveil residency
 "@type": "ListItem",
 "position": 4,
 "name": "Reservation",
-"item": "https://walnutsnowveil.in/reservation"
+"item": "https://walnutsnowveil.in/reservations"
 },
 {
 "@type": "ListItem",
 "position": 5,
 "name": "Contact",
 "item": "https://walnutsnowveil.in/contact"
+}
+{
+"@type": "ListItem",
+"position": 6,
+"name": "Blog",
+"item": "https://walnutsnowveil.in/blog"
 }
 ]
 }
@@ -198,8 +208,8 @@ walnut snowveil residency
 {
 "@type": "SiteNavigationElement",
 "position": 4,
-"name": "Reservation",
-"url": "https://walnutsnowveil.in/reservation"
+"name": "Reservations",
+"url": "https://walnutsnowveil.in/reservations"
 },
 {
 "@type": "SiteNavigationElement",
