@@ -21,8 +21,20 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>About Us | Walnut Snowveil Residency</title>
-        <meta name="description" content="Learn about Walnut Snowveil Residency in Sumoor, Nubra Valley. Discover our history, mission, and commitment to Ladakhi hospitality." />
+        <title>About Us | Walnut Snowveil Residency, Sumoor Nubra Valley</title>
+        <meta name="description" content="Learn about Walnut Snowveil Residency in Sumoor, Nubra Valley Ladakh. Discover our story, mission, and commitment to authentic Ladakhi hospitality near Samstanling Monastery." />
+        <meta name="keywords" content="about Walnut Snowveil, Nubra Valley hotel history, Sumoor Ladakh residency, Ladakhi hospitality, hotel near Samstanling Monastery" />
+        <link rel="canonical" href="https://walnutsnowveil.in/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Us | Walnut Snowveil Residency" />
+        <meta property="og:description" content="Discover the story behind Walnut Snowveil Residency — a peaceful retreat in Sumoor, Nubra Valley Ladakh near Samstanling Monastery." />
+        <meta property="og:url" content="https://walnutsnowveil.in/about" />
+        <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+        <meta property="og:site_name" content="Walnut Snowveil Residency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Walnut Snowveil Residency" />
+        <meta name="twitter:description" content="Discover the story behind Walnut Snowveil Residency in Sumoor, Nubra Valley Ladakh." />
+        <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
       </Helmet>
       {/* Hero Section for About Us */}
       <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">

@@ -39,7 +39,8 @@ const Policy = () => {
     <main className="w-full flex-grow relative bg-[#FDFBF9]">
       <Helmet>
         <title>Hotel Policies | Walnut Snowveil Residency</title>
-        <meta name="description" content="Read the hotel policies, cancellation rules, and guidelines for your stay at Walnut Snowveil Residency." />
+        <meta name="description" content="Read the hotel policies, cancellation rules, and guidelines for your stay at Walnut Snowveil Residency, Sumoor Nubra Valley Ladakh." />
+        <link rel="canonical" href="https://walnutsnowveil.in/policy" />
       </Helmet>
       {/* Elegant Hero Section */}
       <section className="relative w-full pt-40 pb-20 md:pt-48 md:pb-32 flex items-center justify-center border-b border-[#E8E2D9] overflow-hidden">

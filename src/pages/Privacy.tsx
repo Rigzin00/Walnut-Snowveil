@@ -39,7 +39,8 @@ const Privacy = () => {
     <main className="w-full flex-grow relative bg-[#FDFBF9]">
       <Helmet>
         <title>Privacy Policy | Walnut Snowveil Residency</title>
-        <meta name="description" content="Our privacy policy outlines how we protect and handle your personal information at Walnut Snowveil Residency." />
+        <meta name="description" content="Our privacy policy outlines how we protect and handle your personal information at Walnut Snowveil Residency, Nubra Valley Ladakh." />
+        <link rel="canonical" href="https://walnutsnowveil.in/privacy" />
       </Helmet>
       {/* Elegant Hero Section */}
       <section className="relative w-full pt-40 pb-20 md:pt-48 md:pb-32 flex items-center justify-center border-b border-[#E8E2D9] overflow-hidden">

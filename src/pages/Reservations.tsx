@@ -90,6 +90,22 @@ const Reservations = () => {
 
   return (
     <main className="w-full flex-grow relative bg-white">
+      <Helmet>
+        <title>Book Your Stay | Walnut Snowveil Residency, Nubra Valley</title>
+        <meta name="description" content="Book your stay at Walnut Snowveil Residency in Sumoor, Nubra Valley Ladakh. Easy reservations with flexible check-in, Ladakhi meals, free parking, and Wi-Fi." />
+        <meta name="keywords" content="book hotel Nubra Valley, book stay Sumoor Ladakh, Walnut Snowveil reservation, Nubra Valley hotel booking, Ladakh accommodation booking" />
+        <link rel="canonical" href="https://walnutsnowveil.in/reservations" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Book Your Stay | Walnut Snowveil Residency" />
+        <meta property="og:description" content="Reserve your room at Walnut Snowveil Residency, Sumoor Nubra Valley Ladakh. Comfortable rooms from ₹1500/night." />
+        <meta property="og:url" content="https://walnutsnowveil.in/reservations" />
+        <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+        <meta property="og:site_name" content="Walnut Snowveil Residency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Book Your Stay | Walnut Snowveil Residency" />
+        <meta name="twitter:description" content="Reserve your room at Walnut Snowveil Residency in Nubra Valley Ladakh." />
+        <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+      </Helmet>
       {/* Hero Section */}
      <section className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image - Room */}
