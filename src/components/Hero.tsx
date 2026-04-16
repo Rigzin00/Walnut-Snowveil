@@ -5,6 +5,7 @@ const Hero = () => {
     `${import.meta.env.BASE_URL}homebanner6.jpg`,
     `${import.meta.env.BASE_URL}room1.jpeg`,
     `${import.meta.env.BASE_URL}4.jpg`,
+    `${import.meta.env.BASE_URL}IMG_0403.JPG.jpeg`,
   ];
 
   const extendedSlides = [...slides, ...slides];
