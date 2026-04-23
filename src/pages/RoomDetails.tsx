@@ -180,12 +180,15 @@ export default function RoomDetails() {
           >
             {room.description}
           </p>
-          <button 
-            className="border border-[#5c3115]/40 text-[#5c3115] px-6 py-3 uppercase tracking-[2px] text-[13px] md:text-[14px] font-medium hover:bg-[#5c3115] hover:text-white transition-colors"
+          <a 
+            href="https://www.booking.com/hotel/in/walnut-snowveil-residency.en-gb.html?aid=356980&label=gog235jc-10CAsobEIZd2FsbnV0LXNub3d2ZWlsLXJlc2lkZW5jeUgJWANobIgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC9cipzwbAAgHSAiQ1Zjg3ZGJjZi0xYjc3LTRiZTEtYmZlMi1hN2M0OTgwOGY2NWPYAgHgAgE&sid=510a799d11352f71ff9f52579f1a1430&checkin=2026-04-23&checkout=2026-04-24&dest_id=-2102590&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1776968831&srpvid=a29581bbb7d704bf&type=total&ucfs=1&#no_availability_msg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block border border-[#5c3115]/40 text-[#5c3115] px-6 py-3 uppercase tracking-[2px] text-[13px] md:text-[14px] font-medium hover:bg-[#5c3115] hover:text-white transition-colors"
             style={{ fontFamily: "Anek Bangla, sans-serif" }}
           >
             Book Room &rarr;
-          </button>
+          </a>
         </div>
 
         {/* 3. Image Grid First Row */}
