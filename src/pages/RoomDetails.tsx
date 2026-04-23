@@ -80,11 +80,55 @@ export default function RoomDetails() {
     return () => clearTimeout(timer);
   }, [id]);
 
+  const roomSlug = id || room?.title?.toLowerCase().replace(/\s+/g, '-') || 'room';
+  const canonicalUrl = `https://walnutsnowveil.in/room/${roomSlug}`;
+
+  const roomSchema = {
+    "@context": "https://schema.org",
+    "@type": "HotelRoom",
+    "name": room?.title || "Room",
+    "description": room?.description || "Comfortable room at Walnut Snowveil Residency, Nubra Valley Ladakh.",
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "value": 2
+    },
+    "bed": {
+      "@type": "BedDetails",
+      "numberOfBeds": 1,
+      "typeOfBed": room?.bed || "Double Bed"
+    },
+    "containedInPlace": {
+      "@type": "Hotel",
+      "name": "Walnut Snowveil Residency",
+      "url": "https://walnutsnowveil.in/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sumoor Village",
+        "addressLocality": "Nubra Valley",
+        "addressRegion": "Ladakh",
+        "postalCode": "194404",
+        "addressCountry": "IN"
+      }
+    }
+  };
+
   return (
     <main className="w-full bg-[#f8f5f0] min-h-screen">
       <Helmet>
-        <title>{room?.title ? `${room.title} | Walnut Snowveil Residency` : 'Room Details | Walnut Snowveil Residency'}</title>
-        <meta name="description" content={room?.description ? room.description.substring(0, 150) + "..." : "View the detailed amenities, pricing, and features of our rooms at Walnut Snowveil Residency in Nubra Valley."} />
+        <title>{room?.title ? `${room.title} | Walnut Snowveil Residency, Nubra Valley` : 'Room Details | Walnut Snowveil Residency'}</title>
+        <meta name="description" content={room?.description ? room.description.substring(0, 155) : "View the detailed amenities and features of our rooms at Walnut Snowveil Residency in Sumoor, Nubra Valley Ladakh."} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={room?.title ? `${room.title} | Walnut Snowveil Residency` : 'Room Details | Walnut Snowveil Residency'} />
+        <meta property="og:description" content={room?.description ? room.description.substring(0, 155) : "Comfortable room in Nubra Valley Ladakh at Walnut Snowveil Residency."} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={room?.img?.startsWith('http') ? room.img : `https://walnutsnowveil.in/${room?.img || 'Logo_walnut.png'}`} />
+        <meta property="og:site_name" content="Walnut Snowveil Residency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={room?.title ? `${room.title} | Walnut Snowveil Residency` : 'Room Details | Walnut Snowveil Residency'} />
+        <meta name="twitter:description" content={room?.description ? room.description.substring(0, 155) : "Comfortable room in Nubra Valley Ladakh."} />
+        <meta name="twitter:image" content={room?.img?.startsWith('http') ? room.img : `https://walnutsnowveil.in/${room?.img || 'Logo_walnut.png'}`} />
+        <script type="application/ld+json">{JSON.stringify(roomSchema)}</script>
       </Helmet>
       
       {/* 1. Hero Section */}

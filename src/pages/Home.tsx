@@ -21,8 +21,8 @@ export default function Home() {
       "Walnut Snowveil Residency is a peaceful hotel located in Sumoor Village, Nubra Valley, Ladakh offering comfortable rooms, stunning mountain views, and authentic Ladakhi hospitality.",
     image: "https://walnutsnowveil.in/Logo_walnut.png",
     telephone: "+91-6006672711",
-    checkinTime: "11:00",
-    checkoutTime: "09:00",
+    checkinTime: "12:00",
+    checkoutTime: "10:00",
     priceRange: "₹1500 - ₹2500 per night",
     address: {
       "@type": "PostalAddress",

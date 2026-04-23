@@ -1,21 +1,24 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Walnut Snowveil Residency",
+  "short_name": "Walnut Snowveil",
+  "description": "Hotel in Sumoor Village, Nubra Valley Ladakh — mountain views, peaceful stay, authentic Ladakhi hospitality.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/Logo_walnut.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/Logo_walnut.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#5c3115",
   "background_color": "#ffffff",
   "display": "standalone"
 }

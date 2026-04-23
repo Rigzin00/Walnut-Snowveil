@@ -19,8 +19,32 @@ export default function Rooms() {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Rooms – Walnut Snowveil Residency</title>
-        <meta name="description" content="Comfortable rooms in Walnut Snowveil Residency, Sumoor Nubra Valley Ladakh with mountain views and peaceful stay." />
+        <title>Rooms &amp; Suites | Walnut Snowveil Residency, Nubra Valley Ladakh</title>
+        <meta name="description" content="Browse our Standard, Double, Family, and Deluxe rooms at Walnut Snowveil Residency in Sumoor, Nubra Valley Ladakh. Mountain views, hot water, Wi-Fi, and Ladakhi hospitality included." />
+        <meta name="keywords" content="rooms in Nubra Valley, hotel rooms Sumoor Ladakh, standard room Nubra, family room Nubra Valley, deluxe room Ladakh, Walnut Snowveil rooms" />
+        <link rel="canonical" href="https://walnutsnowveil.in/rooms" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Rooms &amp; Suites | Walnut Snowveil Residency" />
+        <meta property="og:description" content="Standard, Double, Family and Deluxe rooms at Walnut Snowveil Residency — comfortable stays in Nubra Valley Ladakh with mountain views." />
+        <meta property="og:url" content="https://walnutsnowveil.in/rooms" />
+        <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+        <meta property="og:site_name" content="Walnut Snowveil Residency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rooms &amp; Suites | Walnut Snowveil Residency" />
+        <meta name="twitter:description" content="Browse comfortable rooms in Nubra Valley Ladakh at Walnut Snowveil Residency." />
+        <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Rooms at Walnut Snowveil Residency",
+          "url": "https://walnutsnowveil.in/rooms",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Standard Room", "url": "https://walnutsnowveil.in/room/standard-room" },
+            { "@type": "ListItem", "position": 2, "name": "Double Room", "url": "https://walnutsnowveil.in/room/double-room" },
+            { "@type": "ListItem", "position": 3, "name": "Family Room", "url": "https://walnutsnowveil.in/room/family-room" },
+            { "@type": "ListItem", "position": 4, "name": "Deluxe Room", "url": "https://walnutsnowveil.in/room/deluxe-room" }
+          ]
+        })}</script>
       </Helmet>
       {/* Hero Section for Rooms */}
       <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">

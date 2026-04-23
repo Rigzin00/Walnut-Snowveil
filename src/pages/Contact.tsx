@@ -56,8 +56,20 @@ const Contact = () => {
   return (
     <main className="w-full flex-grow relative bg-white">
       <Helmet>
-        <title>Contact Walnut Snowveil | Walnut Snowveil Residency</title>
-        <meta name="description" content="Get in touch with Walnut Snowveil Residency in Nubra Valley. Contact us for bookings, inquiries, and travel assistance." />
+        <title>Contact Us | Walnut Snowveil Residency, Sumoor Nubra Valley</title>
+        <meta name="description" content="Contact Walnut Snowveil Residency in Sumoor, Nubra Valley Ladakh for room bookings, travel enquiries, and assistance. Call +91-6006672711 or send us a message." />
+        <meta name="keywords" content="contact Walnut Snowveil, Nubra Valley hotel contact, Sumoor Ladakh hotel phone, book room Nubra Valley" />
+        <link rel="canonical" href="https://walnutsnowveil.in/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us | Walnut Snowveil Residency" />
+        <meta property="og:description" content="Reach out to Walnut Snowveil Residency for bookings and travel assistance in Nubra Valley Ladakh." />
+        <meta property="og:url" content="https://walnutsnowveil.in/contact" />
+        <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+        <meta property="og:site_name" content="Walnut Snowveil Residency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Walnut Snowveil Residency" />
+        <meta name="twitter:description" content="Contact Walnut Snowveil Residency in Nubra Valley Ladakh for bookings and enquiries." />
+        <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[450px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">

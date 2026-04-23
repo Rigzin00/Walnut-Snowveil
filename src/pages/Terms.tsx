@@ -38,8 +38,9 @@ const Terms = () => {
   return (
     <main className="w-full flex-grow relative bg-[#FDFBF9]">
       <Helmet>
-        <title>Terms & Conditions | Walnut Snowveil Residency</title>
-        <meta name="description" content="Terms and conditions for booking and staying at Walnut Snowveil Residency in Nubra Valley." />
+        <title>Terms &amp; Conditions | Walnut Snowveil Residency</title>
+        <meta name="description" content="Terms and conditions for booking and staying at Walnut Snowveil Residency in Sumoor, Nubra Valley Ladakh." />
+        <link rel="canonical" href="https://walnutsnowveil.in/terms" />
       </Helmet>
       {/* Elegant Hero Section */}
       <section className="relative w-full pt-40 pb-20 md:pt-48 md:pb-32 flex items-center justify-center border-b border-[#E8E2D9] overflow-hidden">

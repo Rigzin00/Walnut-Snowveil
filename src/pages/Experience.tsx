@@ -185,7 +185,23 @@ export default function Experience() {
 
   return (
     <main className="w-full bg-[#f8f5f0] min-h-screen">
-      
+      <Helmet>
+        <title>Experiences in Nubra Valley | Walnut Snowveil Residency</title>
+        <meta name="description" content="Discover unforgettable experiences in Nubra Valley Ladakh — sand dunes, monasteries, village walks, and mountain adventures. Based at Walnut Snowveil Residency, Sumoor." />
+        <meta name="keywords" content="Nubra Valley experiences, things to do in Nubra Valley, Samstanling Monastery visit, Sumoor sand dunes, Nubra Valley adventure, Ladakh travel activities" />
+        <link rel="canonical" href="https://walnutsnowveil.in/experience" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Experiences in Nubra Valley | Walnut Snowveil Residency" />
+        <meta property="og:description" content="From golden sand dunes to ancient monasteries — explore the best of Nubra Valley Ladakh, staying at Walnut Snowveil Residency in Sumoor." />
+        <meta property="og:url" content="https://walnutsnowveil.in/experience" />
+        <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+        <meta property="og:site_name" content="Walnut Snowveil Residency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Experiences in Nubra Valley | Walnut Snowveil Residency" />
+        <meta name="twitter:description" content="Explore Nubra Valley — sand dunes, monasteries, and mountain adventures with Walnut Snowveil Residency." />
+        <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+      </Helmet>
+
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         

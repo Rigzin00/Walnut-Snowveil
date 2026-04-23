@@ -26,7 +26,19 @@ const Blog = () => {
     <main className="w-full flex-grow relative bg-white">
       <Helmet>
         <title>Nubra Valley Travel Blog | Walnut Snowveil Residency</title>
-        <meta name="description" content="Read our travel blog for tips, guides, and stories about exploring Nubra Valley, Ladakh and staying at Walnut Snowveil Residency." />
+        <meta name="description" content="Read travel guides, tips, and stories about Nubra Valley Ladakh — monasteries, sand dunes, Khardung La, and the best of Ladakh travel. By Walnut Snowveil Residency." />
+        <meta name="keywords" content="Nubra Valley travel blog, Ladakh travel guide, Nubra Valley tips, Samstanling Monastery, Khardung La guide, Sumoor Ladakh travel" />
+        <link rel="canonical" href="https://walnutsnowveil.in/blog" />
+        <meta property="og:type" content="blog" />
+        <meta property="og:title" content="Nubra Valley Travel Blog | Walnut Snowveil Residency" />
+        <meta property="og:description" content="Travel guides and stories about Nubra Valley Ladakh — monasteries, sand dunes, and mountain adventures." />
+        <meta property="og:url" content="https://walnutsnowveil.in/blog" />
+        <meta property="og:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
+        <meta property="og:site_name" content="Walnut Snowveil Residency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Nubra Valley Travel Blog | Walnut Snowveil Residency" />
+        <meta name="twitter:description" content="Travel guides and stories about Nubra Valley Ladakh by Walnut Snowveil Residency." />
+        <meta name="twitter:image" content="https://walnutsnowveil.in/Logo_walnut.png" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[790px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
