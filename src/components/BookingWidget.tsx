@@ -13,6 +13,7 @@ export default function BookingWidget() {
   });
 
   const [isEnquirePopupOpen, setIsEnquirePopupOpen] = useState(false);
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -138,7 +139,7 @@ export default function BookingWidget() {
             <div className="lg:col-span-1">
               <button
                 onClick={handleBookNow}
-                className="w-full px-6 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-semibold text-base rounded transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
+                className="w-full px-6 py-3 bg-[#5c3115] text-white font-semibold text-base rounded transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
               >
                 BOOK NOW
               </button>
@@ -156,18 +157,68 @@ export default function BookingWidget() {
         <div className="flex gap-2 max-w-md mx-auto">
           {/* Enquire Now Button */}
           <button
-            onClick={() =>handleEnquireSubmit()}
+            onClick={() => handleEnquireSubmit()}
             className="flex-1 px-3 py-2 bg-[#7a4a23] hover:bg-[#6b3f1d] text-white font-bold text-xs rounded transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
+            onMouseEnter={() => setHoveredButton('enquire')}
+            onMouseLeave={() => setHoveredButton(null)}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              setHoveredButton('enquire');
+            }}
+            onTouchEnd={() => setHoveredButton(null)}
           >
-            ENQUIRE NOW
+            <div className="flex items-center justify-center gap-2">
+              <div
+                style={{
+                  height: '2px',
+                  backgroundColor: '#ffffff',
+                  width: hoveredButton === 'enquire' ? '16px' : 0,
+                  transition: 'width 0.3s ease',
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  transition: 'transform 0.3s ease',
+                  transform: hoveredButton === 'enquire' ? 'translateX(4px)' : 'translateX(0)',
+                }}
+              >
+                ENQUIRE NOW
+              </span>
+            </div>
           </button>
 
           {/* Book Now Button */}
           <button
             onClick={() => setIsEnquirePopupOpen(true)}
             className="flex-1 px-3 py-2 bg-yellow-600 hover:bg-yellow-700 text-white font-bold text-xs rounded transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
+            onMouseEnter={() => setHoveredButton('book')}
+            onMouseLeave={() => setHoveredButton(null)}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              setHoveredButton('book');
+            }}
+            onTouchEnd={() => setHoveredButton(null)}
           >
-            BOOK NOW
+            <div className="flex items-center justify-center gap-2">
+              <div
+                style={{
+                  height: '2px',
+                  backgroundColor: '#ffffff',
+                  width: hoveredButton === 'book' ? '16px' : 0,
+                  transition: 'width 0.3s ease',
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  transition: 'transform 0.3s ease',
+                  transform: hoveredButton === 'book' ? 'translateX(4px)' : 'translateX(0)',
+                }}
+              >
+                BOOK NOW
+              </span>
+            </div>
           </button>
         </div>
       </div>

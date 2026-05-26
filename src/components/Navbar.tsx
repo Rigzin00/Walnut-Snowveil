@@ -14,6 +14,18 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [clickedLink, setClickedLink] = useState<string | null>(null);
+
+  const handleLinkClick = (link: any) => {
+    setHoveredLink(link.label);
+    setClickedLink(link.label);
+    // Keep animation visible for the full transition duration
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setClickedLink(null);
+    }, 500);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,36 +151,49 @@ const Navbar = () => {
             <Link
               key={link.label}
               to={link.href}
-              className="group relative inline-block"
+              className="group relative inline-flex items-center gap-3"
               style={{
                 textDecoration: 'none',
                 opacity: isMenuOpen ? 1 : 0,
                 transform: isMenuOpen ? 'translateX(0)' : 'translateX(24px)',
                 transition: `opacity 0.4s ease ${0.15 + i * 0.06}s, transform 0.4s ease ${0.15 + i * 0.06}s`,
+                pointerEvents: isMenuOpen ? 'auto' : 'none',
               }}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick(link);
+              }}
+              onPointerEnter={() => setHoveredLink(link.label)}
+              onPointerLeave={() => setHoveredLink(null)}
+              onTouchStart={(e) => {
+                e.preventDefault();
+                setHoveredLink(link.label);
+                // Trigger the link navigation on touch
+                setTimeout(() => {
+                  window.location.href = link.href;
+                }, 300);
+              }}
             >
-              {/* Overline that appears on hover */}
+              {/* Left Line that appears on hover/click */}
               <div
-                className="transition-opacity duration-300 group-hover:opacity-100"
                 style={{
-                  height: '1px',
+                  height: '3px',
                   backgroundColor: 'rgb(255, 255, 255)',
-                  width: '100%',
-                  opacity: 0,
-                  position: 'absolute',
-                  top: '-4px',
-                  left: 0
+                  width: hoveredLink === link.label || clickedLink === link.label ? '24px' : 0,
+                  transition: 'width 0.3s ease',
+                  flexShrink: 0,
                 }}
               />
               {/* Text */}
               <span
                 style={{
-                  fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
+                  fontFamily: "Anek Bangla, sans-serif",
                   fontSize: 'clamp(32px, 8vw, 48px)',
                   color: 'rgb(255, 255, 255)',
                   lineHeight: '1.1',
-                  display: 'block'
+                  display: 'block',
+                  transition: 'transform 0.3s ease',
+                  transform: hoveredLink === link.label || clickedLink === link.label ? 'translateX(8px)' : 'translateX(0)',
                 }}
               >
                 {link.label}
