@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   overflow-x: clip;
 }
@@ -134,5 +138,28 @@ font-family: 'Anek Bangla', sans-serif;
       transform: translateX(80px);
       opacity: 1;
     }
+  }
+}
+
+/* QuoteSection Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 120px;
+    opacity: 1;
   }
 }

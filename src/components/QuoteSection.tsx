@@ -82,18 +82,55 @@ export default function QuoteSection() {
 
         
         {/* Thin inner border overlay */}
-        <div className="absolute inset-6 lg:inset-[40px] border border-white/20 pointer-events-none"></div>
+        <div className="relative overflow-hidden">
 
-        {/* Quote Content */}
-        <div className="relative z-10 max-w-[800px] ml-auto text-white text-right pr-5 lg:pr-[40px] pb-8 lg:pb-[60px]">
-          <p 
-            className="text-[32px] lg:text-[40px] text-right leading-[1.3] font-normal tracking-wide"
-            style={{ fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif" }}
-          >
-            <span className="mr-4">“</span>
-            Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.
-          </p>
-        </div>
+
+  {/* Animated Content */}
+  <div
+    className="relative z-10 max-w-[800px] ml-auto text-white text-right pr-5 lg:pr-[40px] pb-8 lg:pb-[60px]
+    transform transition-all duration-1000 ease-out"
+    style={{
+      transform: `translateY(${offsetY * 0.08}px)`,
+    }}
+  >
+    
+    {/* Decorative Line */}
+    <div className="flex justify-end items-center mb-6 overflow-hidden">
+      <div className="h-[1px] w-[120px] bg-white/50 animate-[slideIn_1.5s_ease-out]"></div>
+    </div>
+
+    {/* Quote Text */}
+    <p
+      className="
+        text-[30px]
+        sm:text-[34px]
+        lg:text-[48px]
+        text-right
+        leading-[1.4]
+        font-normal
+        tracking-wide
+        drop-shadow-2xl
+        opacity-0
+        animate-[fadeUp_1.2s_ease-out_forwards]
+      "
+      style={{
+        fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
+      }}
+    >
+      <span className="mr-4 text-[50px] lg:text-[70px] leading-none align-top text-white/90">
+        “
+      </span>
+
+      Wake up to the beauty of Nubra Valley and experience the warmth of Ladakhi hospitality.
+    </p>
+
+    {/* Small Glow Effect */}
+    <div className="absolute right-0 bottom-0 w-[200px] h-[200px] bg-white/10 blur-3xl rounded-full pointer-events-none"></div>
+  </div>
+
+ 
+
+</div>
       </section>
     </>
   );
