@@ -2,7 +2,9 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function WhatsAppButton() {
   const phoneNumber = '919541458503';
-  const whatsappUrl = `https://wa.me/${phoneNumber}`;
+  const message = "Hello Walnut Snowveil Residency, I am interested in enquiring about room availability and booking. Could you please provide details about room rates, amenities, and current availability? Thank you.";
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
     <a
