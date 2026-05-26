@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rooms from "./pages/Rooms";
@@ -32,6 +33,7 @@ function App() {
       {!loading && (
         <div className="min-h-screen w-full flex flex-col relative">
           <Navbar />
+          <WhatsAppButton />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
