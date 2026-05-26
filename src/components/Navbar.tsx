@@ -89,8 +89,10 @@ const Navbar = () => {
         className="fixed inset-0 z-40 transition-opacity duration-500"
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          backdropFilter: isMenuOpen ? 'blur(4px)' : 'none',
           opacity: isMenuOpen ? 1 : 0,
           pointerEvents: isMenuOpen ? 'auto' : 'none',
+          animation: isMenuOpen ? 'glassEffectTopToBottom 0.6s ease-out forwards' : 'none',
         }}
         onClick={() => setIsMenuOpen(false)}
       />
@@ -101,8 +103,9 @@ const Navbar = () => {
         style={{
           backgroundColor: '#120a05',
           transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 0.5s cubic-bezier(0.76, 0, 0.24, 1)',
+          animation: isMenuOpen ? 'slideFromRight 0.5s ease-out 0.3s both' : 'none',
           padding: '80px 20px 80px 40px',
+          pointerEvents: isMenuOpen ? 'auto' : 'none',
         }}
       >
         {/* Close button — X made of two rotated white lines */}
