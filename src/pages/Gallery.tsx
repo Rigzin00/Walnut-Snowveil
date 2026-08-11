@@ -399,77 +399,33 @@ export default function Gallery() {
       {/* ── Editorial Bento Grid ──────────────────────────────────────────── */}
       <div className="w-full bg-[#f8f5f0] pb-[80px] md:pb-[130px] px-4 md:px-8 lg:px-16">
         <div className="max-w-[1360px] mx-auto">
+          <FadeInView>
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-auto">
+              {galleryPhotos.map((photo, index) => {
+                // Feature photo 0 (large, 2x2)
+                let gridClasses = "col-span-1 row-span-1 h-[200px] sm:h-[250px] md:h-[280px]";
+                
+                if (index === 0) {
+                  gridClasses = "col-span-2 row-span-2 h-[300px] sm:h-[400px] lg:h-full lg:min-h-[576px]";
+                }
+                // Feature photo 5 (wide, 2x1)
+                else if (index === 5) {
+                  gridClasses = "col-span-2 row-span-1 h-[200px] sm:h-[250px] md:h-[280px]";
+                }
 
-          {/* ── Row 1: Big feature left (tall 2-row) + 2 stacked right ── */}
-          <FadeInView className="mb-3 md:mb-4">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4" style={{ gridTemplateRows: "auto" }}>
-              {/* BIG — spans 2 rows on desktop */}
-              <div className="col-span-2 md:col-span-1 row-span-1 md:row-span-2 h-[260px] sm:h-[320px] md:h-full md:min-h-[560px]">
-                <PhotoTile photo={galleryPhotos[0]} index={0} onClick={() => openLightbox(0)} className="h-full" />
-              </div>
-              {/* Top-right */}
-              <div className="h-[220px] sm:h-[260px] md:h-[272px]">
-                <PhotoTile photo={galleryPhotos[1]} index={1} onClick={() => openLightbox(1)} className="h-full" />
-              </div>
-              {/* Bottom-right */}
-              <div className="h-[220px] sm:h-[260px] md:h-[272px]">
-                <PhotoTile photo={galleryPhotos[2]} index={2} onClick={() => openLightbox(2)} className="h-full" />
-              </div>
-              {/* Middle-right (only visible as part of row on md) */}
-              <div className="hidden md:block h-[272px]">
-                <PhotoTile photo={galleryPhotos[3]} index={3} onClick={() => openLightbox(3)} className="h-full" />
-              </div>
-              {/* Last of right column */}
-              <div className="hidden md:block h-[272px]">
-                <PhotoTile photo={galleryPhotos[4]} index={4} onClick={() => openLightbox(4)} className="h-full" />
-              </div>
+                return (
+                  <div key={index} className={gridClasses}>
+                    <PhotoTile
+                      photo={photo}
+                      index={index}
+                      onClick={() => openLightbox(index)}
+                      className="h-full w-full rounded-sm"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </FadeInView>
-
-          {/* Row 1 mobile — show gall4 & gall5 on mobile only */}
-          <FadeInView className="mb-3 md:hidden">
-            <div className="grid grid-cols-2 gap-3">
-              <div className="h-[200px] sm:h-[240px]">
-                <PhotoTile photo={galleryPhotos[3]} index={3} onClick={() => openLightbox(3)} className="h-full" />
-              </div>
-              <div className="h-[200px] sm:h-[240px]">
-                <PhotoTile photo={galleryPhotos[4]} index={4} onClick={() => openLightbox(4)} className="h-full" />
-              </div>
-            </div>
-          </FadeInView>
-
-          {/* ── Row 2: Wide panorama + portrait ── */}
-          <FadeInView delay={80} className="mb-3 md:mb-4">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-              {/* Wide panorama — spans 2 cols on desktop */}
-              <div className="col-span-2 h-[220px] sm:h-[280px] md:h-[380px]">
-                <PhotoTile photo={galleryPhotos[5]} index={5} onClick={() => openLightbox(5)} className="h-full" />
-              </div>
-              {/* Portrait — right side */}
-              <div className="hidden md:block h-[380px]">
-                <PhotoTile photo={galleryPhotos[6]} index={6} onClick={() => openLightbox(6)} className="h-full" />
-              </div>
-            </div>
-          </FadeInView>
-
-          {/* ── Row 3: equal-width trio ── */}
-          <FadeInView delay={120}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-              <div className="h-[240px] sm:h-[280px] md:h-[340px]">
-                <PhotoTile photo={galleryPhotos[6]} index={6} onClick={() => openLightbox(6)} className="h-full md:hidden" />
-                <PhotoTile photo={galleryPhotos[7]} index={7} onClick={() => openLightbox(7)} className="h-full hidden md:block" />
-              </div>
-              <div className="h-[240px] sm:h-[280px] md:h-[340px]">
-                <PhotoTile photo={galleryPhotos[7]} index={7} onClick={() => openLightbox(7)} className="h-full md:hidden" />
-                <PhotoTile photo={galleryPhotos[0]} index={0} onClick={() => openLightbox(0)} className="h-full hidden md:block" />
-              </div>
-              <div className="h-[240px] sm:h-[280px] md:h-[340px] hidden sm:block">
-                <PhotoTile photo={galleryPhotos[2]} index={2} onClick={() => openLightbox(2)} className="h-full md:hidden" />
-                <PhotoTile photo={galleryPhotos[5]} index={5} onClick={() => openLightbox(5)} className="h-full hidden md:block" />
-              </div>
-            </div>
-          </FadeInView>
-
         </div>
       </div>
 
