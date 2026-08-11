@@ -16,6 +16,7 @@ import Reservations from "./pages/Reservations";
 import Policy from "./pages/Policy";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Gallery from "./pages/Gallery";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -48,6 +49,7 @@ function App() {
             <Route path="/policy" element={<Policy />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
           <Footer />
         </div>

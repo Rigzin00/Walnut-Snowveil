@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Rooms', href: '/rooms' },
   { label: 'Experiences', href: '/experience' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Blog', href: '/blog' },
   { label: 'Reservations', href: '/reservations' },
   { label: 'Contact', href: '/contact' },

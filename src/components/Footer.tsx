@@ -24,6 +24,7 @@ const Footer = () => {
     { label: 'ABOUT US', href: '/about' },
     { label: 'ROOMS', href: '/rooms' },
     { label: 'EXPERIENCES', href: '/experience' },
+    { label: 'GALLERY', href: '/gallery' },
     { label: 'BLOG', href: '/blog' },
     { label: 'RESERVATION', href: '/reservations' },
     { label: 'CONTACT', href: '/contact' }
