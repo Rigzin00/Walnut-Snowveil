@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -18,14 +18,17 @@ const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [clickedLink, setClickedLink] = useState<string | null>(null);
 
+  const navigate = useNavigate();
+
   const handleLinkClick = (link: any) => {
     setHoveredLink(link.label);
     setClickedLink(link.label);
-    // Keep animation visible for the full transition duration
+    // Let the hover animation play briefly, then navigate
     setTimeout(() => {
       setIsMenuOpen(false);
       setClickedLink(null);
-    }, 500);
+      navigate(link.href);
+    }, 300);
   };
 
   useEffect(() => {
@@ -160,19 +163,14 @@ const Navbar = () => {
                 transition: `opacity 0.4s ease ${0.15 + i * 0.06}s, transform 0.4s ease ${0.15 + i * 0.06}s`,
                 pointerEvents: isMenuOpen ? 'auto' : 'none',
               }}
-              onClick={(e) => {
-                e.preventDefault();
+              onClick={() => {
                 handleLinkClick(link);
               }}
               onPointerEnter={() => setHoveredLink(link.label)}
               onPointerLeave={() => setHoveredLink(null)}
-              onTouchStart={(e) => {
-                e.preventDefault();
+              onTouchStart={() => {
                 setHoveredLink(link.label);
-                // Trigger the link navigation on touch
-                setTimeout(() => {
-                  window.location.href = link.href;
-                }, 300);
+                handleLinkClick(link);
               }}
             >
               {/* Left Line that appears on hover/click */}
