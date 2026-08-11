@@ -5,14 +5,14 @@ import ConnectSection from "../components/ConnectSection";
 
 // ─── Gallery photo data — 8 unique images, no duplicates ────────────────────
 const galleryPhotos = [
-  { src: "/gallery/gall1.webp", alt: "Walnut Snowveil Residency — Sumoor Village",    caption: "Our Residency",        tag: "Residency" },
-  { src: "/gallery/gall2.png",  alt: "Nubra Valley Panorama",                          caption: "Nubra Valley Views",   tag: "Landscape" },
-  { src: "/gallery/gall3.webp", alt: "Himalayan Mountain Scenery",                     caption: "Himalayan Horizons",   tag: "Landscape" },
-  { src: "/gallery/gall4.webp", alt: "Guest Room — Walnut Snowveil",                   caption: "Rooms & Comfort",      tag: "Rooms" },
-  { src: "/gallery/gall5.webp", alt: "Scenic View from the Valley",                    caption: "Mountain Serenity",    tag: "Landscape" },
-  { src: "/gallery/gall6.jpeg", alt: "Sand Dunes — Sumoor, Nubra Valley",              caption: "Sand Dune Safari",     tag: "Experience" },
-  { src: "/gallery/gall7.jpeg", alt: "Ladakh Cultural Heritage",                        caption: "Ladakhi Culture",      tag: "Culture" },
-  { src: "/gallery/gall8.jpeg", alt: "Samstanling Monastery, Nubra Valley",            caption: "Monastery Visits",     tag: "Culture" },
+  { src: "/gallery/gall1.webp", alt: "Enjoying coffee with a mountain view", caption: "Morning Coffee Views", tag: "Relaxation" },
+  { src: "/gallery/gall2.png", alt: "Bedroom window opening to Himalayan landscape", caption: "Scenic Room Views", tag: "Rooms" },
+  { src: "/gallery/gall3.webp", alt: "Motorcycle parked against scenic mountain backdrop", caption: "Nubra Adventures", tag: "Experience" },
+  { src: "/gallery/gall4.webp", alt: "Traditional Ladakhi style spacious bedroom", caption: "Comfortable Stays", tag: "Rooms" },
+  { src: "/gallery/gall5.webp", alt: "View from Walnut Snowveil Residency balcony", caption: "Residency Views", tag: "Views" },
+  { src: "/gallery/gall6.jpeg", alt: "Family posing outside Walnut Snowveil Residency", caption: "Happy Guests", tag: "Guests" },
+  { src: "/gallery/gall7.jpeg", alt: "Guests enjoying dinner together at the residency", caption: "Shared Meals", tag: "Dining" },
+  { src: "/gallery/gall8.jpeg", alt: "Friends posing outside the residency", caption: "Making Memories", tag: "Guests" },
 ];
 
 // ─── Scroll-in animation wrapper ─────────────────────────────────────────────
@@ -42,9 +42,8 @@ const FadeInView = ({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-[1100ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[50px]"
-      } ${className}`}
+      className={`transition-all duration-[1100ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[50px]"
+        } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -316,9 +315,8 @@ export default function Gallery() {
           <img
             src="/gallery/gall2.png"
             alt="Nubra Valley — Walnut Snowveil Gallery"
-            className={`w-full h-full object-cover transition-all duration-[2000ms] ease-out ${
-              isHeroVisible ? "scale-100 opacity-80" : "scale-110 opacity-0"
-            }`}
+            className={`w-full h-full object-cover transition-all duration-[2000ms] ease-out ${isHeroVisible ? "scale-100 opacity-80" : "scale-110 opacity-0"
+              }`}
           />
         </div>
         <div className="absolute inset-0 bg-black/45" />
