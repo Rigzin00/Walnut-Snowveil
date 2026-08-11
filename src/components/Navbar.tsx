@@ -186,7 +186,7 @@ const Navbar = () => {
               {/* Text */}
               <span
                 style={{
-                  fontFamily: "Anek Bangla, sans-serif",
+                  fontFamily: "Jomolhari, 'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(32px, 8vw, 48px)',
                   color: 'rgb(255, 255, 255)',
                   lineHeight: '1.1',
